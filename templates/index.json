@@ -203,33 +203,6 @@
         "micro_trust": "I lager, 2 års garanti, 30 dagars öppet köp"
       }
     },
-    "lifestyle-break": {
-      "type": "lifestyle-break",
-      "settings": {
-        "image_alt": "",
-        "quote": "<p>\"Kabeln håller sig undan. Det gör allt annat också.\"</p>",
-        "attribution": "Vinda Engineering · Sverige"
-      }
-    },
-    "before_after_YQQLQm": {
-      "type": "before-after",
-      "name": "Before / After",
-      "settings": {
-        "background_variant": "default",
-        "console_label": "INNAN // EFTER",
-        "console_status": "DRA FÖR JÄMFÖRELSE",
-        "eyebrow": "Skillnaden",
-        "heading": "Innan Vinda. Efter Vinda.",
-        "subheading": "",
-        "image_before": "shopify://shop_images/Vinda_image_driveway_3.png",
-        "image_before_alt": "Uppfart med kabel på marken.",
-        "image_after": "shopify://shop_images/Vinda_image_driveway.png",
-        "image_after_alt": "Vinda monterad, kabel inrullad",
-        "before_label": "INNAN",
-        "after_label": "EFTER",
-        "aria_label": "Innan/efter jämförelse"
-      }
-    },
     "portable-reel": {
       "type": "product-feature",
       "blocks": {
@@ -281,10 +254,37 @@
         "rating": "4.7",
         "review_count": 23,
         "price_meta": "inkl. moms · fri frakt",
-        "description": "Kompakt skivformad. Följer med dit din bil tar dig. Maskinbearbetad aluminiumkropp, matt svart finish, och en fjäderbelastad indragning som håller kabeln perfekt upprullad.",
+        "description": "Din Type 2-kabel är inte gjord för att slängas i bagageluckan i en hög. Ändå är det precis så de flesta elbilsägare förvarar sin laddkabel – ihoprullad, hoptrasslad och nedstoppad där den får plats. Med Vinda Go, den handhållna kabelvindan,  får din laddkabel äntligen den ordning den förtjänar.",
         "badge": "",
         "show_overlay": false,
         "micro_trust": "I lager, 2 års garanti, 30 dagars öppet köp"
+      }
+    },
+    "lifestyle-break": {
+      "type": "lifestyle-break",
+      "settings": {
+        "image_alt": "",
+        "quote": "<p>\"Kabeln håller sig undan. Det gör allt annat också.\"</p>",
+        "attribution": "Vinda Engineering · Sverige"
+      }
+    },
+    "before_after_YQQLQm": {
+      "type": "before-after",
+      "name": "Before / After",
+      "settings": {
+        "background_variant": "default",
+        "console_label": "INNAN // EFTER",
+        "console_status": "DRA FÖR JÄMFÖRELSE",
+        "eyebrow": "Skillnaden",
+        "heading": "Innan Vinda. Efter Vinda.",
+        "subheading": "",
+        "image_before": "shopify://shop_images/Vinda_image_driveway_3.png",
+        "image_before_alt": "Uppfart med kabel på marken.",
+        "image_after": "shopify://shop_images/Vinda_image_driveway.png",
+        "image_after_alt": "Vinda monterad, kabel inrullad",
+        "before_label": "INNAN",
+        "after_label": "EFTER",
+        "aria_label": "Innan/efter jämförelse"
       }
     },
     "reviews": {
@@ -367,9 +367,9 @@
     "trust-strip",
     "features",
     "wall-reel",
+    "portable-reel",
     "lifestyle-break",
     "before_after_YQQLQm",
-    "portable-reel",
     "reviews",
     "final-cta"
   ]
