@@ -30,6 +30,10 @@ button { font: inherit; color: inherit; cursor: pointer; }
   border-radius: var(--radius-xs);
 }
 
+/* Push <main> below the fixed header on every page EXCEPT the index,
+ * where the hero is intentionally full-bleed under the transparent header. */
+body:not(.page-index) main { padding-top: var(--header-height); }
+
 /* ─── Shared layout primitives ─────────────────────────────── */
 .v-container {
   max-width: var(--content-max);
