@@ -459,11 +459,11 @@ body:not(.page-index) main { padding-top: var(--header-height); }
 .v-pf .v-container { padding-block: var(--space-14); }
 .v-pf__grid {
   display: grid;
-  grid-template-columns: 55% 1fr;
-  gap: 64px;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
   align-items: center;
 }
-.v-pf--mirror .v-pf__grid { grid-template-columns: 1fr 55%; }
+.v-pf--mirror .v-pf__grid { grid-template-columns: 1fr 1fr; }
 .v-pf--mirror .v-pf__media  { order: 2; }
 .v-pf--mirror .v-pf__body   { order: 1; }
 @media (max-width: 989px) {
