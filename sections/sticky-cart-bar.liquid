@@ -1,8 +1,43 @@
-{%- comment -%} Wave 4 will replace this stub with the full sticky bar. {%- endcomment -%}
+{%- liquid
+  assign wall = section.settings.wall_product
+  assign portable = section.settings.portable_product
+-%}
+
+{%- if wall != blank or portable != blank -%}
+  <aside class="v-sticky-bar" id="VStickyBar" data-sticky-bar aria-hidden="true">
+    <div class="v-sticky-bar__inner">
+      <div class="v-sticky-bar__copy">
+        <p class="v-sticky-bar__title">{{ section.settings.title | default: 'Vinda Cable Reels' }}</p>
+        <p class="v-sticky-bar__sub">{{ section.settings.sub | default: 'IP44 · AUTO-RETRACT · TYPE 2' }}</p>
+      </div>
+      <div class="v-sticky-bar__ctas">
+        {%- if portable != blank -%}
+          {% render 'atc-form',
+              product: portable,
+              classes: 'v-btn-outline',
+              label: 'Portable',
+              show_price: true %}
+        {%- endif -%}
+        {%- if wall != blank -%}
+          {% render 'atc-form',
+              product: wall,
+              classes: 'v-btn-primary',
+              label: 'Wall Reel',
+              show_price: true %}
+        {%- endif -%}
+      </div>
+    </div>
+  </aside>
+{%- endif -%}
 
 {% schema %}
 {
   "name": "Sticky cart bar",
-  "settings": []
+  "settings": [
+    { "type": "product", "id": "wall_product", "label": "Wall reel product" },
+    { "type": "product", "id": "portable_product", "label": "Portable reel product" },
+    { "type": "text", "id": "title", "label": "Title", "default": "Vinda Cable Reels" },
+    { "type": "text", "id": "sub", "label": "Sub label", "default": "IP44 · AUTO-RETRACT · TYPE 2" }
+  ]
 }
 {% endschema %}

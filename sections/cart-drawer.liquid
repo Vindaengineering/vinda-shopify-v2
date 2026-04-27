@@ -1,4 +1,66 @@
-{%- comment -%} Wave 4 will replace this stub with the full drawer. {%- endcomment -%}
+<link rel="stylesheet" href="{{ 'cart-drawer.css' | asset_url }}">
+
+{%- comment -%}
+  Cart drawer — fixed right-side panel + backdrop.
+  Markup is server-rendered from the current cart so first paint shows correct state.
+  cart-drawer.js takes over for open/close + ATC interception.
+{%- endcomment -%}
+
+<cart-drawer
+  class="v-drawer"
+  data-drawer
+  aria-hidden="true"
+  data-money-format="{{ shop.money_format | strip_html | escape }}"
+>
+  <div class="v-drawer__backdrop" data-drawer-close></div>
+
+  <aside
+    class="v-drawer__panel"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="VDrawerTitle"
+  >
+    <header class="v-drawer__header">
+      <h2 class="v-drawer__title" id="VDrawerTitle">
+        {{ 'cart.title' | t | default: 'Cart' }}
+        <span class="v-drawer__count" data-drawer-count>
+          {%- if cart.item_count > 0 -%}({{ cart.item_count }}){%- endif -%}
+        </span>
+      </h2>
+      <button type="button" class="v-drawer__close" data-drawer-close aria-label="{{ 'cart.close' | t | default: 'Close cart' }}">
+        {% render 'icon-x' %}
+      </button>
+    </header>
+
+    <div class="v-drawer__items" data-drawer-items>
+      {%- if cart.item_count == 0 -%}
+        <div class="v-drawer__empty" data-drawer-empty>
+          <p class="v-drawer__empty-title">{{ 'cart.empty_title' | t | default: 'Your cart is empty.' }}</p>
+          <p class="v-drawer__empty-sub">{{ 'cart.empty_sub' | t | default: 'Add a product to get started.' }}</p>
+        </div>
+      {%- else -%}
+        {%- for item in cart.items -%}
+          {%- render 'cart-drawer-item', item: item -%}
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+
+    <footer class="v-drawer__footer{% if cart.item_count == 0 %} is-hidden{% endif %}" data-drawer-footer>
+      <div class="v-drawer__total-row">
+        <span class="v-drawer__total-label">{{ 'cart.total_incl_vat' | t | default: 'Total incl. VAT' }}</span>
+        <span class="v-drawer__total-amount" data-drawer-total>{{ cart.total_price | money }}</span>
+      </div>
+      <form action="{{ routes.cart_url }}" method="post" novalidate>
+        <button type="submit" name="checkout" class="v-btn-primary v-btn-primary--block v-drawer__checkout">
+          {{ 'cart.checkout' | t | default: 'Checkout' }} →
+        </button>
+      </form>
+      <p class="v-drawer__footnote">
+        {{ 'cart.footnote' | t | default: 'Free shipping · Secure checkout · 30-day returns' }}
+      </p>
+    </footer>
+  </aside>
+</cart-drawer>
 
 {% schema %}
 {

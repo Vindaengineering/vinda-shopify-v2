@@ -1,0 +1,25 @@
+{%- comment -%}
+  Single cart item row inside the drawer.
+  Used both server-rendered and as a JS template (data-attrs let JS update in place).
+{%- endcomment -%}
+
+<div class="v-drawer__item" data-drawer-item data-item-key="{{ item.key }}">
+  <div class="v-drawer__item-media">
+    {%- if item.image -%}
+      <img src="{{ item.image | image_url: width: 200 }}" alt="{{ item.product.title | escape }}" width="68" height="68" loading="lazy">
+    {%- endif -%}
+  </div>
+  <div class="v-drawer__item-body">
+    <p class="v-drawer__item-title">{{ item.product.title }}</p>
+    {%- assign specs = item.variant.title -%}
+    {%- if specs != 'Default Title' and specs != blank -%}
+      <p class="v-drawer__item-specs v-mono">{{ specs }}</p>
+    {%- endif -%}
+    <div class="v-drawer__item-row">
+      <span class="v-drawer__item-price" data-item-price>{{ item.final_line_price | money }}</span>
+      <button type="button" class="v-drawer__item-remove" data-drawer-remove data-item-key="{{ item.key }}">
+        {{ 'cart.remove' | t | default: 'Remove' }}
+      </button>
+    </div>
+  </div>
+</div>
