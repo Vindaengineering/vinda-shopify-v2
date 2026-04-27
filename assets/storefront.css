@@ -479,11 +479,24 @@ body:not(.page-index) main { padding-top: var(--header-height); }
   overflow: hidden;
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 600px;
+}
+@media (max-width: 749px) {
+  .v-pf__media { max-height: 400px; }
 }
 .v-pf__img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  max-height: 600px;
+  object-fit: contain;
+  object-position: center;
   display: block;
+}
+@media (max-width: 749px) {
+  .v-pf__img { max-height: 400px; }
 }
 .v-pf__overlay {
   position: absolute; inset: 0;
