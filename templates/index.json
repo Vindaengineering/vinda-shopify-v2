@@ -1,16 +1,47 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "hero",
       "blocks": {
-        "trust-1": { "type": "trust_item", "settings": { "label": "Fri frakt" } },
-        "trust-2": { "type": "trust_item", "settings": { "label": "2 års garanti" } },
-        "trust-3": { "type": "trust_item", "settings": { "label": "I lager" } }
+        "trust-1": {
+          "type": "trust_item",
+          "settings": {
+            "label": "Fri frakt"
+          }
+        },
+        "trust-2": {
+          "type": "trust_item",
+          "settings": {
+            "label": "2 års garanti"
+          }
+        },
+        "trust-3": {
+          "type": "trust_item",
+          "settings": {
+            "label": "I lager"
+          }
+        }
       },
-      "block_order": ["trust-1", "trust-2", "trust-3"],
+      "block_order": [
+        "trust-1",
+        "trust-2",
+        "trust-3"
+      ],
       "settings": {
+        "product": "vinda-home",
+        "background_image": "shopify://shop_images/resized.jpg",
+        "product_image": "shopify://shop_images/674086245_1474436644172023_5727440520983312386_n.jpg",
         "eyebrow": "Väggmonterad · Automatisk indragning",
-        "heading": "<p>Alltid redo.<br>Aldrig trasslig.</p>",
+        "heading": "<p>Alltid redo.<br/>Aldrig trasslig.</p>",
         "description": "Monteras på valfri yttervägg. Kabeln dras in automatiskt efter varje laddning — inga trassel, inget släp på marken, inget krångel.",
         "rating": "4.9",
         "review_count": 47,
@@ -23,36 +54,139 @@
     "trust-strip": {
       "type": "trust-strip",
       "blocks": {
-        "t1": { "type": "trust", "settings": { "icon": "shield-check", "label": "IP44-klassad" } },
-        "t2": { "type": "trust", "settings": { "icon": "zap", "label": "Upp till 11 kW" } },
-        "t3": { "type": "trust", "settings": { "icon": "cable", "label": "Typ 2-kontakt" } },
-        "t4": { "type": "trust", "settings": { "icon": "rotate-ccw", "label": "Auto-indragande" } },
-        "t5": { "type": "trust", "settings": { "icon": "award", "label": "CE-märkt" } }
+        "t1": {
+          "type": "trust",
+          "settings": {
+            "icon": "shield-check",
+            "label": "IP44-klassad"
+          }
+        },
+        "t2": {
+          "type": "trust",
+          "settings": {
+            "icon": "zap",
+            "label": "Upp till 11 kW"
+          }
+        },
+        "t3": {
+          "type": "trust",
+          "settings": {
+            "icon": "cable",
+            "label": "Typ 2-kontakt"
+          }
+        },
+        "t4": {
+          "type": "trust",
+          "settings": {
+            "icon": "rotate-ccw",
+            "label": "Auto-indragande"
+          }
+        },
+        "t5": {
+          "type": "trust",
+          "settings": {
+            "icon": "award",
+            "label": "CE-märkt"
+          }
+        }
       },
-      "block_order": ["t1", "t2", "t3", "t4", "t5"],
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5"
+      ],
       "settings": {}
     },
     "features": {
       "type": "features",
       "blocks": {
-        "f1": { "type": "feature", "settings": { "icon": "rotate-ccw", "title": "Auto-indragning", "body": "Fjäderbelastad mekanism. Perfekt upprullad varje gång — utan att du tänker på det." } },
-        "f2": { "type": "feature", "settings": { "icon": "shield-check", "title": "IP44-klassad", "body": "Tätad för utomhusbruk året om. Byggd för skandinaviska vintrar." } },
-        "f3": { "type": "feature", "settings": { "icon": "zap", "title": "Upp till 11 kW", "body": "Trefasladdning i full hastighet. Bilen är redo varje morgon." } },
-        "f4": { "type": "feature", "settings": { "icon": "home", "title": "Byggd för hem", "body": "Kompakt avtryck. Diskret matt finish. Passar valfri yttervägg." } }
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "icon": "rotate-ccw",
+            "title": "Auto-indragning",
+            "body": "Fjäderbelastad mekanism. Perfekt upprullad varje gång — utan att du tänker på det."
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "icon": "shield-check",
+            "title": "IP44-klassad",
+            "body": "Tätad för utomhusbruk året om. Byggd för skandinaviska vintrar."
+          }
+        },
+        "f3": {
+          "type": "feature",
+          "settings": {
+            "icon": "zap",
+            "title": "Upp till 11 kW",
+            "body": "Trefasladdning i full hastighet. Bilen är redo varje morgon."
+          }
+        },
+        "f4": {
+          "type": "feature",
+          "settings": {
+            "icon": "home",
+            "title": "Byggd för hem",
+            "body": "Kompakt avtryck. Diskret matt finish. Passar valfri yttervägg."
+          }
+        }
       },
-      "block_order": ["f1", "f2", "f3", "f4"],
-      "settings": { "eyebrow": "Teknik", "heading": "Teknik som försvinner." }
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "settings": {
+        "eyebrow": "Teknik",
+        "heading": "Teknik som försvinner."
+      }
     },
     "wall-reel": {
       "type": "product-feature",
       "blocks": {
-        "s1": { "type": "spec_row", "settings": { "label": "Effekt", "value": "11 kW" } },
-        "s2": { "type": "spec_row", "settings": { "label": "Längd", "value": "5 m" } },
-        "s3": { "type": "spec_row", "settings": { "label": "Kontakt", "value": "Typ 2" } },
-        "s4": { "type": "spec_row", "settings": { "label": "IP-klass", "value": "IP44" } }
+        "s1": {
+          "type": "spec_row",
+          "settings": {
+            "label": "Effekt",
+            "value": "11 kW"
+          }
+        },
+        "s2": {
+          "type": "spec_row",
+          "settings": {
+            "label": "Längd",
+            "value": "5 m"
+          }
+        },
+        "s3": {
+          "type": "spec_row",
+          "settings": {
+            "label": "Kontakt",
+            "value": "Typ 2"
+          }
+        },
+        "s4": {
+          "type": "spec_row",
+          "settings": {
+            "label": "IP-klass",
+            "value": "IP44"
+          }
+        }
       },
-      "block_order": ["s1", "s2", "s3", "s4"],
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
       "settings": {
+        "product": "",
+        "media_alt": "",
         "anchor": "wall-reel",
         "mirror": false,
         "background_variant": "default",
@@ -71,6 +205,7 @@
     "lifestyle-break": {
       "type": "lifestyle-break",
       "settings": {
+        "image_alt": "",
         "quote": "<p>\"Kabeln håller sig undan. Det gör allt annat också.\"</p>",
         "attribution": "Vinda Engineering · Sverige"
       }
@@ -78,13 +213,44 @@
     "portable-reel": {
       "type": "product-feature",
       "blocks": {
-        "s1": { "type": "spec_row", "settings": { "label": "Effekt", "value": "3,6 kW" } },
-        "s2": { "type": "spec_row", "settings": { "label": "Längd", "value": "5 m" } },
-        "s3": { "type": "spec_row", "settings": { "label": "Kontakt", "value": "Typ 2" } },
-        "s4": { "type": "spec_row", "settings": { "label": "IP-klass", "value": "IP44" } }
+        "s1": {
+          "type": "spec_row",
+          "settings": {
+            "label": "Effekt",
+            "value": "3,6 kW"
+          }
+        },
+        "s2": {
+          "type": "spec_row",
+          "settings": {
+            "label": "Längd",
+            "value": "5 m"
+          }
+        },
+        "s3": {
+          "type": "spec_row",
+          "settings": {
+            "label": "Kontakt",
+            "value": "Typ 2"
+          }
+        },
+        "s4": {
+          "type": "spec_row",
+          "settings": {
+            "label": "IP-klass",
+            "value": "IP44"
+          }
+        }
       },
-      "block_order": ["s1", "s2", "s3", "s4"],
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
       "settings": {
+        "product": "",
+        "media_alt": "",
         "anchor": "portable-reel",
         "mirror": true,
         "background_variant": "alt",
@@ -95,6 +261,7 @@
         "review_count": 23,
         "price_meta": "inkl. moms · fri frakt",
         "description": "Kompakt skivformad. Följer med dit din bil tar dig. Maskinbearbetad aluminiumkropp, matt svart finish, och en fjäderbelastad indragning som håller kabeln perfekt upprullad.",
+        "badge": "",
         "show_overlay": false,
         "micro_trust": "I lager, 2 års garanti, 30 dagars öppet köp"
       }
@@ -102,21 +269,76 @@
     "reviews": {
       "type": "reviews",
       "blocks": {
-        "r1": { "type": "review", "settings": { "name": "Erik L.", "location": "Stockholm, SE", "product": "Väggmonterad vinda", "quote": "Monterades på 20 minuter. Kabeln dras in perfekt varje gång. Min uppfart har aldrig sett bättre ut." } },
-        "r2": { "type": "review", "settings": { "name": "Annika B.", "location": "Oslo, NO", "product": "Väggmonterad vinda", "quote": "Skandinavisk vinter, regn, snö — den bara funkar. IP44 är ingen lek. Riktigt gediget bygge." } },
-        "r3": { "type": "review", "settings": { "name": "Marcus H.", "location": "Köpenhamn, DK", "product": "Portabel vinda", "quote": "Kompakt och välbyggd. Får plats fint i bagaget. Indragningsmekanismen är tillfredsställande varje enda gång." } }
+        "r1": {
+          "type": "review",
+          "settings": {
+            "name": "Erik L.",
+            "location": "Stockholm, SE",
+            "product": "Väggmonterad vinda",
+            "quote": "Monterades på 20 minuter. Kabeln dras in perfekt varje gång. Min uppfart har aldrig sett bättre ut."
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "name": "Annika B.",
+            "location": "Oslo, NO",
+            "product": "Väggmonterad vinda",
+            "quote": "Skandinavisk vinter, regn, snö — den bara funkar. IP44 är ingen lek. Riktigt gediget bygge."
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "name": "Marcus H.",
+            "location": "Köpenhamn, DK",
+            "product": "Portabel vinda",
+            "quote": "Kompakt och välbyggd. Får plats fint i bagaget. Indragningsmekanismen är tillfredsställande varje enda gång."
+          }
+        }
       },
-      "block_order": ["r1", "r2", "r3"],
-      "settings": { "eyebrow": "Omdömen", "heading": "Vad kunderna säger.", "aggregate_rating": "4.9", "aggregate_count": 70 }
+      "block_order": [
+        "r1",
+        "r2",
+        "r3"
+      ],
+      "settings": {
+        "eyebrow": "Omdömen",
+        "heading": "Vad kunderna säger.",
+        "aggregate_rating": "4.9",
+        "aggregate_count": 70
+      }
     },
     "final-cta": {
       "type": "final-cta",
       "blocks": {
-        "c1": { "type": "product_card", "settings": { "label": "Väggmonterad vinda", "sub_specs": "11 kW · Auto-indragning · IP44", "badge": "Bästsäljare" } },
-        "c2": { "type": "product_card", "settings": { "label": "Portabel vinda", "sub_specs": "3,6 kW · Fjäder-indragning · IP44" } }
+        "c1": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "label": "Väggmonterad vinda",
+            "sub_specs": "11 kW · Auto-indragning · IP44",
+            "badge": "Bästsäljare"
+          }
+        },
+        "c2": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "label": "Portabel vinda",
+            "sub_specs": "3,6 kW · Fjäder-indragning · IP44",
+            "badge": ""
+          }
+        }
       },
-      "block_order": ["c1", "c2"],
-      "settings": { "eyebrow": "Redo att ladda smartare?", "heading": "Välj din vinda." }
+      "block_order": [
+        "c1",
+        "c2"
+      ],
+      "settings": {
+        "eyebrow": "Redo att ladda smartare?",
+        "heading": "Välj din vinda."
+      }
     }
   },
   "order": [
