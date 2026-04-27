@@ -211,6 +211,25 @@
         "attribution": "Vinda Engineering · Sverige"
       }
     },
+    "before_after_YQQLQm": {
+      "type": "before-after",
+      "name": "Before / After",
+      "settings": {
+        "background_variant": "default",
+        "console_label": "INNAN // EFTER",
+        "console_status": "DRA FÖR JÄMFÖRELSE",
+        "eyebrow": "Skillnaden",
+        "heading": "Innan Vinda. Efter Vinda.",
+        "subheading": "",
+        "image_before": "shopify://shop_images/Vinda_image_driveway_3.png",
+        "image_before_alt": "Garage med kabel på golvet",
+        "image_after": "shopify://shop_images/Vinda_image_driveway.png",
+        "image_after_alt": "Vinda monterad, kabel inrullad",
+        "before_label": "INNAN",
+        "after_label": "EFTER",
+        "aria_label": "Innan/efter jämförelse"
+      }
+    },
     "portable-reel": {
       "type": "product-feature",
       "blocks": {
@@ -349,6 +368,7 @@
     "features",
     "wall-reel",
     "lifestyle-break",
+    "before_after_YQQLQm",
     "portable-reel",
     "reviews",
     "final-cta"
