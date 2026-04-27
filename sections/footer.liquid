@@ -23,7 +23,11 @@
           <p class="v-footer__tagline">{{ tagline }}</p>
         {%- endif -%}
         <p class="v-footer__location v-mono">
-          <span class="v-footer__dot" aria-hidden="true"></span>
+          <svg class="v-footer__flag" viewBox="0 0 16 10" aria-hidden="true" focusable="false">
+            <rect width="16" height="10" fill="#006AA7"/>
+            <rect x="5" width="2" height="10" fill="#FECC00"/>
+            <rect y="4" width="16" height="2" fill="#FECC00"/>
+          </svg>
           {{ section.settings.location | default: 'Designed in Sweden' }}
         </p>
       </div>
