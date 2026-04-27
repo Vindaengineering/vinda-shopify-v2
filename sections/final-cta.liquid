@@ -1,0 +1,61 @@
+<section class="v-final-cta" aria-labelledby="FinalCtaHeading">
+  <div class="v-final-cta__inner" data-reveal>
+    <p class="v-eyebrow">{{ section.settings.eyebrow | default: 'Ready to charge smarter?' }}</p>
+    <h2 class="v-display v-final-cta__heading" id="FinalCtaHeading">
+      {{ section.settings.heading | default: 'Pick your reel.' }}
+    </h2>
+
+    <div class="v-final-cta__grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'product_card' -%}
+          {%- assign cp = block.settings.product -%}
+          <article class="v-final-cta__card" {{ block.shopify_attributes }} data-reveal style="--reveal-i: {{ forloop.index }};">
+            {%- if block.settings.badge != blank -%}
+              <span class="v-final-cta__badge v-badge">{{ block.settings.badge }}</span>
+            {%- endif -%}
+            <p class="v-final-cta__label">{{ block.settings.label | default: cp.title }}</p>
+            {%- if cp != blank -%}
+              <p class="v-final-cta__price">{{ cp.price | money }}</p>
+            {%- endif -%}
+            <p class="v-final-cta__sub v-mono">{{ block.settings.sub_specs }}</p>
+            {%- if cp != blank -%}
+              {% render 'atc-form', product: cp, classes: 'v-btn-primary v-btn-primary--block', show_price: false %}
+            {%- endif -%}
+          </article>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Final CTA",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Ready to charge smarter?" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Pick your reel." }
+  ],
+  "blocks": [
+    {
+      "type": "product_card",
+      "name": "Product card",
+      "limit": 2,
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product" },
+        { "type": "text", "id": "label", "label": "Label", "default": "Wall-Mount Reel" },
+        { "type": "text", "id": "sub_specs", "label": "Sub specs", "default": "11 kW · Auto-retract · IP44" },
+        { "type": "text", "id": "badge", "label": "Badge (optional)" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Final CTA",
+      "blocks": [
+        { "type": "product_card", "settings": { "label": "Wall-Mount Reel", "sub_specs": "11 kW · Auto-retract · IP44", "badge": "Best seller" } },
+        { "type": "product_card", "settings": { "label": "Portable Reel", "sub_specs": "3.6 kW · Spring-retract · IP44" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

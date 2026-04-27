@@ -1,0 +1,128 @@
+{%- liquid
+  assign p = section.settings.product
+  assign hero_image = section.settings.background_image
+  assign product_image = section.settings.product_image
+-%}
+
+<section class="v-hero" aria-labelledby="HeroHeading">
+  <div class="v-hero__bg" {% if hero_image != blank %}style="background-image: url({{ hero_image | image_url: width: 2400 }});"{% else %}style="background-image: url({{ 'lifestyle-driveway.jpg' | asset_url }});"{% endif %} aria-hidden="true"></div>
+  <div class="v-hero__gradient" aria-hidden="true"></div>
+
+  <div class="v-hero__product" aria-hidden="true">
+    {%- if product_image != blank -%}
+      {{ product_image | image_url: width: 1200 | image_tag: loading: 'eager', fetchpriority: 'high', alt: '', class: 'v-hero__product-img', widths: '600,900,1200', sizes: '44vw' }}
+    {%- elsif p.featured_image != blank -%}
+      {{ p.featured_image | image_url: width: 1200 | image_tag: loading: 'eager', fetchpriority: 'high', alt: '', class: 'v-hero__product-img', widths: '600,900,1200', sizes: '44vw' }}
+    {%- else -%}
+      <img src="{{ 'product-wall-reel.jpg' | asset_url }}" alt="" class="v-hero__product-img" loading="eager" fetchpriority="high">
+    {%- endif -%}
+  </div>
+
+  <div class="v-hero__inner">
+    <div class="v-hero__content">
+      <p class="v-eyebrow" data-reveal style="--reveal-i: 0;">
+        {{ section.settings.eyebrow | default: 'Wall-Mount · Auto-Retractable' }}
+      </p>
+
+      <h1 class="v-hero__title" id="HeroHeading" data-reveal style="--reveal-i: 1;">
+        {{ section.settings.heading | default: 'Always ready.<br>Never tangled.' }}
+      </h1>
+
+      <div class="v-hero__rating" data-reveal style="--reveal-i: 2;">
+        <span class="v-stars" aria-hidden="true">★★★★★</span>
+        <span class="v-hero__rating-text">
+          {{ section.settings.rating | default: '4.9' }} ·
+          {{ section.settings.review_count | default: 47 }}
+          {{ 'home.hero.reviews' | t | default: 'reviews' }}
+        </span>
+      </div>
+
+      {%- if p != blank -%}
+        <p class="v-hero__price" data-reveal style="--reveal-i: 3;">
+          <span class="v-hero__price-amount">{{ p.price | money }}</span>
+          <span class="v-hero__price-meta">{{ section.settings.price_meta | default: 'incl. VAT' }}</span>
+        </p>
+      {%- endif -%}
+
+      <p class="v-hero__desc" data-reveal style="--reveal-i: 4;">
+        {{ section.settings.description | default: 'Mounts to any exterior wall. Cable retracts automatically after every session — no tangles, no dragging, no fuss.' }}
+      </p>
+
+      {%- if section.settings.spec_chips != blank -%}
+        <div class="v-hero__chips" data-reveal style="--reveal-i: 5;">
+          {%- assign chips = section.settings.spec_chips | split: ',' -%}
+          {%- for chip in chips -%}
+            <span class="v-chip">{{ chip | strip }}</span>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+      <div class="v-hero__ctas" data-reveal style="--reveal-i: 6;">
+        {%- if p != blank -%}
+          {% render 'atc-form', product: p, classes: 'v-btn-primary' %}
+        {%- endif -%}
+        {%- if section.settings.secondary_cta_label != blank -%}
+          <a href="{{ section.settings.secondary_cta_url | default: '#portable-reel' }}" class="v-btn-outline">
+            {{ section.settings.secondary_cta_label }} →
+          </a>
+        {%- endif -%}
+      </div>
+
+      <ul class="v-trust-row v-hero__trust" data-reveal style="--reveal-i: 7;" aria-label="{{ 'home.hero.trust_label' | t | default: 'Trust' }}">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'trust_item' -%}
+            <li class="v-trust-row__item" {{ block.shopify_attributes }}>
+              {% render 'icon-check' %}
+              <span>{{ block.settings.label }}</span>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+
+  <div class="v-hero__scroll-hint" aria-hidden="true">
+    <span>{{ 'home.hero.scroll_hint' | t | default: 'Scroll' }}</span>
+    <span class="v-hero__scroll-line"></span>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Featured product (Wall reel)" },
+    { "type": "image_picker", "id": "background_image", "label": "Background lifestyle image" },
+    { "type": "image_picker", "id": "product_image", "label": "Product image (overrides featured)" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Wall-Mount · Auto-Retractable" },
+    { "type": "richtext", "id": "heading", "label": "Heading (use <br> for line break)", "default": "<p>Always ready.<br>Never tangled.</p>" },
+    { "type": "textarea", "id": "description", "label": "Description", "default": "Mounts to any exterior wall. Cable retracts automatically after every session — no tangles, no dragging, no fuss." },
+    { "type": "text", "id": "rating", "label": "Rating value", "default": "4.9" },
+    { "type": "number", "id": "review_count", "label": "Review count", "default": 47 },
+    { "type": "text", "id": "price_meta", "label": "Price meta", "default": "incl. VAT" },
+    { "type": "text", "id": "spec_chips", "label": "Spec chips (comma separated)", "default": "11 kW, 5 m, IP44, Type 2, CE Certified" },
+    { "type": "text", "id": "secondary_cta_label", "label": "Secondary CTA label", "default": "View Portable Reel" },
+    { "type": "url", "id": "secondary_cta_url", "label": "Secondary CTA URL" }
+  ],
+  "blocks": [
+    {
+      "type": "trust_item",
+      "name": "Trust item",
+      "limit": 4,
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Free shipping" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero",
+      "blocks": [
+        { "type": "trust_item", "settings": { "label": "Free shipping" } },
+        { "type": "trust_item", "settings": { "label": "2-year warranty" } },
+        { "type": "trust_item", "settings": { "label": "In stock" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

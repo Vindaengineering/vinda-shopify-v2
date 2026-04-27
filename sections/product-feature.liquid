@@ -1,0 +1,140 @@
+{%- liquid
+  assign p = section.settings.product
+  assign mirror = section.settings.mirror
+  assign anchor = section.settings.anchor | default: 'product-feature'
+  assign bg = section.settings.background_variant
+-%}
+
+<section
+  class="v-pf{% if mirror %} v-pf--mirror{% endif %}{% if bg == 'alt' %} v-pf--bg-alt{% endif %}"
+  id="{{ anchor }}"
+  aria-labelledby="PF-{{ section.id }}-heading"
+>
+  <div class="v-container">
+    <div class="v-pf__grid">
+      {%- comment -%} Image side {%- endcomment -%}
+      <div class="v-pf__media" data-reveal>
+        {%- if section.settings.media_image != blank -%}
+          {{ section.settings.media_image | image_url: width: 1400 | image_tag: alt: section.settings.media_alt | default: p.title, class: 'v-pf__img', widths: '600,900,1200,1600', sizes: '(min-width: 990px) 50vw, 100vw', loading: 'lazy' }}
+        {%- elsif p.featured_image != blank -%}
+          {{ p.featured_image | image_url: width: 1400 | image_tag: alt: p.title, class: 'v-pf__img', widths: '600,900,1200,1600', sizes: '(min-width: 990px) 50vw, 100vw', loading: 'lazy' }}
+        {%- else -%}
+          <img src="{{ 'lifestyle-garden.jpg' | asset_url }}" alt="" class="v-pf__img" loading="lazy">
+        {%- endif -%}
+
+        {%- if section.settings.show_overlay -%}
+          <div class="v-pf__overlay" aria-hidden="true"></div>
+        {%- endif -%}
+        {%- if section.settings.badge != blank -%}
+          <div class="v-pf__badge"><span class="v-badge">{{ section.settings.badge }}</span></div>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%} Content side {%- endcomment -%}
+      <div class="v-pf__body" data-reveal style="--reveal-i: 1;">
+        <p class="v-eyebrow">{{ section.settings.eyebrow }}</p>
+        <h2 class="v-display v-pf__heading" id="PF-{{ section.id }}-heading">
+          {{ section.settings.heading | default: p.title }}
+        </h2>
+
+        {%- if section.settings.show_rating -%}
+          <div class="v-pf__rating">
+            <span class="v-stars" aria-hidden="true">★★★★★</span>
+            <span class="v-pf__rating-text">
+              {{ section.settings.rating | default: '4.9' }} ·
+              {{ section.settings.review_count | default: 47 }} {{ 'home.hero.reviews' | t | default: 'reviews' }}
+            </span>
+          </div>
+        {%- endif -%}
+
+        {%- if p != blank -%}
+          <p class="v-pf__price">
+            <span class="v-pf__price-amount">{{ p.price | money }}</span>
+            <span class="v-pf__price-meta">{{ section.settings.price_meta | default: 'incl. VAT · free shipping' }}</span>
+          </p>
+        {%- endif -%}
+
+        {%- if section.settings.description != blank -%}
+          <p class="v-pf__desc">{{ section.settings.description }}</p>
+        {%- endif -%}
+
+        {%- if section.blocks.size > 0 -%}
+          <dl class="v-spec-grid">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'spec_row' -%}
+                <div class="v-spec-grid__cell" {{ block.shopify_attributes }}>
+                  <dt class="v-spec-grid__label">{{ block.settings.label }}</dt>
+                  <dd class="v-spec-grid__value">{{ block.settings.value }}</dd>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </dl>
+        {%- endif -%}
+
+        {%- if p != blank -%}
+          {% render 'atc-form', product: p, classes: 'v-btn-primary v-btn-primary--block' %}
+        {%- endif -%}
+
+        <ul class="v-trust-row v-pf__micro-trust" aria-label="{{ 'home.product.trust_label' | t | default: 'Trust' }}">
+          {%- assign micro = section.settings.micro_trust | split: ',' -%}
+          {%- for item in micro -%}
+            <li class="v-trust-row__item">
+              {% render 'icon-check' %}<span>{{ item | strip }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product feature",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Product" },
+    { "type": "image_picker", "id": "media_image", "label": "Lifestyle / product image (overrides featured)" },
+    { "type": "text", "id": "media_alt", "label": "Image alt text" },
+    { "type": "text", "id": "anchor", "label": "Anchor (id)", "default": "product-feature" },
+    { "type": "checkbox", "id": "mirror", "label": "Mirror (image right, content left)", "default": false },
+    { "type": "select", "id": "background_variant", "label": "Background", "default": "default",
+      "options": [
+        { "value": "default", "label": "Default (#0D0D0D)" },
+        { "value": "alt", "label": "Alt (#080808)" }
+      ]
+    },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Wall Mount" },
+    { "type": "richtext", "id": "heading", "label": "Heading" },
+    { "type": "checkbox", "id": "show_rating", "label": "Show star rating", "default": true },
+    { "type": "text", "id": "rating", "label": "Rating value", "default": "4.9" },
+    { "type": "number", "id": "review_count", "label": "Review count", "default": 47 },
+    { "type": "text", "id": "price_meta", "label": "Price meta", "default": "incl. VAT · free shipping" },
+    { "type": "textarea", "id": "description", "label": "Description" },
+    { "type": "text", "id": "badge", "label": "Badge label (e.g. Best seller)" },
+    { "type": "checkbox", "id": "show_overlay", "label": "Show image gradient overlay", "default": true },
+    { "type": "text", "id": "micro_trust", "label": "Micro trust items (comma separated)", "default": "In stock, 2-year warranty, 30-day returns" }
+  ],
+  "blocks": [
+    {
+      "type": "spec_row",
+      "name": "Spec row",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Output" },
+        { "type": "text", "id": "value", "label": "Value", "default": "11 kW" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product feature",
+      "settings": { "eyebrow": "Wall Mount", "anchor": "wall-reel", "badge": "Best seller" },
+      "blocks": [
+        { "type": "spec_row", "settings": { "label": "Output", "value": "11 kW" } },
+        { "type": "spec_row", "settings": { "label": "Length", "value": "5 m" } },
+        { "type": "spec_row", "settings": { "label": "Connector", "value": "Type 2" } },
+        { "type": "spec_row", "settings": { "label": "IP Rating", "value": "IP44" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

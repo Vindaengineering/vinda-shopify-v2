@@ -1,0 +1,30 @@
+<section class="v-lifestyle" aria-label="{{ section.settings.aria_label | default: 'Lifestyle' }}">
+  {%- if section.settings.image != blank -%}
+    {{ section.settings.image | image_url: width: 2400 | image_tag: alt: section.settings.image_alt | default: '', class: 'v-lifestyle__img', widths: '800,1200,1800,2400', sizes: '100vw', loading: 'lazy' }}
+  {%- else -%}
+    <img src="{{ 'lifestyle-driveway.jpg' | asset_url }}" alt="" class="v-lifestyle__img" loading="lazy">
+  {%- endif -%}
+  <div class="v-lifestyle__gradient" aria-hidden="true"></div>
+
+  <div class="v-lifestyle__content">
+    <p class="v-lifestyle__quote">
+      {{ section.settings.quote | default: '"The cable stays out of the way. So does everything else."' }}
+    </p>
+    <p class="v-lifestyle__attribution v-mono">
+      {{ section.settings.attribution | default: 'Vinda Engineering · Sweden' }}
+    </p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Lifestyle break",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Background image" },
+    { "type": "text", "id": "image_alt", "label": "Image alt text" },
+    { "type": "richtext", "id": "quote", "label": "Quote", "default": "<p>\"The cable stays out of the way. So does everything else.\"</p>" },
+    { "type": "text", "id": "attribution", "label": "Attribution", "default": "Vinda Engineering · Sweden" }
+  ],
+  "presets": [{ "name": "Lifestyle break" }]
+}
+{% endschema %}

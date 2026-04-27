@@ -1,0 +1,34 @@
+{%- comment -%}
+  Add-to-cart form. Use anywhere a button needs to add a product to the cart.
+
+  Required: product (object)
+  Optional:
+    label (string, default localised "Add to cart")
+    classes (string, default "v-btn-primary v-btn-primary--block")
+    show_price (bool, default true) — appends " — {price}" to label
+    qty (int, default 1)
+{%- endcomment -%}
+
+{%- liquid
+  assign p = product
+  assign cls = classes | default: 'v-btn-primary v-btn-primary--block'
+  assign btn_label = label | default: 'products.product.add_to_cart' | t
+  if show_price == nil
+    assign show_price = true
+  endif
+  assign q = qty | default: 1
+-%}
+
+{%- if p and p.available -%}
+  <form action="{{ routes.cart_add_url }}" method="post" enctype="multipart/form-data" class="v-atc-form" data-atc-form>
+    <input type="hidden" name="id" value="{{ p.selected_or_first_available_variant.id }}">
+    <input type="hidden" name="quantity" value="{{ q }}">
+    <button type="submit" class="{{ cls }}">
+      {{ btn_label }}{% if show_price %} — {{ p.price | money }}{% endif %}
+    </button>
+  </form>
+{%- else -%}
+  <button type="button" class="{{ cls }}" disabled>
+    {{ 'products.product.sold_out' | t }}
+  </button>
+{%- endif -%}

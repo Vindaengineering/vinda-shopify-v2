@@ -1,0 +1,67 @@
+<section class="v-reviews" id="reviews" aria-labelledby="ReviewsHeading">
+  <div class="v-container">
+    <header class="v-reviews__header" data-reveal>
+      <div>
+        <p class="v-eyebrow">{{ section.settings.eyebrow | default: 'Reviews' }}</p>
+        <h2 class="v-display v-reviews__heading" id="ReviewsHeading">
+          {{ section.settings.heading | default: 'What customers say.' }}
+        </h2>
+      </div>
+      <div class="v-reviews__aggregate">
+        <span class="v-stars v-stars--lg" aria-hidden="true">★★★★★</span>
+        <span class="v-reviews__avg">{{ section.settings.aggregate_rating | default: '4.9' }}</span>
+        <span class="v-reviews__count">· {{ section.settings.aggregate_count | default: 70 }} {{ 'home.hero.reviews' | t | default: 'reviews' }}</span>
+      </div>
+    </header>
+
+    <div class="v-reviews__grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'review' -%}
+          <article class="v-reviews__tile" {{ block.shopify_attributes }} data-reveal style="--reveal-i: {{ forloop.index }};">
+            <span class="v-stars" aria-hidden="true">★★★★★</span>
+            <p class="v-reviews__quote">"{{ block.settings.quote }}"</p>
+            <div>
+              <p class="v-reviews__name">{{ block.settings.name }}</p>
+              <p class="v-reviews__meta">{{ block.settings.location }} · {{ block.settings.product }}</p>
+            </div>
+          </article>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Reviews",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Reviews" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What customers say." },
+    { "type": "text", "id": "aggregate_rating", "label": "Aggregate rating", "default": "4.9" },
+    { "type": "number", "id": "aggregate_count", "label": "Aggregate count", "default": 70 }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "limit": 9,
+      "settings": [
+        { "type": "text", "id": "name", "label": "Reviewer name", "default": "Erik L." },
+        { "type": "text", "id": "location", "label": "Location", "default": "Stockholm, SE" },
+        { "type": "text", "id": "product", "label": "Product", "default": "Wall-Mount Reel" },
+        { "type": "textarea", "id": "quote", "label": "Quote", "default": "Installed in 20 minutes. Cable retracts perfectly every time. My driveway has never looked better." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews",
+      "blocks": [
+        { "type": "review", "settings": { "name": "Erik L.", "location": "Stockholm, SE", "product": "Wall-Mount Reel", "quote": "Installed in 20 minutes. Cable retracts perfectly every time. My driveway has never looked better." } },
+        { "type": "review", "settings": { "name": "Annika B.", "location": "Oslo, NO", "product": "Wall-Mount Reel", "quote": "Scandinavian winter, rain, snow — the thing just works. IP44 is no joke. Absolutely solid build quality." } },
+        { "type": "review", "settings": { "name": "Marcus H.", "location": "Copenhagen, DK", "product": "Portable Reel", "quote": "Compact and well-made. Fits neatly in the boot. The retract mechanism is satisfying every single time." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
