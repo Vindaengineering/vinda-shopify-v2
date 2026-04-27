@@ -1,0 +1,82 @@
+{%- comment -%}
+  Blog index — header + 3-up article cards. v2 styling.
+{%- endcomment -%}
+
+<section class="v-page v-blog">
+  <div class="v-container">
+    <header class="v-page__header" data-reveal>
+      <p class="v-eyebrow">{{ section.settings.eyebrow | default: blog.title }}</p>
+      <h1 class="v-display v-page__heading">{{ section.settings.heading | default: blog.title }}</h1>
+      {%- if section.settings.lede != blank -%}
+        <p class="v-page__lede">{{ section.settings.lede }}</p>
+      {%- endif -%}
+    </header>
+
+    {%- paginate blog.articles by section.settings.posts_per_page -%}
+      {%- if blog.articles_count > 0 -%}
+        <ul class="v-blog__grid">
+          {%- for article in blog.articles -%}
+            <li class="v-blog__card" data-reveal style="--reveal-i: {{ forloop.index0 | modulo: 3 }};">
+              <a href="{{ article.url }}" class="v-blog__link">
+                <div class="v-blog__media">
+                  {%- if article.image -%}
+                    {{ article.image | image_url: width: 800 | image_tag: alt: article.image.alt | default: article.title, class: 'v-blog__img', widths: '400,600,800', sizes: '(min-width: 990px) 33vw, 100vw', loading: 'lazy' }}
+                  {%- else -%}
+                    <div class="v-blog__placeholder" aria-hidden="true"></div>
+                  {%- endif -%}
+                </div>
+                <div class="v-blog__body">
+                  <p class="v-blog__meta v-mono">
+                    <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: '%d %b %Y' }}</time>
+                    {%- if article.tags.size > 0 -%}
+                      <span aria-hidden="true"> · </span>{{ article.tags.first }}
+                    {%- endif -%}
+                  </p>
+                  <h2 class="v-blog__title">{{ article.title }}</h2>
+                  {%- if article.excerpt != blank or article.content != blank -%}
+                    <p class="v-blog__excerpt">
+                      {%- if article.excerpt != blank -%}
+                        {{ article.excerpt | strip_html | truncate: 140 }}
+                      {%- else -%}
+                        {{ article.content | strip_html | truncate: 140 }}
+                      {%- endif -%}
+                    </p>
+                  {%- endif -%}
+                  <span class="v-blog__read v-mono">{{ 'blog.read_more' | t | default: 'Läs mer' }} →</span>
+                </div>
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+
+        {%- if paginate.pages > 1 -%}
+          <nav class="v-blog__pagination" aria-label="{{ 'general.pagination.label' | t | default: 'Pagination' }}">
+            {%- if paginate.previous -%}
+              <a href="{{ paginate.previous.url }}" class="v-btn-outline">← {{ 'general.pagination.previous' | t | default: 'Föregående' }}</a>
+            {%- endif -%}
+            <span class="v-blog__pagination-info v-mono">{{ paginate.current_page }} / {{ paginate.pages }}</span>
+            {%- if paginate.next -%}
+              <a href="{{ paginate.next.url }}" class="v-btn-outline">{{ 'general.pagination.next' | t | default: 'Nästa' }} →</a>
+            {%- endif -%}
+          </nav>
+        {%- endif -%}
+      {%- else -%}
+        <div class="v-blog__empty">
+          <p class="v-page__lede">{{ 'blog.empty' | t | default: 'Inga inlägg än. Kom tillbaka snart.' }}</p>
+        </div>
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Blog index",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Journal" },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "textarea", "id": "lede", "label": "Lede", "default": "Anteckningar om laddning, installation och liv med elbil." },
+    { "type": "range", "id": "posts_per_page", "label": "Posts per page", "min": 3, "max": 24, "step": 3, "default": 9 }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,155 @@
+{%- comment -%}
+  Installation page — intro + 3 numbered steps + troubleshoot accordion + CTA strip.
+  v2 styling. Step images render at their natural aspect ratio inside square cards.
+{%- endcomment -%}
+
+<section class="v-page v-install">
+  <div class="v-container">
+    <header class="v-page__header" data-reveal>
+      <p class="v-eyebrow">{{ section.settings.eyebrow | default: 'Installation' }}</p>
+      <h1 class="v-display v-page__heading">{{ section.settings.heading | default: 'Installation i tre steg.' }}</h1>
+      {%- if section.settings.lede != blank -%}
+        <p class="v-page__lede">{{ section.settings.lede }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.meta_1 != blank or section.settings.meta_2 != blank or section.settings.meta_3 != blank -%}
+        <ul class="v-page__meta v-mono" aria-label="{{ 'home.product.trust_label' | t | default: 'Info' }}">
+          {%- if section.settings.meta_1 != blank -%}<li>{{ section.settings.meta_1 }}</li>{%- endif -%}
+          {%- if section.settings.meta_2 != blank -%}<li>{{ section.settings.meta_2 }}</li>{%- endif -%}
+          {%- if section.settings.meta_3 != blank -%}<li>{{ section.settings.meta_3 }}</li>{%- endif -%}
+        </ul>
+      {%- endif -%}
+    </header>
+
+    <ol class="v-install__steps">
+      {%- for i in (1..3) -%}
+        {%- assign img_key = 'image_' | append: i -%}
+        {%- assign title_key = 'title_' | append: i -%}
+        {%- assign body_key = 'body_' | append: i -%}
+        {%- assign tools_key = 'tools_' | append: i -%}
+        {%- assign img = section.settings[img_key] -%}
+        {%- assign title = section.settings[title_key] -%}
+        {%- assign body = section.settings[body_key] -%}
+        {%- assign tools = section.settings[tools_key] -%}
+        {%- if title != blank -%}
+          <li class="v-install__step" data-reveal style="--reveal-i: {{ forloop.index0 }};">
+            <div class="v-install__step-media">
+              {%- if img != blank -%}
+                {{ img | image_url: width: 1000 | image_tag: alt: title, class: 'v-install__step-img', widths: '400,600,900', sizes: '(min-width: 990px) 33vw, 100vw', loading: 'lazy' }}
+              {%- else -%}
+                <div class="v-install__step-placeholder" aria-hidden="true"></div>
+              {%- endif -%}
+            </div>
+            <div class="v-install__step-body">
+              <p class="v-install__step-num v-mono">0{{ forloop.index }}</p>
+              <h2 class="v-install__step-title">{{ title }}</h2>
+              <div class="v-install__step-text">{{ body }}</div>
+              {%- if tools != blank -%}
+                <p class="v-install__step-tools v-mono"><span>{{ 'page.install.tools' | t | default: 'Verktyg' }}:</span> {{ tools }}</p>
+              {%- endif -%}
+            </div>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ol>
+
+    {%- comment -%} Troubleshoot accordion {%- endcomment -%}
+    {%- assign has_qa = false -%}
+    {%- for i in (1..6) -%}
+      {%- assign qk = 'q_' | append: i -%}
+      {%- if section.settings[qk] != blank -%}{%- assign has_qa = true -%}{%- endif -%}
+    {%- endfor -%}
+
+    {%- if has_qa -%}
+      <div class="v-install__faq" data-reveal>
+        <p class="v-eyebrow">{{ section.settings.faq_eyebrow | default: 'Felsökning' }}</p>
+        <h2 class="v-display v-install__faq-heading">{{ section.settings.faq_heading | default: 'Vanliga frågor.' }}</h2>
+        <div class="v-faq">
+          {%- for i in (1..6) -%}
+            {%- assign qk = 'q_' | append: i -%}
+            {%- assign ak = 'a_' | append: i -%}
+            {%- assign q = section.settings[qk] -%}
+            {%- assign a = section.settings[ak] -%}
+            {%- if q != blank -%}
+              <details class="v-faq__item">
+                <summary class="v-faq__q">
+                  <span>{{ q }}</span>
+                  <span class="v-faq__icon" aria-hidden="true">+</span>
+                </summary>
+                <div class="v-faq__a">{{ a }}</div>
+              </details>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.cta_heading != blank -%}
+      <div class="v-install__cta" data-reveal>
+        <p class="v-eyebrow">{{ section.settings.cta_eyebrow }}</p>
+        <h2 class="v-display v-install__cta-heading">{{ section.settings.cta_heading }}</h2>
+        {%- if section.settings.cta_button_text != blank -%}
+          <a href="{{ section.settings.cta_button_url | default: '/pages/contact' }}" class="v-btn-primary">
+            {{ section.settings.cta_button_text }} →
+          </a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Installation page",
+  "settings": [
+    { "type": "header", "content": "Intro" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Installation" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Installation i tre steg." },
+    { "type": "textarea", "id": "lede", "label": "Lede", "default": "Vinda kräver inga specialverktyg och ingen certifierad elektriker. Ett borrhål, två skruvar — sen är du igång." },
+    { "type": "text", "id": "meta_1", "label": "Meta 1", "default": "MKT // SE" },
+    { "type": "text", "id": "meta_2", "label": "Meta 2", "default": "TID // 15 MIN" },
+    { "type": "text", "id": "meta_3", "label": "Meta 3", "default": "VERKTYG // 2" },
+
+    { "type": "header", "content": "Step 1" },
+    { "type": "image_picker", "id": "image_1", "label": "Image" },
+    { "type": "text", "id": "title_1", "label": "Title", "default": "Välj plats" },
+    { "type": "richtext", "id": "body_1", "label": "Body", "default": "<p>Hitta en vägg nära din laddbox. Underkanten av Vinda bör sitta minst 1 meter från golvet så kabeln rullar fritt utan att släpa.</p>" },
+    { "type": "text", "id": "tools_1", "label": "Tools", "default": "Måttband, vattenpass" },
+
+    { "type": "header", "content": "Step 2" },
+    { "type": "image_picker", "id": "image_2", "label": "Image" },
+    { "type": "text", "id": "title_2", "label": "Title", "default": "Markera och borra" },
+    { "type": "richtext", "id": "body_2", "label": "Body", "default": "<p>Använd monteringsmallen i paketet för att markera två borrhål. Borra 8 mm för betong eller tegel, 6 mm för trä.</p>" },
+    { "type": "text", "id": "tools_2", "label": "Tools", "default": "Slagborrmaskin, 8 mm borr" },
+
+    { "type": "header", "content": "Step 3" },
+    { "type": "image_picker", "id": "image_3", "label": "Image" },
+    { "type": "text", "id": "title_3", "label": "Title", "default": "Sätt upp väggfästet" },
+    { "type": "richtext", "id": "body_3", "label": "Body", "default": "<p>Skruva fast väggfästet med de två medföljande skruvarna. Kontrollera att det sitter i våg innan du drar åt helt.</p>" },
+    { "type": "text", "id": "tools_3", "label": "Tools", "default": "Skruvmejsel, vattenpass" },
+
+    { "type": "header", "content": "Troubleshoot" },
+    { "type": "text", "id": "faq_eyebrow", "label": "Eyebrow", "default": "Felsökning" },
+    { "type": "text", "id": "faq_heading", "label": "Heading", "default": "Vanliga frågor." },
+    { "type": "text", "id": "q_1", "label": "Q1", "default": "Kabeln rullas inte in automatiskt." },
+    { "type": "richtext", "id": "a_1", "label": "A1", "default": "<p>Returfjädern aktiveras när du drar ut kabeln ~10 cm och sen släpper. Om det ändå inte fungerar — kontrollera att kabeln inte är i kläm.</p>" },
+    { "type": "text", "id": "q_2", "label": "Q2", "default": "Väggfästet känns löst." },
+    { "type": "richtext", "id": "a_2", "label": "A2", "default": "<p>Dra åt skruvarna ordentligt. Sitter du i en gipsvägg eller tunt material — använd ankarplugg eller välj en annan vägg med bakomliggande trä eller betong.</p>" },
+    { "type": "text", "id": "q_3", "label": "Q3", "default": "Behöver jag en certifierad elektriker?" },
+    { "type": "richtext", "id": "a_3", "label": "A3", "default": "<p>Nej. Vinda ansluts till din befintliga laddbox och kräver ingen fast elinstallation. Om du ännu inte har en laddbox installerad behövs en certifierad elektriker för den delen.</p>" },
+    { "type": "text", "id": "q_4", "label": "Q4", "default": "Fungerar Vinda utomhus?" },
+    { "type": "richtext", "id": "a_4", "label": "A4", "default": "<p>Ja. Vinda är IP44-klassad och tål regn och snö. Den bör dock inte installeras där den utsätts för stående vatten.</p>" },
+    { "type": "text", "id": "q_5", "label": "Q5" },
+    { "type": "richtext", "id": "a_5", "label": "A5" },
+    { "type": "text", "id": "q_6", "label": "Q6" },
+    { "type": "richtext", "id": "a_6", "label": "A6" },
+
+    { "type": "header", "content": "CTA strip" },
+    { "type": "text", "id": "cta_eyebrow", "label": "Eyebrow", "default": "Något som krånglar?" },
+    { "type": "text", "id": "cta_heading", "label": "Heading", "default": "Skicka en fråga — vi svarar snabbt." },
+    { "type": "text", "id": "cta_button_text", "label": "Button text", "default": "Kontakta oss" },
+    { "type": "url", "id": "cta_button_url", "label": "Button URL" }
+  ],
+  "presets": [{ "name": "Installation page" }]
+}
+{% endschema %}

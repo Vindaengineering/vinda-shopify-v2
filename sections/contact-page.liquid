@@ -1,0 +1,109 @@
+{%- comment -%}
+  Contact page — header + 2-col layout: form (Shopify {% form 'contact' %}) + sidebar info.
+{%- endcomment -%}
+
+<section class="v-page v-contact">
+  <div class="v-container">
+    <header class="v-page__header" data-reveal>
+      <p class="v-eyebrow">{{ section.settings.eyebrow | default: 'Kontakt' }}</p>
+      <h1 class="v-display v-page__heading">{{ section.settings.heading | default: 'Hör av dig.' }}</h1>
+      {%- if section.settings.lede != blank -%}
+        <p class="v-page__lede">{{ section.settings.lede }}</p>
+      {%- endif -%}
+    </header>
+
+    <div class="v-contact__grid">
+      <div class="v-contact__form-wrap" data-reveal>
+        {%- form 'contact', class: 'v-contact__form' -%}
+          {%- if form.posted_successfully? -%}
+            <p class="v-contact__success">{{ section.settings.success_text | default: 'Tack! Vi återkommer inom 24 timmar.' }}</p>
+          {%- endif -%}
+
+          {%- if form.errors -%}
+            <div class="v-contact__errors" role="alert">
+              <p>{{ 'templates.contact.form.error_heading' | t | default: 'Något gick fel' }}</p>
+              <ul>
+                {%- for field in form.errors -%}
+                  <li>{{ form.errors.messages[field] }}</li>
+                {%- endfor -%}
+              </ul>
+            </div>
+          {%- endif -%}
+
+          <div class="v-field">
+            <label for="ContactName">{{ 'page.contact.name' | t | default: 'Namn' }}</label>
+            <input type="text" id="ContactName" name="contact[name]" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}" autocomplete="name" required>
+          </div>
+
+          <div class="v-field">
+            <label for="ContactEmail">{{ 'page.contact.email' | t | default: 'E-post' }}</label>
+            <input type="email" id="ContactEmail" name="contact[email]" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" autocomplete="email" required>
+          </div>
+
+          <div class="v-field">
+            <label for="ContactSubject">{{ 'page.contact.subject' | t | default: 'Ämne' }}</label>
+            <input type="text" id="ContactSubject" name="contact[subject]" value="{{ form.subject }}">
+          </div>
+
+          <div class="v-field">
+            <label for="ContactMessage">{{ 'page.contact.message' | t | default: 'Meddelande' }}</label>
+            <textarea id="ContactMessage" name="contact[body]" rows="6" required>{{ form.body }}</textarea>
+          </div>
+
+          <button type="submit" class="v-btn-primary v-btn-primary--block">
+            {{ 'page.contact.send' | t | default: 'Skicka' }} →
+          </button>
+        {%- endform -%}
+      </div>
+
+      <aside class="v-contact__side" data-reveal style="--reveal-i: 1;">
+        {%- if section.settings.side_heading != blank -%}
+          <h2 class="v-contact__side-title">{{ section.settings.side_heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.side_body != blank -%}
+          <div class="v-contact__side-body">{{ section.settings.side_body }}</div>
+        {%- endif -%}
+
+        <dl class="v-contact__meta">
+          {%- if section.settings.email_address != blank -%}
+            <div>
+              <dt class="v-mono">{{ 'page.contact.email_label' | t | default: 'E-post' }}</dt>
+              <dd><a href="mailto:{{ section.settings.email_address }}">{{ section.settings.email_address }}</a></dd>
+            </div>
+          {%- endif -%}
+          {%- if section.settings.response_time != blank -%}
+            <div>
+              <dt class="v-mono">{{ 'page.contact.response' | t | default: 'Svarstid' }}</dt>
+              <dd>{{ section.settings.response_time }}</dd>
+            </div>
+          {%- endif -%}
+          {%- if section.settings.hours != blank -%}
+            <div>
+              <dt class="v-mono">{{ 'page.contact.hours' | t | default: 'Öppettider' }}</dt>
+              <dd>{{ section.settings.hours }}</dd>
+            </div>
+          {%- endif -%}
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact page",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Kontakt" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Hör av dig." },
+    { "type": "textarea", "id": "lede", "label": "Lede", "default": "Frågor om beställning, installation eller produkt? Skriv så svarar vi snabbt." },
+    { "type": "text", "id": "success_text", "label": "Success text", "default": "Tack! Vi återkommer inom 24 timmar." },
+    { "type": "header", "content": "Sidebar" },
+    { "type": "text", "id": "side_heading", "label": "Sidebar heading", "default": "Snabb hjälp." },
+    { "type": "richtext", "id": "side_body", "label": "Sidebar body", "default": "<p>Vi besvarar de flesta frågor inom 24 timmar på vardagar.</p>" },
+    { "type": "text", "id": "email_address", "label": "Email", "default": "hej@vinda.se" },
+    { "type": "text", "id": "response_time", "label": "Response time", "default": "Inom 24 h" },
+    { "type": "text", "id": "hours", "label": "Hours", "default": "Mån–Fre, 09–17 CET" }
+  ],
+  "presets": [{ "name": "Contact page" }]
+}
+{% endschema %}

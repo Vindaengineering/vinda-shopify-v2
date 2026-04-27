@@ -1,0 +1,6 @@
+{
+  "sections": {
+    "main": { "type": "installation-page", "settings": {} }
+  },
+  "order": ["main"]
+}

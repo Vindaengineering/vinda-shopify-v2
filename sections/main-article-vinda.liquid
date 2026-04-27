@@ -1,0 +1,50 @@
+{%- comment -%}
+  Article — full-bleed hero image, centered max-width body column, back link footer.
+{%- endcomment -%}
+
+<article class="v-article">
+  <header class="v-article__header" data-reveal>
+    <div class="v-container v-container--narrow">
+      <p class="v-article__meta v-mono">
+        <a href="{{ blog.url }}">{{ blog.title }}</a>
+        <span aria-hidden="true"> · </span>
+        <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: '%d %b %Y' }}</time>
+        {%- if article.tags.size > 0 -%}
+          <span aria-hidden="true"> · </span>{{ article.tags.first }}
+        {%- endif -%}
+      </p>
+      <h1 class="v-display v-article__title">{{ article.title }}</h1>
+      {%- if article.excerpt != blank -%}
+        <p class="v-article__lede">{{ article.excerpt | strip_html }}</p>
+      {%- endif -%}
+      <p class="v-article__byline v-mono">
+        {%- if article.author != blank -%}
+          {{ 'article.by' | t | default: 'Av' }} {{ article.author }}
+        {%- endif -%}
+      </p>
+    </div>
+  </header>
+
+  {%- if article.image -%}
+    <div class="v-article__hero" data-reveal style="--reveal-i: 1;">
+      {{ article.image | image_url: width: 2000 | image_tag: alt: article.image.alt | default: article.title, class: 'v-article__hero-img', widths: '800,1200,1600,2000', sizes: '100vw', loading: 'eager', fetchpriority: 'high' }}
+    </div>
+  {%- endif -%}
+
+  <div class="v-container v-container--narrow">
+    <div class="v-article__body rte" data-reveal style="--reveal-i: 2;">
+      {{ article.content }}
+    </div>
+
+    <footer class="v-article__footer">
+      <a href="{{ blog.url }}" class="v-btn-outline">← {{ 'article.back_to_blog' | t | default: 'Tillbaka till bloggen' }}</a>
+    </footer>
+  </div>
+</article>
+
+{% schema %}
+{
+  "name": "Article",
+  "settings": []
+}
+{% endschema %}
