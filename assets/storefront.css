@@ -1,0 +1,208 @@
+/* ─── Vinda v2 storefront — global resets + shared primitives ─
+ * Section-specific CSS lives further down this file (one stylesheet
+ * keeps cascade simple for a one-page brand site).
+ * ─────────────────────────────────────────────────────────── */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-border-2); border-radius: var(--radius-xs); }
+
+img, svg { display: block; max-width: 100%; }
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; cursor: pointer; }
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
+}
+
+/* ─── Shared layout primitives ─────────────────────────────── */
+.v-container {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+@media (max-width: 749px) {
+  .v-container { padding-inline: var(--gutter-sm); }
+}
+
+.v-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-mono);
+  font-weight: var(--weight-semi);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 14px;
+  display: inline-block;
+}
+
+.v-display {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+  color: var(--color-fg);
+}
+
+.v-mono {
+  font-family: var(--font-mono);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+}
+
+/* Reveal-on-scroll primitive (IntersectionObserver adds .is-visible) */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--motion-slow) var(--motion-ease-out),
+    transform var(--motion-slow) var(--motion-ease-out);
+  transition-delay: calc(var(--reveal-i, 0) * 80ms);
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+}
+
+/* Star rating row */
+.v-stars {
+  display: inline-flex;
+  gap: 2px;
+  color: var(--color-accent);
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* Spec chip used in hero */
+.v-chip {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono);
+  color: var(--color-fg-mute2);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-2);
+  border-radius: var(--radius-xs);
+  padding: 4px 10px;
+  white-space: nowrap;
+}
+
+/* Primary accent-green button */
+.v-btn-primary {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: var(--weight-bold);
+  padding: 15px 36px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  cursor: pointer;
+  transition: filter var(--motion-fast) var(--motion-ease-out),
+              transform 100ms var(--motion-ease-out);
+  white-space: nowrap;
+  letter-spacing: var(--tracking-snug);
+}
+.v-btn-primary:hover { filter: brightness(1.1); }
+.v-btn-primary:active { transform: scale(0.97); }
+.v-btn-primary--block { width: 100%; padding: 17px 32px; font-size: 16px; }
+
+/* Secondary outline button */
+.v-btn-outline {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: var(--weight-medium);
+  padding: 14px 24px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-3);
+  background: transparent;
+  color: var(--color-fg-muted);
+  cursor: pointer;
+  transition: color var(--motion-fast), border-color var(--motion-fast);
+  white-space: nowrap;
+}
+.v-btn-outline:hover {
+  color: var(--color-fg);
+  border-color: var(--color-border-4);
+}
+
+/* Best-seller / status badge */
+.v-badge {
+  font-family: var(--font-body);
+  font-size: var(--text-mono-sm);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-mono-wide);
+  text-transform: uppercase;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  padding: 4px 10px;
+  border-radius: var(--radius-xs);
+}
+
+/* Trust-row checkmark item */
+.v-trust-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.v-trust-row__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: var(--text-meta);
+  color: var(--color-fg-mute2);
+}
+.v-trust-row__item svg {
+  width: 13px;
+  height: 13px;
+  stroke-width: 2.5;
+  color: var(--color-accent);
+}
+
+/* Spec grid (used on product feature + PDPs) */
+.v-spec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 32px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.v-spec-grid__cell {
+  padding: 13px 18px;
+  background: var(--color-bg);
+}
+.v-spec-grid__cell:nth-child(odd) { border-right: 1px solid var(--color-border); }
+.v-spec-grid__cell:not(:nth-last-child(-n+2)) { border-bottom: 1px solid var(--color-border); }
+.v-spec-grid__label {
+  font-family: var(--font-body);
+  font-size: var(--text-mono-sm);
+  font-weight: var(--weight-semi);
+  letter-spacing: var(--tracking-mono-wide);
+  text-transform: uppercase;
+  color: var(--color-fg-mute4);
+  margin-bottom: 5px;
+}
+.v-spec-grid__value {
+  font-family: var(--font-mono);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-fg);
+}
