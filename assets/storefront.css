@@ -34,6 +34,9 @@ button { font: inherit; color: inherit; cursor: pointer; }
  * where the hero is intentionally full-bleed under the transparent header. */
 body:not(.page-index) main { padding-top: var(--header-height); }
 
+/* Anchor-link offset so #wall-reel etc. don't hide under the 64px fixed header */
+[id] { scroll-margin-top: calc(var(--header-height) + 12px); }
+
 /* ─── Shared layout primitives ─────────────────────────────── */
 .v-container {
   max-width: var(--content-max);

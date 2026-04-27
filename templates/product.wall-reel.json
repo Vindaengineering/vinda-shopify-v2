@@ -1,0 +1,64 @@
+{
+  "sections": {
+    "pdp-hero": {
+      "type": "product-feature",
+      "blocks": {
+        "s1": { "type": "spec_row", "settings": { "label": "Effekt", "value": "11 kW" } },
+        "s2": { "type": "spec_row", "settings": { "label": "Längd", "value": "5 m" } },
+        "s3": { "type": "spec_row", "settings": { "label": "Kontakt", "value": "Typ 2" } },
+        "s4": { "type": "spec_row", "settings": { "label": "IP-klass", "value": "IP44" } },
+        "s5": { "type": "spec_row", "settings": { "label": "Mått", "value": "320 × 320 × 140 mm" } },
+        "s6": { "type": "spec_row", "settings": { "label": "Vikt", "value": "8,4 kg" } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4", "s5", "s6"],
+      "settings": {
+        "anchor": "wall-reel",
+        "mirror": false,
+        "background_variant": "default",
+        "eyebrow": "Väggmontering",
+        "heading": "<p>Auto-indragande<br>kabelvinda</p>",
+        "show_rating": true,
+        "rating": "4.9",
+        "review_count": 47,
+        "price_meta": "inkl. moms · fri frakt",
+        "description": "Väggmonterad och auto-indragande. Efter varje laddning rullas kabeln in av sig själv. Inga trassel, ingen markkontakt, ingen daglig irritation. IP44-klassad för utomhusbruk året om i alla klimat.",
+        "badge": "Bästsäljare",
+        "show_overlay": true,
+        "micro_trust": "I lager, 2 års garanti, 30 dagars öppet köp"
+      }
+    },
+    "pdp-trust-strip": {
+      "type": "trust-strip",
+      "blocks": {
+        "t1": { "type": "trust", "settings": { "icon": "shield-check", "label": "IP44-klassad" } },
+        "t2": { "type": "trust", "settings": { "icon": "zap", "label": "Upp till 11 kW" } },
+        "t3": { "type": "trust", "settings": { "icon": "cable", "label": "Typ 2-kontakt" } },
+        "t4": { "type": "trust", "settings": { "icon": "rotate-ccw", "label": "Auto-indragande" } },
+        "t5": { "type": "trust", "settings": { "icon": "award", "label": "CE-märkt" } }
+      },
+      "block_order": ["t1", "t2", "t3", "t4", "t5"],
+      "settings": {}
+    },
+    "pdp-features": {
+      "type": "features",
+      "blocks": {
+        "f1": { "type": "feature", "settings": { "icon": "rotate-ccw", "title": "Auto-indragning", "body": "Fjäderbelastad mekanism. Perfekt upprullad varje gång — utan att du tänker på det." } },
+        "f2": { "type": "feature", "settings": { "icon": "shield-check", "title": "IP44-klassad", "body": "Tätad för utomhusbruk året om. Byggd för skandinaviska vintrar." } },
+        "f3": { "type": "feature", "settings": { "icon": "zap", "title": "Upp till 11 kW", "body": "Trefasladdning i full hastighet. Bilen är redo varje morgon." } },
+        "f4": { "type": "feature", "settings": { "icon": "home", "title": "Byggd för hem", "body": "Kompakt avtryck. Diskret matt finish. Passar valfri yttervägg." } }
+      },
+      "block_order": ["f1", "f2", "f3", "f4"],
+      "settings": { "eyebrow": "Teknik", "heading": "Teknik som försvinner." }
+    },
+    "pdp-final-cta": {
+      "type": "final-cta",
+      "blocks": {
+        "c1": { "type": "product_card", "settings": { "label": "Väggmonterad vinda", "sub_specs": "11 kW · Auto-indragning · IP44", "badge": "Bästsäljare" } },
+        "c2": { "type": "product_card", "settings": { "label": "Portabel vinda", "sub_specs": "3,6 kW · Fjäder-indragning · IP44" } }
+      },
+      "block_order": ["c1", "c2"],
+      "settings": { "eyebrow": "Behöver du en till?", "heading": "Välj din vinda." }
+    }
+  },
+  "order": ["pdp-hero", "pdp-trust-strip", "pdp-features", "pdp-final-cta"]
+}

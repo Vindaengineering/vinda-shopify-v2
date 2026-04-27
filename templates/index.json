@@ -3,31 +3,31 @@
     "hero": {
       "type": "hero",
       "blocks": {
-        "trust-1": { "type": "trust_item", "settings": { "label": "Free shipping" } },
-        "trust-2": { "type": "trust_item", "settings": { "label": "2-year warranty" } },
-        "trust-3": { "type": "trust_item", "settings": { "label": "In stock" } }
+        "trust-1": { "type": "trust_item", "settings": { "label": "Fri frakt" } },
+        "trust-2": { "type": "trust_item", "settings": { "label": "2 års garanti" } },
+        "trust-3": { "type": "trust_item", "settings": { "label": "I lager" } }
       },
       "block_order": ["trust-1", "trust-2", "trust-3"],
       "settings": {
-        "eyebrow": "Wall-Mount · Auto-Retractable",
-        "heading": "<p>Always ready.<br>Never tangled.</p>",
-        "description": "Mounts to any exterior wall. Cable retracts automatically after every session — no tangles, no dragging, no fuss.",
+        "eyebrow": "Väggmonterad · Automatisk indragning",
+        "heading": "<p>Alltid redo.<br>Aldrig trasslig.</p>",
+        "description": "Monteras på valfri yttervägg. Kabeln dras in automatiskt efter varje laddning — inga trassel, inget släp på marken, inget krångel.",
         "rating": "4.9",
         "review_count": 47,
-        "price_meta": "incl. VAT",
-        "spec_chips": "11 kW, 5 m, IP44, Type 2, CE Certified",
-        "secondary_cta_label": "View Portable Reel",
+        "price_meta": "inkl. moms",
+        "spec_chips": "11 kW, 5 m, IP44, Typ 2, CE-märkt",
+        "secondary_cta_label": "Se Portable Reel",
         "secondary_cta_url": "#portable-reel"
       }
     },
     "trust-strip": {
       "type": "trust-strip",
       "blocks": {
-        "t1": { "type": "trust", "settings": { "icon": "shield-check", "label": "IP44 Rated" } },
-        "t2": { "type": "trust", "settings": { "icon": "zap", "label": "Up to 11 kW" } },
-        "t3": { "type": "trust", "settings": { "icon": "cable", "label": "Type 2 Connector" } },
-        "t4": { "type": "trust", "settings": { "icon": "rotate-ccw", "label": "Auto-Retractable" } },
-        "t5": { "type": "trust", "settings": { "icon": "award", "label": "CE Certified" } }
+        "t1": { "type": "trust", "settings": { "icon": "shield-check", "label": "IP44-klassad" } },
+        "t2": { "type": "trust", "settings": { "icon": "zap", "label": "Upp till 11 kW" } },
+        "t3": { "type": "trust", "settings": { "icon": "cable", "label": "Typ 2-kontakt" } },
+        "t4": { "type": "trust", "settings": { "icon": "rotate-ccw", "label": "Auto-indragande" } },
+        "t5": { "type": "trust", "settings": { "icon": "award", "label": "CE-märkt" } }
       },
       "block_order": ["t1", "t2", "t3", "t4", "t5"],
       "settings": {}
@@ -35,88 +35,88 @@
     "features": {
       "type": "features",
       "blocks": {
-        "f1": { "type": "feature", "settings": { "icon": "rotate-ccw", "title": "Auto-retract", "body": "Spring-loaded mechanism. Perfectly coiled every time, without thinking about it." } },
-        "f2": { "type": "feature", "settings": { "icon": "shield-check", "title": "IP44 rated", "body": "Sealed for outdoor use year-round. Built for Scandinavian winters." } },
-        "f3": { "type": "feature", "settings": { "icon": "zap", "title": "Up to 11 kW", "body": "Three-phase charging at full speed. Your car is ready every morning." } },
-        "f4": { "type": "feature", "settings": { "icon": "home", "title": "Built for homes", "body": "Compact footprint. Discreet matte finish. Fits any exterior surface." } }
+        "f1": { "type": "feature", "settings": { "icon": "rotate-ccw", "title": "Auto-indragning", "body": "Fjäderbelastad mekanism. Perfekt upprullad varje gång — utan att du tänker på det." } },
+        "f2": { "type": "feature", "settings": { "icon": "shield-check", "title": "IP44-klassad", "body": "Tätad för utomhusbruk året om. Byggd för skandinaviska vintrar." } },
+        "f3": { "type": "feature", "settings": { "icon": "zap", "title": "Upp till 11 kW", "body": "Trefasladdning i full hastighet. Bilen är redo varje morgon." } },
+        "f4": { "type": "feature", "settings": { "icon": "home", "title": "Byggd för hem", "body": "Kompakt avtryck. Diskret matt finish. Passar valfri yttervägg." } }
       },
       "block_order": ["f1", "f2", "f3", "f4"],
-      "settings": { "eyebrow": "Technology", "heading": "Engineering that disappears." }
+      "settings": { "eyebrow": "Teknik", "heading": "Teknik som försvinner." }
     },
     "wall-reel": {
       "type": "product-feature",
       "blocks": {
-        "s1": { "type": "spec_row", "settings": { "label": "Output", "value": "11 kW" } },
-        "s2": { "type": "spec_row", "settings": { "label": "Length", "value": "5 m" } },
-        "s3": { "type": "spec_row", "settings": { "label": "Connector", "value": "Type 2" } },
-        "s4": { "type": "spec_row", "settings": { "label": "IP Rating", "value": "IP44" } }
+        "s1": { "type": "spec_row", "settings": { "label": "Effekt", "value": "11 kW" } },
+        "s2": { "type": "spec_row", "settings": { "label": "Längd", "value": "5 m" } },
+        "s3": { "type": "spec_row", "settings": { "label": "Kontakt", "value": "Typ 2" } },
+        "s4": { "type": "spec_row", "settings": { "label": "IP-klass", "value": "IP44" } }
       },
       "block_order": ["s1", "s2", "s3", "s4"],
       "settings": {
         "anchor": "wall-reel",
         "mirror": false,
         "background_variant": "default",
-        "eyebrow": "Wall Mount",
-        "heading": "<p>Auto-Retractable<br>Cable Reel</p>",
+        "eyebrow": "Väggmontering",
+        "heading": "<p>Auto-indragande<br>kabelvinda</p>",
         "show_rating": true,
         "rating": "4.9",
         "review_count": 47,
-        "price_meta": "incl. VAT · free shipping",
-        "description": "Wall-mounted and auto-retractable. After every charge session the cable winds itself back in. No tangles, no ground contact, no daily frustration. IP44-rated for year-round outdoor use in any climate.",
-        "badge": "Best seller",
+        "price_meta": "inkl. moms · fri frakt",
+        "description": "Väggmonterad och auto-indragande. Efter varje laddning rullas kabeln in av sig själv. Inga trassel, ingen markkontakt, ingen daglig irritation. IP44-klassad för utomhusbruk året om i alla klimat.",
+        "badge": "Bästsäljare",
         "show_overlay": true,
-        "micro_trust": "In stock, 2-year warranty, 30-day returns"
+        "micro_trust": "I lager, 2 års garanti, 30 dagars öppet köp"
       }
     },
     "lifestyle-break": {
       "type": "lifestyle-break",
       "settings": {
-        "quote": "<p>\"The cable stays out of the way. So does everything else.\"</p>",
-        "attribution": "Vinda Engineering · Sweden"
+        "quote": "<p>\"Kabeln håller sig undan. Det gör allt annat också.\"</p>",
+        "attribution": "Vinda Engineering · Sverige"
       }
     },
     "portable-reel": {
       "type": "product-feature",
       "blocks": {
-        "s1": { "type": "spec_row", "settings": { "label": "Output", "value": "3.6 kW" } },
-        "s2": { "type": "spec_row", "settings": { "label": "Length", "value": "5 m" } },
-        "s3": { "type": "spec_row", "settings": { "label": "Connector", "value": "Type 2" } },
-        "s4": { "type": "spec_row", "settings": { "label": "IP Rating", "value": "IP44" } }
+        "s1": { "type": "spec_row", "settings": { "label": "Effekt", "value": "3,6 kW" } },
+        "s2": { "type": "spec_row", "settings": { "label": "Längd", "value": "5 m" } },
+        "s3": { "type": "spec_row", "settings": { "label": "Kontakt", "value": "Typ 2" } },
+        "s4": { "type": "spec_row", "settings": { "label": "IP-klass", "value": "IP44" } }
       },
       "block_order": ["s1", "s2", "s3", "s4"],
       "settings": {
         "anchor": "portable-reel",
         "mirror": true,
         "background_variant": "alt",
-        "eyebrow": "Portable",
-        "heading": "<p>Portable<br>Cable Reel</p>",
+        "eyebrow": "Portabel",
+        "heading": "<p>Portabel<br>kabelvinda</p>",
         "show_rating": true,
         "rating": "4.7",
         "review_count": 23,
-        "price_meta": "incl. VAT · free shipping",
-        "description": "Compact disc form factor. Goes wherever your car does. Machined aluminium body, matte black finish, and a spring-loaded retract that keeps the cable perfectly coiled.",
+        "price_meta": "inkl. moms · fri frakt",
+        "description": "Kompakt skivformad. Följer med dit din bil tar dig. Maskinbearbetad aluminiumkropp, matt svart finish, och en fjäderbelastad indragning som håller kabeln perfekt upprullad.",
         "show_overlay": false,
-        "micro_trust": "In stock, 2-year warranty, 30-day returns"
+        "micro_trust": "I lager, 2 års garanti, 30 dagars öppet köp"
       }
     },
     "reviews": {
       "type": "reviews",
       "blocks": {
-        "r1": { "type": "review", "settings": { "name": "Erik L.", "location": "Stockholm, SE", "product": "Wall-Mount Reel", "quote": "Installed in 20 minutes. Cable retracts perfectly every time. My driveway has never looked better." } },
-        "r2": { "type": "review", "settings": { "name": "Annika B.", "location": "Oslo, NO", "product": "Wall-Mount Reel", "quote": "Scandinavian winter, rain, snow — the thing just works. IP44 is no joke. Absolutely solid build quality." } },
-        "r3": { "type": "review", "settings": { "name": "Marcus H.", "location": "Copenhagen, DK", "product": "Portable Reel", "quote": "Compact and well-made. Fits neatly in the boot. The retract mechanism is satisfying every single time." } }
+        "r1": { "type": "review", "settings": { "name": "Erik L.", "location": "Stockholm, SE", "product": "Väggmonterad vinda", "quote": "Monterades på 20 minuter. Kabeln dras in perfekt varje gång. Min uppfart har aldrig sett bättre ut." } },
+        "r2": { "type": "review", "settings": { "name": "Annika B.", "location": "Oslo, NO", "product": "Väggmonterad vinda", "quote": "Skandinavisk vinter, regn, snö — den bara funkar. IP44 är ingen lek. Riktigt gediget bygge." } },
+        "r3": { "type": "review", "settings": { "name": "Marcus H.", "location": "Köpenhamn, DK", "product": "Portabel vinda", "quote": "Kompakt och välbyggd. Får plats fint i bagaget. Indragningsmekanismen är tillfredsställande varje enda gång." } }
       },
       "block_order": ["r1", "r2", "r3"],
-      "settings": { "eyebrow": "Reviews", "heading": "What customers say.", "aggregate_rating": "4.9", "aggregate_count": 70 }
+      "settings": { "eyebrow": "Omdömen", "heading": "Vad kunderna säger.", "aggregate_rating": "4.9", "aggregate_count": 70 }
     },
     "final-cta": {
       "type": "final-cta",
       "blocks": {
-        "c1": { "type": "product_card", "settings": { "label": "Wall-Mount Reel", "sub_specs": "11 kW · Auto-retract · IP44", "badge": "Best seller" } },
-        "c2": { "type": "product_card", "settings": { "label": "Portable Reel", "sub_specs": "3.6 kW · Spring-retract · IP44" } }
+        "c1": { "type": "product_card", "settings": { "label": "Väggmonterad vinda", "sub_specs": "11 kW · Auto-indragning · IP44", "badge": "Bästsäljare" } },
+        "c2": { "type": "product_card", "settings": { "label": "Portabel vinda", "sub_specs": "3,6 kW · Fjäder-indragning · IP44" } }
       },
       "block_order": ["c1", "c2"],
-      "settings": { "eyebrow": "Ready to charge smarter?", "heading": "Pick your reel." }
+      "settings": { "eyebrow": "Redo att ladda smartare?", "heading": "Välj din vinda." }
     }
   },
   "order": [

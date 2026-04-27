@@ -527,5 +527,34 @@
       "send_on": "YYYY-MM-DD",
       "send_on_label": "Send on (optional)"
     }
+  },
+  "home": {
+    "hero": {
+      "reviews": "reviews",
+      "trust_label": "Trust",
+      "scroll_hint": "Scroll"
+    },
+    "product": {
+      "trust_label": "Trust"
+    }
+  },
+  "header": {
+    "about": "About",
+    "cart": "Cart",
+    "cart_label": "Open cart",
+    "skip_to_main": "Skip to content"
+  },
+  "footer": {
+    "nav_label": "Footer"
+  },
+  "cart": {
+    "title": "Cart",
+    "close": "Close cart",
+    "empty_title": "Your cart is empty.",
+    "empty_sub": "Add a product to get started.",
+    "total_incl_vat": "Total incl. VAT",
+    "checkout": "Checkout",
+    "remove": "Remove",
+    "footnote": "Free shipping · Secure checkout · 30-day returns"
   }
 }

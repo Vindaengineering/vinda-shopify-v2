@@ -1,8 +1,15 @@
 {%- liquid
   assign p = section.settings.product
+  if p == blank and product != blank
+    assign p = product
+  endif
   assign mirror = section.settings.mirror
   assign anchor = section.settings.anchor | default: 'product-feature'
   assign bg = section.settings.background_variant
+  assign heading_tag = 'h2'
+  if template contains 'product'
+    assign heading_tag = 'h1'
+  endif
 -%}
 
 <section
@@ -33,9 +40,9 @@
       {%- comment -%} Content side {%- endcomment -%}
       <div class="v-pf__body" data-reveal style="--reveal-i: 1;">
         <p class="v-eyebrow">{{ section.settings.eyebrow }}</p>
-        <h2 class="v-display v-pf__heading" id="PF-{{ section.id }}-heading">
+        <{{ heading_tag }} class="v-display v-pf__heading" id="PF-{{ section.id }}-heading">
           {{ section.settings.heading | default: p.title }}
-        </h2>
+        </{{ heading_tag }}>
 
         {%- if section.settings.show_rating -%}
           <div class="v-pf__rating">

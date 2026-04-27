@@ -526,5 +526,34 @@
       "expanded": "Mottagarformulär för presentkort öppnat",
       "collapsed": "Mottagarformulär för presentkort stängt"
     }
+  },
+  "home": {
+    "hero": {
+      "reviews": "omdömen",
+      "trust_label": "Förtroende",
+      "scroll_hint": "Skrolla"
+    },
+    "product": {
+      "trust_label": "Förtroende"
+    }
+  },
+  "header": {
+    "about": "Om oss",
+    "cart": "Varukorg",
+    "cart_label": "Öppna varukorg",
+    "skip_to_main": "Hoppa till innehåll"
+  },
+  "footer": {
+    "nav_label": "Sidfot"
+  },
+  "cart": {
+    "title": "Varukorg",
+    "close": "Stäng varukorg",
+    "empty_title": "Din varukorg är tom.",
+    "empty_sub": "Lägg till en produkt för att börja.",
+    "total_incl_vat": "Totalt inkl. moms",
+    "checkout": "Till kassan",
+    "remove": "Ta bort",
+    "footnote": "Fri frakt · Säker betalning · 30 dagars öppet köp"
   }
 }
