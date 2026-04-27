@@ -345,7 +345,7 @@
           "type": "product_card",
           "settings": {
             "product": "",
-            "label": "Väggmonterad vinda",
+            "label": "Vinda Home",
             "sub_specs": "11 kW · Auto-indragning · IP44",
             "badge": "Bästsäljare"
           }
@@ -354,8 +354,8 @@
           "type": "product_card",
           "settings": {
             "product": "",
-            "label": "Portabel vinda",
-            "sub_specs": "3,6 kW · Fjäder-indragning · IP44",
+            "label": "Vinda Go",
+            "sub_specs": "Upp till 10m · Får plats i frunken · CE-märkt",
             "badge": ""
           }
         }
