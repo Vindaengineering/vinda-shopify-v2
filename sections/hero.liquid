@@ -8,16 +8,6 @@
   <div class="v-hero__bg" {% if hero_image != blank %}style="background-image: url({{ hero_image | image_url: width: 2400 }});"{% else %}style="background-image: url({{ 'lifestyle-driveway.jpg' | asset_url }});"{% endif %} aria-hidden="true"></div>
   <div class="v-hero__gradient" aria-hidden="true"></div>
 
-  <div class="v-hero__product" aria-hidden="true">
-    {%- if product_image != blank -%}
-      {{ product_image | image_url: width: 1200 | image_tag: loading: 'eager', fetchpriority: 'high', alt: '', class: 'v-hero__product-img', widths: '600,900,1200', sizes: '44vw' }}
-    {%- elsif p.featured_image != blank -%}
-      {{ p.featured_image | image_url: width: 1200 | image_tag: loading: 'eager', fetchpriority: 'high', alt: '', class: 'v-hero__product-img', widths: '600,900,1200', sizes: '44vw' }}
-    {%- else -%}
-      <img src="{{ 'product-wall-reel.jpg' | asset_url }}" alt="" class="v-hero__product-img" loading="eager" fetchpriority="high">
-    {%- endif -%}
-  </div>
-
   <div class="v-hero__inner">
     <div class="v-hero__content">
       <p class="v-eyebrow" data-reveal style="--reveal-i: 0;">
@@ -78,6 +68,16 @@
           {%- endif -%}
         {%- endfor -%}
       </ul>
+    </div>
+
+    <div class="v-hero__product" aria-hidden="true">
+      {%- if product_image != blank -%}
+        {{ product_image | image_url: width: 1200 | image_tag: loading: 'eager', fetchpriority: 'high', alt: '', class: 'v-hero__product-img', widths: '600,900,1200', sizes: '(min-width: 750px) 50vw, 80vw' }}
+      {%- elsif p.featured_image != blank -%}
+        {{ p.featured_image | image_url: width: 1200 | image_tag: loading: 'eager', fetchpriority: 'high', alt: '', class: 'v-hero__product-img', widths: '600,900,1200', sizes: '(min-width: 750px) 50vw, 80vw' }}
+      {%- else -%}
+        <img src="{{ 'product-wall-reel.jpg' | asset_url }}" alt="" class="v-hero__product-img" loading="eager" fetchpriority="high">
+      {%- endif -%}
     </div>
   </div>
 
