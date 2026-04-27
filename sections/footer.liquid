@@ -1,31 +1,106 @@
 <link rel="stylesheet" href="{{ 'footer.css' | asset_url }}">
 
 {%- liquid
-  assign menu = linklists[section.settings.menu]
   assign year = 'now' | date: '%Y'
+  assign tagline = section.settings.tagline
 -%}
 
 <footer class="v-footer">
   <div class="v-footer__inner">
-    <a href="{{ routes.root_url }}" class="v-footer__logo" aria-label="{{ shop.name }}">
-      <img
-        src="{{ 'logo-outline-white.png' | asset_url }}"
-        alt="{{ shop.name }}"
-        width="120"
-        height="22"
-        loading="lazy"
-      >
-    </a>
+    <div class="v-footer__top">
+      {%- comment -%} Brand column {%- endcomment -%}
+      <div class="v-footer__brand">
+        <a href="{{ routes.root_url }}" class="v-footer__logo" aria-label="{{ shop.name }}">
+          <img
+            src="{{ 'logo-outline-white.png' | asset_url }}"
+            alt="{{ shop.name }}"
+            width="120"
+            height="22"
+            loading="lazy"
+          >
+        </a>
+        {%- if tagline != blank -%}
+          <p class="v-footer__tagline">{{ tagline }}</p>
+        {%- endif -%}
+        <p class="v-footer__location v-mono">
+          <span class="v-footer__dot" aria-hidden="true"></span>
+          {{ section.settings.location | default: 'Designed in Sweden' }}
+        </p>
+      </div>
 
-    {%- if menu.links.size > 0 -%}
-      <nav class="v-footer__nav" aria-label="{{ 'footer.nav_label' | t | default: 'Footer' }}">
-        {%- for link in menu.links -%}
-          <a href="{{ link.url }}" class="v-footer__link">{{ link.title | escape }}</a>
+      {%- comment -%} Link columns from blocks {%- endcomment -%}
+      <div class="v-footer__cols">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'menu_column' -%}
+            {%- assign col_menu = linklists[block.settings.menu] -%}
+            {%- if col_menu.links.size > 0 or block.settings.heading != blank -%}
+              <nav class="v-footer__col" aria-label="{{ block.settings.heading | escape }}" {{ block.shopify_attributes }}>
+                {%- if block.settings.heading != blank -%}
+                  <p class="v-footer__col-heading v-mono">{{ block.settings.heading }}</p>
+                {%- endif -%}
+                <ul class="v-footer__list">
+                  {%- for link in col_menu.links -%}
+                    <li><a href="{{ link.url }}" class="v-footer__link">{{ link.title | escape }}</a></li>
+                  {%- endfor -%}
+                </ul>
+              </nav>
+            {%- endif -%}
+          {%- endif -%}
         {%- endfor -%}
-      </nav>
-    {%- endif -%}
 
-    <p class="v-footer__copy">© {{ year }} {{ shop.name }}</p>
+        {%- comment -%} Newsletter (optional) {%- endcomment -%}
+        {%- if section.settings.show_newsletter -%}
+          <div class="v-footer__newsletter">
+            <p class="v-footer__col-heading v-mono">{{ section.settings.newsletter_heading | default: 'Nyhetsbrev' }}</p>
+            <p class="v-footer__newsletter-sub">{{ section.settings.newsletter_sub | default: 'Lanseringar och installationsguider. Inget skräp.' }}</p>
+            {%- form 'customer', class: 'v-footer__form' -%}
+              <input type="hidden" name="contact[tags]" value="newsletter">
+              <input type="hidden" name="contact[accepts_marketing]" value="true">
+              <div class="v-footer__form-row">
+                <label for="FooterNewsletter" class="visually-hidden">{{ 'page.contact.email' | t | default: 'E-post' }}</label>
+                <input
+                  type="email"
+                  id="FooterNewsletter"
+                  name="contact[email]"
+                  placeholder="{{ section.settings.newsletter_placeholder | default: 'din@epost.se' }}"
+                  autocomplete="email"
+                  required
+                >
+                <button type="submit" class="v-footer__form-btn" aria-label="{{ 'newsletter.submit' | t | default: 'Prenumerera' }}">→</button>
+              </div>
+              {%- if form.posted_successfully? -%}
+                <p class="v-footer__form-success v-mono">{{ section.settings.newsletter_success | default: 'Tack — du är på listan.' }}</p>
+              {%- endif -%}
+              {%- if form.errors -%}
+                <p class="v-footer__form-error v-mono">{{ form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email }}</p>
+              {%- endif -%}
+            {%- endform -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- comment -%} Bottom strip {%- endcomment -%}
+    <div class="v-footer__bottom">
+      <p class="v-footer__copy">© {{ year }} {{ shop.name }}. {{ section.settings.rights | default: 'Alla rättigheter förbehållna.' }}</p>
+
+      {%- assign legal_menu = linklists[section.settings.legal_menu] -%}
+      {%- if legal_menu.links.size > 0 -%}
+        <nav class="v-footer__legal" aria-label="{{ 'footer.legal_label' | t | default: 'Legal' }}">
+          {%- for link in legal_menu.links -%}
+            <a href="{{ link.url }}" class="v-footer__legal-link">{{ link.title | escape }}</a>
+          {%- endfor -%}
+        </nav>
+      {%- endif -%}
+
+      {%- if section.settings.payment_icons -%}
+        <div class="v-footer__pay" aria-label="{{ 'footer.payment' | t | default: 'Payment methods' }}">
+          {%- for type in shop.enabled_payment_types -%}
+            {{ type | payment_type_svg_tag: class: 'v-footer__pay-icon' }}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
   </div>
 </footer>
 
@@ -33,7 +108,42 @@
 {
   "name": "Footer",
   "settings": [
-    { "type": "link_list", "id": "menu", "label": "Footer menu", "default": "footer" }
+    { "type": "header", "content": "Brand" },
+    { "type": "text", "id": "tagline", "label": "Tagline", "default": "Auto-indragande kabelvindor för elbilsladdning. Byggda för skandinaviska hem." },
+    { "type": "text", "id": "location", "label": "Location label", "default": "Designed in Sweden" },
+
+    { "type": "header", "content": "Newsletter" },
+    { "type": "checkbox", "id": "show_newsletter", "label": "Show newsletter signup", "default": true },
+    { "type": "text", "id": "newsletter_heading", "label": "Heading", "default": "Nyhetsbrev" },
+    { "type": "text", "id": "newsletter_sub", "label": "Subtext", "default": "Lanseringar och installationsguider. Inget skräp." },
+    { "type": "text", "id": "newsletter_placeholder", "label": "Placeholder", "default": "din@epost.se" },
+    { "type": "text", "id": "newsletter_success", "label": "Success message", "default": "Tack — du är på listan." },
+
+    { "type": "header", "content": "Bottom strip" },
+    { "type": "text", "id": "rights", "label": "Rights text", "default": "Alla rättigheter förbehållna." },
+    { "type": "link_list", "id": "legal_menu", "label": "Legal menu (Privacy, Terms…)" },
+    { "type": "checkbox", "id": "payment_icons", "label": "Show payment icons", "default": false }
+  ],
+  "blocks": [
+    {
+      "type": "menu_column",
+      "name": "Menu column",
+      "limit": 4,
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Produkter" },
+        { "type": "link_list", "id": "menu", "label": "Menu" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer",
+      "blocks": [
+        { "type": "menu_column", "settings": { "heading": "Produkter" } },
+        { "type": "menu_column", "settings": { "heading": "Hjälp" } },
+        { "type": "menu_column", "settings": { "heading": "Företag" } }
+      ]
+    }
   ]
 }
 {% endschema %}
