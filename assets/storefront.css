@@ -1168,3 +1168,179 @@ body:not(.page-index) main { padding-top: var(--header-height); }
   padding-top: 32px;
   border-top: 1px solid var(--color-border);
 }
+
+/* ─── Before / After ───────────────────────────────────────── */
+.v-ba { background: var(--color-bg); border-top: 1px solid #111; }
+.v-ba--bg-alt { background: var(--color-bg-alt); }
+.v-ba .v-container { padding-block: var(--space-14); display: grid; gap: 32px; }
+
+.v-ba__console {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+.v-ba__console-label,
+.v-ba__console-status {
+  font-size: var(--text-mono-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-fg-mute3);
+  line-height: 1;
+}
+.v-ba__console-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.v-ba__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 12px rgba(57, 230, 20, 0.6);
+  animation: vBaPulse 2.4s ease-in-out infinite;
+}
+@keyframes vBaPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v-ba__dot { animation: none; }
+}
+
+.v-ba__head { display: grid; gap: 12px; max-width: 80ch; }
+.v-ba__heading { margin: 0; }
+.v-ba__sub {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-fg-mute2);
+  margin: 0;
+}
+
+.v-ba__slider {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 1024px;
+  margin-inline: auto;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.v-ba__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: var(--color-bg-card);
+  pointer-events: none;
+  display: block;
+}
+
+.v-ba__placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: var(--color-bg-card);
+}
+.v-ba__placeholder--before { background: #141414; }
+.v-ba__placeholder--after  { background: #1a1a1a; }
+.v-ba__placeholder::after {
+  content: attr(data-label);
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-sm);
+  color: var(--color-fg-mute3);
+  letter-spacing: 0.12em;
+}
+
+.v-ba__clip {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 50% 0 0);
+}
+
+.v-ba__label {
+  position: absolute;
+  top: 16px;
+  font-size: var(--text-mono-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 2px;
+  line-height: 1;
+}
+.v-ba__label--before {
+  left: 16px;
+  background: rgba(13, 13, 13, 0.85);
+  color: var(--color-fg);
+  border: 1px solid var(--color-border-2);
+}
+.v-ba__label--after {
+  right: 16px;
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+.v-ba__handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: var(--color-fg);
+  border: 0;
+  padding: 0;
+  cursor: ew-resize;
+  transform: translateX(-50%);
+}
+.v-ba__handle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-fg);
+  border: 1px solid var(--color-border-2);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+.v-ba__handle span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  transform: translate(-50%, -50%);
+  color: var(--color-bg);
+  font-size: 22px;
+  line-height: 1;
+  font-family: var(--font-mono);
+}
+.v-ba__handle:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+@media (max-width: 749px) {
+  .v-ba .v-container { padding-block: var(--space-10); gap: 24px; }
+  .v-ba__console { flex-wrap: wrap; }
+  .v-ba__label { font-size: 11px; padding: 4px 8px; }
+  .v-ba__handle::before,
+  .v-ba__handle span { width: 44px; height: 44px; }
+}
