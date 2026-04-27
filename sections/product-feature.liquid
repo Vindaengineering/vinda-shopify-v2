@@ -20,14 +20,27 @@
   <div class="v-container">
     <div class="v-pf__grid">
       {%- comment -%} Image side {%- endcomment -%}
-      <div class="v-pf__media" data-reveal>
-        {%- if section.settings.media_image != blank -%}
-          {{ section.settings.media_image | image_url: width: 1400 | image_tag: alt: section.settings.media_alt | default: p.title, class: 'v-pf__img', widths: '600,900,1200,1600', sizes: '(min-width: 990px) 50vw, 100vw', loading: 'lazy' }}
-        {%- elsif p.featured_image != blank -%}
-          {{ p.featured_image | image_url: width: 1400 | image_tag: alt: p.title, class: 'v-pf__img', widths: '600,900,1200,1600', sizes: '(min-width: 990px) 50vw, 100vw', loading: 'lazy' }}
-        {%- else -%}
-          <img src="{{ 'lifestyle-garden.jpg' | asset_url }}" alt="" class="v-pf__img" loading="lazy">
-        {%- endif -%}
+      {%- liquid
+        assign pf_image_url = ''
+        assign pf_alt = ''
+        if section.settings.media_image != blank
+          assign pf_image_url = section.settings.media_image | image_url: width: 1600
+          assign pf_alt = section.settings.media_alt | default: p.title
+        elsif p.featured_image != blank
+          assign pf_image_url = p.featured_image | image_url: width: 1600
+          assign pf_alt = p.title
+        else
+          assign pf_image_url = 'lifestyle-garden.jpg' | asset_url
+          assign pf_alt = ''
+        endif
+      -%}
+      <div
+        class="v-pf__media"
+        data-reveal
+        role="img"
+        aria-label="{{ pf_alt | escape }}"
+        style="background-image: url('{{ pf_image_url }}');"
+      >
 
         {%- if section.settings.show_overlay -%}
           <div class="v-pf__overlay" aria-hidden="true"></div>
