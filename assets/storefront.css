@@ -259,14 +259,10 @@ body:not(.page-index) main { padding-top: var(--header-height); }
   position: relative;
   width: 100%;
   z-index: 1;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #EAEAE8;
-  box-shadow: 0 24px 80px rgba(0,0,0,0.5);
 }
 .v-hero__product-img { width: 100%; height: auto; display: block; }
 @media (max-width: 749px) {
-  .v-hero__product { width: 80%; margin-inline: auto; border-radius: 12px; opacity: 0.9; }
+  .v-hero__product { width: 80%; margin-inline: auto; opacity: 0.9; }
 }
 
 .v-hero__title {
