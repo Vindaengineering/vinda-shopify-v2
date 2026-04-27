@@ -479,10 +479,19 @@ body:not(.page-index) main { padding-top: var(--header-height); }
   overflow: hidden;
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
+  height: 560px;
+}
+@media (max-width: 989px) {
+  .v-pf__media { height: 420px; }
+}
+@media (max-width: 749px) {
+  .v-pf__media { height: 300px; }
 }
 .v-pf__img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   display: block;
 }
 .v-pf__overlay {
