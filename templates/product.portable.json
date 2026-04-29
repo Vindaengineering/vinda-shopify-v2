@@ -36,8 +36,8 @@
         "s4": {
           "type": "spec_row",
           "settings": {
-            "label": "IP-klass",
-            "value": "IP44"
+            "label": "Höjd",
+            "value": "140 mm"
           }
         },
         "s5": {
