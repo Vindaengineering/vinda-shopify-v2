@@ -70,7 +70,7 @@
         "mirror": false,
         "background_variant": "default",
         "eyebrow": "Portabel",
-        "heading": "<p>Portabel<br>kabelvinda</p>",
+        "heading": "<p>Portabel<br/>kabelvinda</p>",
         "show_rating": true,
         "rating": "4.7",
         "review_count": 23,
@@ -88,14 +88,14 @@
           "type": "trust",
           "settings": {
             "icon": "shield-check",
-            "label": "IP44-klassad"
+            "label": "Skydda din kabel"
           }
         },
         "t2": {
           "type": "trust",
           "settings": {
             "icon": "zap",
-            "label": "3,6 kW"
+            "label": "Spara tid"
           }
         },
         "t3": {
@@ -109,7 +109,7 @@
           "type": "trust",
           "settings": {
             "icon": "rotate-ccw",
-            "label": "Fjäder-indragning"
+            "label": "Spara utrymme i bakluckan"
           }
         },
         "t5": {
@@ -136,8 +136,8 @@
           "type": "feature",
           "settings": {
             "icon": "rotate-ccw",
-            "title": "Fjäder-indragning",
-            "body": "Spänd fjädermekanism. Kabeln rullas in jämnt, varje gång."
+            "title": "Spara utrymme",
+            "body": "Oavsett om du förvarar din kabel i bakluckan eller i garaget så kommer du spara plats med Vinda Go."
           }
         },
         "f2": {
