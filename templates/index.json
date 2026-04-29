@@ -231,8 +231,8 @@
         "s3": {
           "type": "spec_row",
           "settings": {
-            "label": "Kontakt",
-            "value": "Typ 2"
+            "label": "adaptrar",
+            "value": "Typ 2 och universell"
           }
         },
         "s4": {
