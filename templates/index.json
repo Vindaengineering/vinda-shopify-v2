@@ -47,8 +47,8 @@
         "review_count": 47,
         "price_meta": "inkl. moms",
         "spec_chips": "11 kW, 5 m, IP44, Typ 2, CE-märkt",
-        "secondary_cta_label": "Se Portable Reel",
-        "secondary_cta_url": "#portable-reel"
+        "secondary_cta_label": "Läs mer",
+        "secondary_cta_url": "shopify://products/vinda-home"
       }
     },
     "trust-strip": {
@@ -167,7 +167,7 @@
           "type": "spec_row",
           "settings": {
             "label": "Längd",
-            "value": "5 m"
+            "value": "8 m"
           }
         },
         "s3": {
@@ -225,7 +225,7 @@
           "type": "spec_row",
           "settings": {
             "label": "Längd",
-            "value": "5 m"
+            "value": "Upp till 10 m"
           }
         },
         "s3": {
