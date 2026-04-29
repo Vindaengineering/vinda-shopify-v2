@@ -12,15 +12,60 @@
     "pdp-hero": {
       "type": "product-feature",
       "blocks": {
-        "s1": { "type": "spec_row", "settings": { "label": "Effekt", "value": "3,6 kW" } },
-        "s2": { "type": "spec_row", "settings": { "label": "Längd", "value": "5 m" } },
-        "s3": { "type": "spec_row", "settings": { "label": "Kontakt", "value": "Typ 2" } },
-        "s4": { "type": "spec_row", "settings": { "label": "IP-klass", "value": "IP44" } },
-        "s5": { "type": "spec_row", "settings": { "label": "Diameter", "value": "240 mm" } },
-        "s6": { "type": "spec_row", "settings": { "label": "Vikt", "value": "3,2 kg" } }
+        "s1": {
+          "type": "spec_row",
+          "settings": {
+            "label": "Material",
+            "value": "Slittålig plast"
+          }
+        },
+        "s2": {
+          "type": "spec_row",
+          "settings": {
+            "label": "Längd",
+            "value": "5 m"
+          }
+        },
+        "s3": {
+          "type": "spec_row",
+          "settings": {
+            "label": "Kontakt",
+            "value": "Typ 2"
+          }
+        },
+        "s4": {
+          "type": "spec_row",
+          "settings": {
+            "label": "IP-klass",
+            "value": "IP44"
+          }
+        },
+        "s5": {
+          "type": "spec_row",
+          "settings": {
+            "label": "Diameter",
+            "value": "240 mm"
+          }
+        },
+        "s6": {
+          "type": "spec_row",
+          "settings": {
+            "label": "Vikt",
+            "value": "3,2 kg"
+          }
+        }
       },
-      "block_order": ["s1", "s2", "s3", "s4", "s5", "s6"],
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s6"
+      ],
       "settings": {
+        "product": "",
+        "media_alt": "",
         "anchor": "portable-reel",
         "mirror": false,
         "background_variant": "default",
@@ -31,6 +76,7 @@
         "review_count": 23,
         "price_meta": "inkl. moms · fri frakt",
         "description": "Kompakt skivformad. Följer med dit din bil tar dig. Maskinbearbetad aluminiumkropp, matt svart finish, och en fjäderbelastad indragning som håller kabeln perfekt upprullad.",
+        "badge": "",
         "show_overlay": false,
         "micro_trust": "I lager, 2 års garanti, 30 dagars öppet köp"
       }
@@ -38,35 +84,134 @@
     "pdp-trust-strip": {
       "type": "trust-strip",
       "blocks": {
-        "t1": { "type": "trust", "settings": { "icon": "shield-check", "label": "IP44-klassad" } },
-        "t2": { "type": "trust", "settings": { "icon": "zap", "label": "3,6 kW" } },
-        "t3": { "type": "trust", "settings": { "icon": "cable", "label": "Typ 2-kontakt" } },
-        "t4": { "type": "trust", "settings": { "icon": "rotate-ccw", "label": "Fjäder-indragning" } },
-        "t5": { "type": "trust", "settings": { "icon": "award", "label": "CE-märkt" } }
+        "t1": {
+          "type": "trust",
+          "settings": {
+            "icon": "shield-check",
+            "label": "IP44-klassad"
+          }
+        },
+        "t2": {
+          "type": "trust",
+          "settings": {
+            "icon": "zap",
+            "label": "3,6 kW"
+          }
+        },
+        "t3": {
+          "type": "trust",
+          "settings": {
+            "icon": "cable",
+            "label": "Typ 2-kontakt"
+          }
+        },
+        "t4": {
+          "type": "trust",
+          "settings": {
+            "icon": "rotate-ccw",
+            "label": "Fjäder-indragning"
+          }
+        },
+        "t5": {
+          "type": "trust",
+          "settings": {
+            "icon": "award",
+            "label": "CE-märkt"
+          }
+        }
       },
-      "block_order": ["t1", "t2", "t3", "t4", "t5"],
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5"
+      ],
       "settings": {}
     },
     "pdp-features": {
       "type": "features",
       "blocks": {
-        "f1": { "type": "feature", "settings": { "icon": "rotate-ccw", "title": "Fjäder-indragning", "body": "Spänd fjädermekanism. Kabeln rullas in jämnt, varje gång." } },
-        "f2": { "type": "feature", "settings": { "icon": "shield-check", "title": "IP44-klassad", "body": "Tätad mot regn och damm. Klarar alla väder." } },
-        "f3": { "type": "feature", "settings": { "icon": "cable", "title": "5 m räckvidd", "body": "Tillräckligt för parkeringsplatser, gästspel och resor." } },
-        "f4": { "type": "feature", "settings": { "icon": "award", "title": "Aluminiumkropp", "body": "Maskinbearbetad. Matt svart finish. Tål att slängas i bagaget." } }
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "icon": "rotate-ccw",
+            "title": "Fjäder-indragning",
+            "body": "Spänd fjädermekanism. Kabeln rullas in jämnt, varje gång."
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "icon": "shield-check",
+            "title": "IP44-klassad",
+            "body": "Tätad mot regn och damm. Klarar alla väder."
+          }
+        },
+        "f3": {
+          "type": "feature",
+          "settings": {
+            "icon": "cable",
+            "title": "5 m räckvidd",
+            "body": "Tillräckligt för parkeringsplatser, gästspel och resor."
+          }
+        },
+        "f4": {
+          "type": "feature",
+          "settings": {
+            "icon": "award",
+            "title": "Aluminiumkropp",
+            "body": "Maskinbearbetad. Matt svart finish. Tål att slängas i bagaget."
+          }
+        }
       },
-      "block_order": ["f1", "f2", "f3", "f4"],
-      "settings": { "eyebrow": "Teknik", "heading": "Byggd för att följa med." }
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "settings": {
+        "eyebrow": "Teknik",
+        "heading": "Byggd för att följa med."
+      }
     },
     "pdp-final-cta": {
       "type": "final-cta",
       "blocks": {
-        "c1": { "type": "product_card", "settings": { "label": "Väggmonterad vinda", "sub_specs": "11 kW · Auto-indragning · IP44", "badge": "Bästsäljare" } },
-        "c2": { "type": "product_card", "settings": { "label": "Portabel vinda", "sub_specs": "3,6 kW · Fjäder-indragning · IP44" } }
+        "c1": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "label": "Väggmonterad vinda",
+            "sub_specs": "11 kW · Auto-indragning · IP44",
+            "badge": "Bästsäljare"
+          }
+        },
+        "c2": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "label": "Portabel vinda",
+            "sub_specs": "3,6 kW · Fjäder-indragning · IP44",
+            "badge": ""
+          }
+        }
       },
-      "block_order": ["c1", "c2"],
-      "settings": { "eyebrow": "Behöver du fler?", "heading": "Välj din vinda." }
+      "block_order": [
+        "c1",
+        "c2"
+      ],
+      "settings": {
+        "eyebrow": "Behöver du fler?",
+        "heading": "Välj din vinda."
+      }
     }
   },
-  "order": ["pdp-hero", "pdp-trust-strip", "pdp-features", "pdp-final-cta"]
+  "order": [
+    "pdp-hero",
+    "pdp-trust-strip",
+    "pdp-features",
+    "pdp-final-cta"
+  ]
 }
