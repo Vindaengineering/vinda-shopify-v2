@@ -238,8 +238,8 @@
         "s4": {
           "type": "spec_row",
           "settings": {
-            "label": "IP-klass",
-            "value": "IP44"
+            "label": "material",
+            "value": "återvinnbar slittålig plast"
           }
         }
       },
