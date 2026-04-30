@@ -179,14 +179,64 @@
     "pdp-gallery": {
       "type": "photo-gallery",
       "blocks": {
-        "g1": { "type": "image", "settings": { "caption": "VINDA GO // BAKLUCKA", "size": "wide" } },
-        "g2": { "type": "image", "settings": { "caption": "DETALJ // KABEL", "size": "normal" } },
-        "g3": { "type": "image", "settings": { "caption": "MILJÖ // RESAN", "size": "normal" } },
-        "g4": { "type": "image", "settings": { "caption": "DETALJ // RULLE", "size": "tall" } },
-        "g5": { "type": "image", "settings": { "caption": "MILJÖ // LADDSTATION", "size": "normal" } },
-        "g6": { "type": "image", "settings": { "caption": "VINDA GO // NÄRBILD", "size": "normal" } }
+        "g1": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "caption": "VINDA GO // BAKLUCKA",
+            "size": "wide"
+          }
+        },
+        "g2": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "caption": "DETALJ // KABEL",
+            "size": "normal"
+          }
+        },
+        "g3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/image-12.jpg",
+            "alt": "",
+            "caption": "MILJÖ // RESAN",
+            "size": "normal"
+          }
+        },
+        "g4": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "caption": "DETALJ // RULLE",
+            "size": "tall"
+          }
+        },
+        "g5": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "caption": "MILJÖ // LADDSTATION",
+            "size": "normal"
+          }
+        },
+        "g6": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "caption": "VINDA GO // NÄRBILD",
+            "size": "normal"
+          }
+        }
       },
-      "block_order": ["g1", "g2", "g3", "g4", "g5", "g6"],
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4",
+        "g5",
+        "g6"
+      ],
       "settings": {
         "eyebrow": "GALLERI // VINDA GO",
         "heading": "Sett i verkligheten."
@@ -201,7 +251,8 @@
             "product": "",
             "label": "Väggmonterad vinda",
             "sub_specs": "11 kW · Auto-indragning · IP44",
-            "badge": "Bästsäljare"
+            "badge": "Bästsäljare",
+            "url": ""
           }
         },
         "c2": {
@@ -210,7 +261,8 @@
             "product": "",
             "label": "Portabel vinda",
             "sub_specs": "3,6 kW · Fjäder-indragning · IP44",
-            "badge": ""
+            "badge": "",
+            "url": ""
           }
         }
       },
