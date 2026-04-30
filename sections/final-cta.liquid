@@ -21,6 +21,12 @@
             {%- if cp != blank -%}
               {% render 'atc-form', product: cp, classes: 'v-btn-primary v-btn-primary--block', show_price: false %}
             {%- endif -%}
+            {%- assign read_more_url = block.settings.url | default: cp.url -%}
+            {%- if read_more_url != blank -%}
+              <a href="{{ read_more_url }}" class="v-final-cta__read-more">
+                {{- 'home.final_cta.read_more' | t | default: 'Läs mer' -}}
+              </a>
+            {%- endif -%}
           </article>
         {%- endif -%}
       {%- endfor -%}
@@ -44,7 +50,8 @@
         { "type": "product", "id": "product", "label": "Product" },
         { "type": "text", "id": "label", "label": "Label", "default": "Wall-Mount Reel" },
         { "type": "text", "id": "sub_specs", "label": "Sub specs", "default": "11 kW · Auto-retract · IP44" },
-        { "type": "text", "id": "badge", "label": "Badge (optional)" }
+        { "type": "text", "id": "badge", "label": "Badge (optional)" },
+        { "type": "url", "id": "url", "label": "\"Läs mer\" link (defaults to product URL)" }
       ]
     }
   ],

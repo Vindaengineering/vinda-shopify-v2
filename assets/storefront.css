@@ -712,6 +712,22 @@ body:not(.page-index) main { padding-top: var(--header-height); }
 }
 .v-final-cta__card .v-atc-form { width: 100%; }
 
+.v-final-cta__read-more {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-fg-muted);
+  text-decoration: none;
+  transition: color var(--motion-fast) var(--motion-ease-out);
+}
+
+.v-final-cta__read-more:hover { color: var(--color-fg-inverse); }
+
 /* ─── Page primitives (installation / contact / blog / article) ─ */
 .v-container--narrow {
   max-width: 760px;

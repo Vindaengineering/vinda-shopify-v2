@@ -566,6 +566,11 @@
     "remove": "Remove",
     "footnote": "Free shipping · Secure checkout · 30-day returns"
   },
+  "home": {
+    "final_cta": {
+      "read_more": "Read more"
+    }
+  },
   "page": {
     "contact": {
       "name": "Name",

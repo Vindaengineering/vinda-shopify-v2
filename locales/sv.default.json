@@ -565,6 +565,11 @@
     "remove": "Ta bort",
     "footnote": "Fri frakt · Säker betalning · 30 dagars öppet köp"
   },
+  "home": {
+    "final_cta": {
+      "read_more": "Läs mer"
+    }
+  },
   "page": {
     "contact": {
       "name": "Namn",
