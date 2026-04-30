@@ -1,0 +1,157 @@
+<link rel="stylesheet" href="{{ 'about.css' | asset_url }}" media="all">
+
+<section class="about-page" aria-labelledby="AboutHeading">
+  <div class="about-page__inner">
+
+    {%- comment -%} ── Head ──────────────────────────────────── {%- endcomment -%}
+    <header class="about-page__head">
+      <div class="about-page__meta">
+        <span class="about-page__meta-item">{{ 'pages.about.meta_market' | t }}</span>
+        <span class="about-page__meta-item">{{ 'pages.about.meta_founded' | t }}</span>
+        <span class="about-page__meta-item">{{ 'pages.about.meta_based' | t }}</span>
+      </div>
+
+      <p class="about-page__eyebrow">{{ 'pages.about.eyebrow' | t }}</p>
+      <h1 class="about-page__heading" id="AboutHeading">
+        {{- 'pages.about.heading' | t -}}
+      </h1>
+      <p class="about-page__lede">{{ 'pages.about.lede' | t }}</p>
+    </header>
+
+    {%- comment -%} ── Timeline ──────────────────────────────── {%- endcomment -%}
+    <div class="about-page__section">
+      <div class="about-page__console">
+        <span class="about-page__console-dot" aria-hidden="true"></span>
+        <span class="about-page__console-label">{{ 'pages.about.timeline.console_label' | t }}</span>
+      </div>
+
+      <dl class="about-page__timeline">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'timeline_entry' -%}
+            <div class="about-page__timeline-row" {{ block.shopify_attributes }}>
+              <dt class="about-page__timeline-year">
+                <span class="about-page__timeline-index">
+                  {%- if forloop.index0 < 10 -%}0{% endif -%}{{ forloop.index }}
+                </span>
+                <span class="about-page__timeline-year-value">{{ block.settings.year }}</span>
+              </dt>
+              <dd class="about-page__timeline-body">
+                <p class="about-page__timeline-title">{{ block.settings.title }}</p>
+                <p class="about-page__timeline-text">{{ block.settings.body }}</p>
+              </dd>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </dl>
+    </div>
+
+    {%- comment -%} ── Founders ──────────────────────────────── {%- endcomment -%}
+    {%- assign has_founders = false -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'founder' -%}
+        {%- assign has_founders = true -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- if has_founders -%}
+      <div class="about-page__section">
+        <div class="about-page__console">
+          <span class="about-page__console-dot about-page__console-dot--static" aria-hidden="true"></span>
+          <span class="about-page__console-label">{{ 'pages.about.founders.console_label' | t }}</span>
+        </div>
+
+        <div class="about-page__founders">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'founder' -%}
+              <article class="about-page__founder" {{ block.shopify_attributes }}>
+                <p class="about-page__founder-role">
+                  <span class="about-page__founder-dot" aria-hidden="true"></span>
+                  {{- block.settings.role -}}
+                </p>
+                <h3 class="about-page__founder-name">{{ block.settings.name }}</h3>
+                <p class="about-page__founder-bio">{{ block.settings.bio }}</p>
+              </article>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} ── Closing CTA ───────────────────────────── {%- endcomment -%}
+    <div class="about-page__cta">
+      <div class="about-page__cta-text">
+        <div class="about-page__cta-meta">
+          <span class="about-page__cta-dot" aria-hidden="true"></span>
+          {{- 'pages.about.cta.label' | t -}}
+        </div>
+        <p class="about-page__cta-heading">{{ 'pages.about.cta.heading' | t }}</p>
+      </div>
+      <a href="{{ section.settings.cta_url | default: '/collections/all' }}" class="about-page__cta-link">
+        {{- 'pages.about.cta.button' | t -}}
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "About page",
+  "class": "section-about-page",
+  "settings": [
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Closing CTA link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "timeline_entry",
+      "name": "Timeline entry",
+      "settings": [
+        {
+          "type": "text",
+          "id": "year",
+          "label": "Year",
+          "default": "2024"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Event title"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "Event description"
+        }
+      ]
+    },
+    {
+      "type": "founder",
+      "name": "Founder",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Role"
+        },
+        {
+          "type": "textarea",
+          "id": "bio",
+          "label": "Short bio"
+        }
+      ]
+    }
+  ],
+  "presets": [{ "name": "About page" }]
+}
+{% endschema %}
