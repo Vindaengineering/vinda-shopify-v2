@@ -1,0 +1,83 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "content-page",
+      "blocks": {
+        "intro": {
+          "type": "intro",
+          "settings": {
+            "meta_1": "MKT // SE",
+            "meta_2": "SEKTION // 08",
+            "meta_3": "UPPDATERAD // 2026",
+            "eyebrow": "[ 08 / FRAKT & RETUR ]",
+            "heading": "Frakt och retur.",
+            "lede": "Vi skickar inom Sverige med Postnord och DHL. Fria returer i 30 dagar — inga krångliga villkor."
+          }
+        },
+        "shipping": {
+          "type": "accordion",
+          "settings": {
+            "console_label": "LOGG // FRAKT",
+            "q_1": "Hur lång är leveranstiden?",
+            "a_1": "<p>3–5 vardagar inom Sverige. Du får ett spårningsnummer via e-post samma dag som ordern skickas.</p>",
+            "q_2": "Vad kostar frakten?",
+            "a_2": "<p>Fri frakt på alla beställningar inom Sverige. Inga dolda avgifter.</p>",
+            "q_3": "Vilket fraktbolag använder ni?",
+            "a_3": "<p>Vi skickar med Postnord eller DHL beroende på din adress. Du väljer utlämningsställe i kassan.</p>",
+            "q_4": "Kan jag spåra min order?",
+            "a_4": "<p>Ja. Du får ett spårningsnummer via e-post när paketet lämnar vårt lager. Spårningen uppdateras i realtid.</p>",
+            "q_5": "Levererar ni till företagsadresser?",
+            "a_5": "<p>Ja. Ange företagsnamn och adress i kassan som vanligt. Vi skickar till alla adresser i Sverige.</p>"
+          }
+        },
+        "returns": {
+          "type": "accordion",
+          "settings": {
+            "console_label": "LOGG // RETUR & GARANTI",
+            "q_1": "Hur gör jag en retur?",
+            "a_1": "<p>Du har 30 dagars öppet köp. Produkten ska vara oanvänd och i originalförpackning. Kontakta oss på info@vinda.se med ditt ordernummer så skickar vi en förbetald retursedel.</p>",
+            "q_2": "Är returen gratis?",
+            "a_2": "<p>Ja. Vi betalar returfrakt för alla returer inom Sverige.</p>",
+            "q_3": "När får jag tillbaka pengarna?",
+            "a_3": "<p>Återbetalning sker inom 5–7 vardagar efter att vi mottagit och kontrollerat produkten. Pengarna betalas tillbaka via samma betalningsmetod som du använde.</p>",
+            "q_4": "Vad gäller för garantin?",
+            "a_4": "<p>Alla Vinda-produkter levereras med 2 års garanti. Vid reklamation — mejla info@vinda.se med ordernummer och en kort beskrivning av felet så hjälper vi dig.</p>",
+            "q_5": "Kan jag byta produkt istället för att returnera?",
+            "a_5": "<p>Ja. Kontakta oss så ordnar vi ett byte. Enklast är att returnera originalprodukten och lägga en ny order.</p>"
+          }
+        },
+        "international": {
+          "type": "accordion",
+          "settings": {
+            "console_label": "LOGG // INTERNATIONELLT",
+            "q_1": "Levererar ni utanför Sverige?",
+            "a_1": "<p>Just nu levererar vi till Sverige, Norge, Danmark och Finland. Välj ditt land i kassan för att se tillgängliga fraktalternativ och pris.</p>",
+            "q_2": "Tillkommer tullavgifter?",
+            "a_2": "<p>Nej för leveranser inom Norden. Alla priser inkluderar moms och inga extra tullavgifter tillkommer.</p>"
+          }
+        },
+        "cta": {
+          "type": "cta_strip",
+          "settings": {
+            "label": "FRÅGOR OM DIN ORDER?",
+            "heading": "Vi svarar inom en arbetsdag.",
+            "button_text": "KONTAKTA OSS",
+            "button_url": "/pages/contact"
+          }
+        }
+      },
+      "block_order": ["intro", "shipping", "returns", "international", "cta"],
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}
