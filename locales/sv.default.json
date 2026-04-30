@@ -564,5 +564,17 @@
     "checkout": "Till kassan",
     "remove": "Ta bort",
     "footnote": "Fri frakt · Säker betalning · 30 dagars öppet köp"
+  },
+  "page": {
+    "contact": {
+      "name": "Namn",
+      "email": "E-postadress",
+      "subject": "Ämne",
+      "message": "Meddelande",
+      "send": "Skicka",
+      "email_label": "E-post",
+      "response": "Svarstid",
+      "hours": "Öppettider"
+    }
   }
 }

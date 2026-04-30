@@ -565,5 +565,17 @@
     "checkout": "Checkout",
     "remove": "Remove",
     "footnote": "Free shipping · Secure checkout · 30-day returns"
+  },
+  "page": {
+    "contact": {
+      "name": "Name",
+      "email": "Email address",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send",
+      "email_label": "Email",
+      "response": "Response time",
+      "hours": "Opening hours"
+    }
   }
 }
