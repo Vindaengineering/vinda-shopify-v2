@@ -253,7 +253,7 @@
             "label": "Väggmonterad vinda",
             "sub_specs": "11 kW · Auto-indragning · IP44",
             "badge": "Bästsäljare",
-            "url": ""
+            "url": "/products/vinda-home"
           }
         },
         "c2": {
@@ -263,7 +263,7 @@
             "label": "Portabel vinda",
             "sub_specs": "3,6 kW · Fjäder-indragning · IP44",
             "badge": "",
-            "url": ""
+            "url": "/products/vinda-go"
           }
         }
       },
