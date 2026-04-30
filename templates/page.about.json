@@ -1,0 +1,69 @@
+{
+  "sections": {
+    "about": {
+      "type": "about-page",
+      "blocks": {
+        "timeline-1": {
+          "type": "timeline_entry",
+          "settings": {
+            "year": "2023",
+            "title": "Vinda grundas",
+            "body": "Vinda grundas i Göteborg efter ett decennium av frustration över elbilsladdare som hamnar på garagegolvet. Grundarna är tidigare elbilsingenjörer och produktdesigners."
+          }
+        },
+        "timeline-2": {
+          "type": "timeline_entry",
+          "settings": {
+            "year": "2024",
+            "title": "Första prototypen",
+            "body": "Den första fungerande prototypen av den väggmonterade automatiska kabelrullen testas hos tidiga användare i Västra Götaland. 50 hushåll, noll incidenter."
+          }
+        },
+        "timeline-3": {
+          "type": "timeline_entry",
+          "settings": {
+            "year": "2025",
+            "title": "Vinda Home lanseras",
+            "body": "Vinda Home släpps kommersiellt — väggmonterad, auto-retract, godkänd för svensk elstandard. Under 30 minuter att installera. Fem års garanti."
+          }
+        },
+        "timeline-4": {
+          "type": "timeline_entry",
+          "settings": {
+            "year": "2026",
+            "title": "Vinda Go",
+            "body": "Portabel version för resor och laddning på annan plats — passar i bagageutrymmet, klarar kallt klimat. 599 kr, samma mekanik, mindre format."
+          }
+        },
+        "founder-1": {
+          "type": "founder",
+          "settings": {
+            "name": "Placeholder Namnsson",
+            "role": "VD & medgrundare",
+            "bio": "Bakgrund inom elteknik och produktdesign. Driver produktutvecklingen på Vinda sedan 2023. Har egen Tesla Model 3 och vet exakt hur kabeln ser ut på garagegolvet kl. 23 en tisdag."
+          }
+        },
+        "founder-2": {
+          "type": "founder",
+          "settings": {
+            "name": "Placeholder Efternamn",
+            "role": "CTO & medgrundare",
+            "bio": "Tidigare elbilsingenjör. Ansvarig för mekaniken och säkerheten i Vinda Home. Byggde den första prototypen i en källare i Majorna med 3D-printade delar och reservdelar från en tvättmaskin."
+          }
+        }
+      },
+      "block_order": [
+        "timeline-1",
+        "timeline-2",
+        "timeline-3",
+        "timeline-4",
+        "founder-1",
+        "founder-2"
+      ],
+      "settings": {
+        "cta_url": "/collections/all"
+      }
+    }
+  },
+  "order": ["about"]
+}
