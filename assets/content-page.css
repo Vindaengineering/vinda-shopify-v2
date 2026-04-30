@@ -479,8 +479,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.6ch;
-  background: var(--color-fg);
-  color: var(--color-fg-inverse);
+  background: var(--color-accent);
+  color: var(--color-fg) !important;
   padding: 12px 20px;
   border-radius: var(--radius-sm);
   font-family: var(--font-mono);
@@ -494,6 +494,7 @@
     color var(--motion-fast) var(--motion-ease-out),
     transform var(--motion-fast) var(--motion-ease-out);
   justify-self: start;
+  border: none;
 }
 
 .content-page__cta-button span {
@@ -501,8 +502,8 @@
 }
 
 .content-page__cta-button:hover {
-  background: var(--color-accent);
-  color: var(--color-fg);
+  background: var(--color-fg);
+  color: var(--color-fg-inverse) !important;
 }
 
 .content-page__cta-button:hover span { transform: translateX(4px); }
