@@ -1,0 +1,71 @@
+{
+  "sections": {
+    "faq": {
+      "type": "content-page",
+      "blocks": {
+        "intro": {
+          "type": "intro",
+          "settings": {
+            "meta_1": "MKT // SE",
+            "meta_2": "SEKTION // 07",
+            "meta_3": "UPPDATERAD // 2026",
+            "eyebrow": "[ 07 / FAQ ]",
+            "heading": "Vanliga frågor.",
+            "lede": "Svar på det folk undrar innan de lägger en beställning. Hittar du inte det du söker — skriv till info@vinda.se."
+          }
+        },
+        "faq_product": {
+          "type": "accordion",
+          "settings": {
+            "console_label": "LOGG // PRODUKT",
+            "q_1": "Passar Vinda Home min elbil?",
+            "a_1": "<p>Ja. Vinda Home är kompatibel med alla elbilar som använder standard Typ 2-laddkabel — det vill säga i princip alla elbilar sålda i Sverige.</p>",
+            "q_2": "Vilken effekt klarar Vinda Home?",
+            "a_2": "<p>Upp till 11 kW trefas (16 A). Kabeln är 8 meter, vilket räcker till de flesta garage och carportar.</p>",
+            "q_3": "Vad är skillnaden mellan Vinda Home och Vinda Go?",
+            "a_3": "<p>Vinda Home är väggmonterad och för din fasta laddplats. Vinda Go är portabel och för resan — du kastar den i bagaget när du åker bort.</p>",
+            "q_4": "Vad händer om kabeln fastnar?",
+            "a_4": "<p>Returfjädern är byggd för daglig användning i minst 10 000 cykler. Om kabeln känns seg — dra ut lite till och släpp, så rullar den in sig själv.</p>"
+          }
+        },
+        "faq_install": {
+          "type": "accordion",
+          "settings": {
+            "console_label": "LOGG // INSTALLATION",
+            "q_1": "Hur svår är installationen?",
+            "a_1": "<p>Två skruvar och en vattenpass. De flesta kunder monterar Vinda Home på under 15 minuter. Väggplugg följer med i paketet.</p>",
+            "q_2": "Behöver jag en elektriker?",
+            "a_2": "<p>Nej. Vinda Home kopplas in i din befintliga laddbox — du behöver ingen extra elinstallation. Har du ingen laddbox än, behövs en certifierad elektriker för den delen.</p>",
+            "q_3": "Hur högt ska Vinda Home sitta?",
+            "a_3": "<p>Vi rekommenderar att underkanten sitter minst 1,8 meter från golvet, så kabeln rullar fritt utan att släpa i marken.</p>"
+          }
+        },
+        "faq_order": {
+          "type": "accordion",
+          "settings": {
+            "console_label": "LOGG // KÖP & LEVERANS",
+            "q_1": "Hur lång leveranstid gäller?",
+            "a_1": "<p>3–5 vardagar inom Sverige. Du får ett spårningsnummer samma dag som ordern skickas.</p>",
+            "q_2": "Vad gäller för returer?",
+            "a_2": "<p>30 dagars öppet köp. Produkten ska vara oanvänd och i originalförpackning. Kontakta oss innan du skickar retur så vi kan skicka en retursedel.</p>",
+            "q_3": "Vad gäller för garantin?",
+            "a_3": "<p>2 års garanti på alla delar. Vid reklamation — mejla info@vinda.se med ordernummer och en kort beskrivning.</p>",
+            "q_4": "Kan jag betala med faktura?",
+            "a_4": "<p>Ja. Vi använder Klarna, så du kan välja direktbetalning, faktura eller delbetalning i kassan.</p>"
+          }
+        },
+        "cta": {
+          "type": "cta_strip",
+          "settings": {
+            "label": "HITTAR DU INTE DITT SVAR?",
+            "heading": "Vi svarar inom en arbetsdag.",
+            "button_text": "KONTAKTA OSS",
+            "button_url": "/pages/contact"
+          }
+        }
+      },
+      "block_order": ["intro", "faq_product", "faq_install", "faq_order", "cta"]
+    }
+  },
+  "order": ["faq"]
+}
