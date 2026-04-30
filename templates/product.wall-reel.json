@@ -179,14 +179,64 @@
     "pdp-gallery": {
       "type": "photo-gallery",
       "blocks": {
-        "g1": { "type": "image", "settings": { "caption": "VINDA HOME // GARAGEVÄGG", "size": "wide" } },
-        "g2": { "type": "image", "settings": { "caption": "DETALJ // ANSLUTNING", "size": "normal" } },
-        "g3": { "type": "image", "settings": { "caption": "MILJÖ // UPPFART", "size": "normal" } },
-        "g4": { "type": "image", "settings": { "caption": "DETALJ // KABEL", "size": "tall" } },
-        "g5": { "type": "image", "settings": { "caption": "MILJÖ // LADDNING", "size": "normal" } },
-        "g6": { "type": "image", "settings": { "caption": "INSTALLATION // STEG 3", "size": "normal" } }
+        "g1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Vinda_home_driveway.png",
+            "alt": "",
+            "caption": "VINDA HOME // GARAGEVÄGG",
+            "size": "wide"
+          }
+        },
+        "g2": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "caption": "DETALJ // ANSLUTNING",
+            "size": "normal"
+          }
+        },
+        "g3": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "caption": "MILJÖ // UPPFART",
+            "size": "normal"
+          }
+        },
+        "g4": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "caption": "DETALJ // KABEL",
+            "size": "tall"
+          }
+        },
+        "g5": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "caption": "MILJÖ // LADDNING",
+            "size": "normal"
+          }
+        },
+        "g6": {
+          "type": "image",
+          "settings": {
+            "alt": "",
+            "caption": "INSTALLATION // STEG 3",
+            "size": "normal"
+          }
+        }
       },
-      "block_order": ["g1", "g2", "g3", "g4", "g5", "g6"],
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4",
+        "g5",
+        "g6"
+      ],
       "settings": {
         "eyebrow": "GALLERI // VINDA HOME",
         "heading": "Sett i verkligheten."
@@ -201,7 +251,8 @@
             "product": "",
             "label": "Väggmonterad vinda",
             "sub_specs": "11 kW · Auto-indragning · IP44",
-            "badge": "Bästsäljare"
+            "badge": "Bästsäljare",
+            "url": ""
           }
         },
         "c2": {
@@ -210,7 +261,8 @@
             "product": "",
             "label": "Portabel vinda",
             "sub_specs": "3,6 kW · Fjäder-indragning · IP44",
-            "badge": ""
+            "badge": "",
+            "url": ""
           }
         }
       },
