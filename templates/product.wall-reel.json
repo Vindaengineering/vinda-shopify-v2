@@ -176,6 +176,22 @@
         "heading": "Slipp kabelkaos på uppfarten."
       }
     },
+    "pdp-gallery": {
+      "type": "photo-gallery",
+      "blocks": {
+        "g1": { "type": "image", "settings": { "caption": "VINDA HOME // GARAGEVÄGG", "size": "wide" } },
+        "g2": { "type": "image", "settings": { "caption": "DETALJ // ANSLUTNING", "size": "normal" } },
+        "g3": { "type": "image", "settings": { "caption": "MILJÖ // UPPFART", "size": "normal" } },
+        "g4": { "type": "image", "settings": { "caption": "DETALJ // KABEL", "size": "tall" } },
+        "g5": { "type": "image", "settings": { "caption": "MILJÖ // LADDNING", "size": "normal" } },
+        "g6": { "type": "image", "settings": { "caption": "INSTALLATION // STEG 3", "size": "normal" } }
+      },
+      "block_order": ["g1", "g2", "g3", "g4", "g5", "g6"],
+      "settings": {
+        "eyebrow": "GALLERI // VINDA HOME",
+        "heading": "Sett i verkligheten."
+      }
+    },
     "pdp-final-cta": {
       "type": "final-cta",
       "blocks": {
@@ -212,6 +228,7 @@
     "pdp-hero",
     "pdp-trust-strip",
     "pdp-features",
+    "pdp-gallery",
     "pdp-final-cta"
   ]
 }

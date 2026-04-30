@@ -176,6 +176,22 @@
         "heading": "Byggd för att följa med."
       }
     },
+    "pdp-gallery": {
+      "type": "photo-gallery",
+      "blocks": {
+        "g1": { "type": "image", "settings": { "caption": "VINDA GO // BAKLUCKA", "size": "wide" } },
+        "g2": { "type": "image", "settings": { "caption": "DETALJ // KABEL", "size": "normal" } },
+        "g3": { "type": "image", "settings": { "caption": "MILJÖ // RESAN", "size": "normal" } },
+        "g4": { "type": "image", "settings": { "caption": "DETALJ // RULLE", "size": "tall" } },
+        "g5": { "type": "image", "settings": { "caption": "MILJÖ // LADDSTATION", "size": "normal" } },
+        "g6": { "type": "image", "settings": { "caption": "VINDA GO // NÄRBILD", "size": "normal" } }
+      },
+      "block_order": ["g1", "g2", "g3", "g4", "g5", "g6"],
+      "settings": {
+        "eyebrow": "GALLERI // VINDA GO",
+        "heading": "Sett i verkligheten."
+      }
+    },
     "pdp-final-cta": {
       "type": "final-cta",
       "blocks": {
@@ -212,6 +228,7 @@
     "pdp-hero",
     "pdp-trust-strip",
     "pdp-features",
+    "pdp-gallery",
     "pdp-final-cta"
   ]
 }
