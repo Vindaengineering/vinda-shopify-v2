@@ -215,6 +215,7 @@
         "g5": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Vinda_home_driveway2.png",
             "alt": "",
             "caption": "MILJÖ // LADDNING",
             "size": "normal"
