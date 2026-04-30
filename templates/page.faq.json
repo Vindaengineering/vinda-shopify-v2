@@ -73,8 +73,17 @@
           }
         }
       },
-      "block_order": ["intro", "faq_product", "faq_install", "faq_order", "cta"]
+      "block_order": [
+        "intro",
+        "faq_product",
+        "faq_install",
+        "faq_order",
+        "cta"
+      ],
+      "settings": {}
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }
