@@ -556,7 +556,10 @@
     "skip_to_main": "Hoppa till innehåll"
   },
   "footer": {
-    "nav_label": "Sidfot"
+    "nav_label": "Sidfot",
+    "legal_label": "Juridisk information",
+    "payment": "Betalningsmetoder",
+    "location": "Designad i Sverige"
   },
   "cart": {
     "title": "Varukorg",

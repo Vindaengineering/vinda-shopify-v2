@@ -557,7 +557,10 @@
     "skip_to_main": "Skip to content"
   },
   "footer": {
-    "nav_label": "Footer"
+    "nav_label": "Footer",
+    "legal_label": "Legal",
+    "payment": "Payment methods",
+    "location": "Designed in Sweden"
   },
   "cart": {
     "title": "Cart",
