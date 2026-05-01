@@ -792,7 +792,7 @@ body:not(.page-index) main { padding-top: var(--header-height); }
   aspect-ratio: 1 / 1;
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   display: flex;
   align-items: center;
