@@ -46,13 +46,16 @@
 .v-carousel__stage {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  /* aspect-ratio alone collapses when children are all position:absolute.
+     height: 0 + padding-top is the reliable cross-browser alternative. */
+  height: 0;
+  padding-top: 56.25%; /* 16:9 */
   overflow: hidden;
   background: var(--color-bg-card);
 }
 
 @media (max-width: 749px) {
-  .v-carousel__stage { aspect-ratio: 4 / 3; }
+  .v-carousel__stage { padding-top: 75%; /* 4:3 */ }
 }
 
 /* ─── Track + Slides ─────────────────────────────────────────── */
@@ -234,27 +237,26 @@
   color: rgba(255,255,255,0.25);
 }
 
-/* ─── Corner brackets ────────────────────────────────────────── */
+/* ─── Corner brackets (on track, not stage, since stage uses height:0) ── */
 
-.v-carousel__stage::before,
-.v-carousel__stage::after {
+.v-carousel__track::before,
+.v-carousel__track::after {
   content: '';
   position: absolute;
   width: 20px;
   height: 20px;
   z-index: 5;
   pointer-events: none;
-  transition: opacity var(--motion-base) var(--motion-ease-out);
 }
 
-.v-carousel__stage::before {
+.v-carousel__track::before {
   top: var(--space-4);
   left: var(--space-4);
   border-top: 1px solid var(--color-accent);
   border-left: 1px solid var(--color-accent);
 }
 
-.v-carousel__stage::after {
+.v-carousel__track::after {
   bottom: var(--space-4);
   right: var(--space-4);
   border-bottom: 1px solid var(--color-accent);
