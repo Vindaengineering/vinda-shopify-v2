@@ -38,8 +38,6 @@
       ],
       "settings": {
         "product": "vinda-home",
-        "background_image": "shopify://shop_images/resized.jpg",
-        "product_image": "shopify://shop_images/Vinda_no_background.png",
         "eyebrow": "Väggmonterad · Automatisk indragning",
         "heading": "<p>Alltid redo.<br/>Aldrig trasslig.</p>",
         "description": "Monteras på valfri yttervägg. Kabeln dras in automatiskt efter varje laddning — inga trassel, inget släp på marken, inget krångel.",
@@ -194,7 +192,6 @@
       ],
       "settings": {
         "product": "",
-        "media_image": "shopify://shop_images/674086245_1474436644172023_5727440520983312386_n.jpg",
         "media_alt": "",
         "anchor": "wall-reel",
         "mirror": false,
@@ -251,7 +248,6 @@
       ],
       "settings": {
         "product": "vinda-go",
-        "media_image": "shopify://shop_images/655673765_2809105136109429_7211717394551981286_n.png",
         "media_alt": "",
         "anchor": "portable-reel",
         "mirror": true,
@@ -347,7 +343,8 @@
             "product": "",
             "label": "Vinda Home",
             "sub_specs": "11 kW · Auto-indragning · IP44",
-            "badge": "Bästsäljare"
+            "badge": "Bästsäljare",
+            "url": ""
           }
         },
         "c2": {
@@ -356,7 +353,8 @@
             "product": "",
             "label": "Vinda Go",
             "sub_specs": "Upp till 10m · Får plats i frunken · CE-märkt",
-            "badge": ""
+            "badge": "",
+            "url": ""
           }
         }
       },
