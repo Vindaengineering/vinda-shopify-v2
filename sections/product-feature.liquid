@@ -93,6 +93,10 @@
 
         {%- if p != blank -%}
           {% render 'atc-form', product: p, classes: 'v-btn-primary v-btn-primary--block' %}
+        {%- elsif section.settings.product_url != blank -%}
+          <a href="{{ section.settings.product_url }}" class="v-btn-primary v-btn-primary--block">
+            {{ 'products.product.add_to_cart' | t | default: 'Köp nu' }}
+          </a>
         {%- endif -%}
 
         <ul class="v-trust-row v-pf__micro-trust" aria-label="{{ 'home.product.trust_label' | t | default: 'Trust' }}">
@@ -132,7 +136,8 @@
     { "type": "textarea", "id": "description", "label": "Description" },
     { "type": "text", "id": "badge", "label": "Badge label (e.g. Best seller)" },
     { "type": "checkbox", "id": "show_overlay", "label": "Show image gradient overlay", "default": true },
-    { "type": "text", "id": "micro_trust", "label": "Micro trust items (comma separated)", "default": "In stock, 2-year warranty, 30-day returns" }
+    { "type": "text", "id": "micro_trust", "label": "Micro trust items (comma separated)", "default": "In stock, 2-year warranty, 30-day returns" },
+    { "type": "url", "id": "product_url", "label": "Product page URL (fallback when no product selected)" }
   ],
   "blocks": [
     {
