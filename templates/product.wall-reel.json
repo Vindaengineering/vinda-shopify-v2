@@ -23,7 +23,7 @@
           "type": "spec_row",
           "settings": {
             "label": "Längd",
-            "value": "5 m"
+            "value": "8 m"
           }
         },
         "s3": {
@@ -51,7 +51,7 @@
           "type": "spec_row",
           "settings": {
             "label": "Vikt",
-            "value": "8,4 kg"
+            "value": "5.4 KG"
           }
         }
       },
@@ -184,32 +184,28 @@
           "settings": {
             "image": "shopify://shop_images/Vinda_home_driveway.png",
             "alt": "",
-            "caption": "VINDA HOME // GARAGEVÄGG",
-            "size": "wide"
+            "caption": "VINDA HOME // GARAGEVÄGG"
           }
         },
         "g2": {
           "type": "image",
           "settings": {
             "alt": "",
-            "caption": "DETALJ // ANSLUTNING",
-            "size": "normal"
+            "caption": "DETALJ // ANSLUTNING"
           }
         },
         "g3": {
           "type": "image",
           "settings": {
             "alt": "",
-            "caption": "MILJÖ // UPPFART",
-            "size": "normal"
+            "caption": "MILJÖ // UPPFART"
           }
         },
         "g4": {
           "type": "image",
           "settings": {
             "alt": "",
-            "caption": "DETALJ // KABEL",
-            "size": "tall"
+            "caption": "DETALJ // KABEL"
           }
         },
         "g5": {
@@ -217,16 +213,14 @@
           "settings": {
             "image": "shopify://shop_images/Vinda_home_driveway2.png",
             "alt": "",
-            "caption": "MILJÖ // LADDNING",
-            "size": "normal"
+            "caption": "MILJÖ // LADDNING"
           }
         },
         "g6": {
           "type": "image",
           "settings": {
             "alt": "",
-            "caption": "INSTALLATION // STEG 3",
-            "size": "normal"
+            "caption": "INSTALLATION // STEG 3"
           }
         }
       },
