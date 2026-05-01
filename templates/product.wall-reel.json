@@ -176,6 +176,28 @@
         "heading": "Slipp kabelkaos på uppfarten."
       }
     },
+    "pdp-before-after": {
+      "type": "before-after",
+      "settings": {
+        "background_variant": "alt",
+        "console_label": "INNAN // EFTER",
+        "console_status": "DRA FÖR JÄMFÖRELSE",
+        "eyebrow": "Skillnaden",
+        "heading": "Innan Vinda. Efter Vinda.",
+        "subheading": ""
+      }
+    },
+    "pdp-installation": {
+      "type": "installation-page",
+      "settings": {
+        "eyebrow": "Installation",
+        "heading": "Monterat på 30 minuter.",
+        "lede": "Allt du behöver ingår i kartongen. Inga elektriker, inget extra verktyg.",
+        "meta_1": "VERKTYG // BORRMASKIN",
+        "meta_2": "TID // CA 30 MIN",
+        "meta_3": "SVÅRIGHETSGRAD // ENKEL"
+      }
+    },
     "pdp-gallery": {
       "type": "photo-gallery",
       "blocks": {
@@ -276,6 +298,8 @@
     "pdp-hero",
     "pdp-trust-strip",
     "pdp-features",
+    "pdp-before-after",
+    "pdp-installation",
     "pdp-gallery",
     "pdp-final-cta"
   ]
