@@ -240,7 +240,8 @@
       ],
       "settings": {
         "eyebrow": "GALLERI // VINDA HOME",
-        "heading": "Sett i verkligheten."
+        "heading": "Sett i verkligheten.",
+        "interval": 4000
       }
     },
     "pdp-final-cta": {

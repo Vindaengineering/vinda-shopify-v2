@@ -239,7 +239,8 @@
       ],
       "settings": {
         "eyebrow": "GALLERI // VINDA GO",
-        "heading": "Sett i verkligheten."
+        "heading": "Sett i verkligheten.",
+        "interval": 4000
       }
     },
     "pdp-final-cta": {
