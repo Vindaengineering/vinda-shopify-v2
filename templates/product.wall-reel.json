@@ -78,7 +78,8 @@
         "description": "Väggmonterad och auto-indragande. Efter varje laddning rullas kabeln in av sig själv. Inga trassel, ingen markkontakt, ingen daglig irritation. IP44-klassad för utomhusbruk året om i alla klimat.",
         "badge": "Bästsäljare",
         "show_overlay": true,
-        "micro_trust": "I lager, 2 års garanti, 30 dagars öppet köp"
+        "micro_trust": "I lager, 2 års garanti, 30 dagars öppet köp",
+        "product_url": ""
       }
     },
     "pdp-trust-strip": {
@@ -183,8 +184,15 @@
         "console_label": "INNAN // EFTER",
         "console_status": "DRA FÖR JÄMFÖRELSE",
         "eyebrow": "Skillnaden",
-        "heading": "Innan Vinda. Efter Vinda.",
-        "subheading": ""
+        "heading": "Innan Vinda Home. Efter Vinda Home.",
+        "subheading": "",
+        "image_before": "shopify://shop_images/Vinda_image_driveway_3.png",
+        "image_before_alt": "Garage med kabel på golvet",
+        "image_after": "shopify://shop_images/Vinda_image_driveway.png",
+        "image_after_alt": "Vinda monterad, kabel inrullad",
+        "before_label": "INNAN",
+        "after_label": "EFTER",
+        "aria_label": "Innan/efter jämförelse"
       }
     },
     "pdp-installation": {
@@ -195,7 +203,34 @@
         "lede": "Allt du behöver ingår i kartongen. Inga elektriker, inget extra verktyg.",
         "meta_1": "VERKTYG // BORRMASKIN",
         "meta_2": "TID // CA 30 MIN",
-        "meta_3": "SVÅRIGHETSGRAD // ENKEL"
+        "meta_3": "SVÅRIGHETSGRAD // ENKEL",
+        "title_1": "Välj plats",
+        "body_1": "<p>Hitta en vägg nära din laddbox. Underkanten av Vinda bör sitta minst 1 meter från golvet så kabeln rullar fritt utan att släpa.</p>",
+        "tools_1": "Måttband, vattenpass",
+        "title_2": "Markera och borra",
+        "body_2": "<p>Använd monteringsmallen i paketet för att markera två borrhål. Borra 8 mm för betong eller tegel, 6 mm för trä.</p>",
+        "tools_2": "Slagborrmaskin, 8 mm borr",
+        "title_3": "Sätt upp väggfästet",
+        "body_3": "<p>Skruva fast väggfästet med de två medföljande skruvarna. Kontrollera att det sitter i våg innan du drar åt helt.</p>",
+        "tools_3": "Skruvmejsel, vattenpass",
+        "faq_eyebrow": "Felsökning",
+        "faq_heading": "Vanliga frågor.",
+        "q_1": "Kabeln rullas inte in automatiskt.",
+        "a_1": "<p>Returfjädern aktiveras när du drar ut kabeln ~10 cm och sen släpper. Om det ändå inte fungerar — kontrollera att kabeln inte är i kläm.</p>",
+        "q_2": "Väggfästet känns löst.",
+        "a_2": "<p>Dra åt skruvarna ordentligt. Sitter du i en gipsvägg eller tunt material — använd ankarplugg eller välj en annan vägg med bakomliggande trä eller betong.</p>",
+        "q_3": "Behöver jag en certifierad elektriker?",
+        "a_3": "<p>Nej. Vinda ansluts till din befintliga laddbox och kräver ingen fast elinstallation. Om du ännu inte har en laddbox installerad behövs en certifierad elektriker för den delen.</p>",
+        "q_4": "Fungerar Vinda utomhus?",
+        "a_4": "<p>Ja. Vinda är IP44-klassad och tål regn och snö. Den bör dock inte installeras där den utsätts för stående vatten.</p>",
+        "q_5": "",
+        "a_5": "",
+        "q_6": "",
+        "a_6": "",
+        "cta_eyebrow": "Något som krånglar?",
+        "cta_heading": "Skicka en fråga — vi svarar snabbt.",
+        "cta_button_text": "Kontakta oss",
+        "cta_button_url": ""
       }
     },
     "pdp-gallery": {
@@ -204,7 +239,6 @@
         "g1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Vinda_home_driveway.png",
             "alt": "",
             "caption": "VINDA HOME // GARAGEVÄGG"
           }
@@ -233,7 +267,6 @@
         "g5": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Vinda_home_driveway2.png",
             "alt": "",
             "caption": "MILJÖ // LADDNING"
           }
