@@ -5,6 +5,7 @@
   background: var(--color-bg);
 }
 
+/* Header is constrained to content-max; stage spans full section width */
 .v-carousel__inner {
   max-width: var(--content-max);
   margin: 0 auto;

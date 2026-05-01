@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="{{ 'photo-gallery.css' | asset_url }}">
 
 <section class="v-carousel" aria-labelledby="GalleryHeading-{{ section.id }}">
-  <div class="v-carousel__inner">
 
-    {%- if section.settings.eyebrow != blank or section.settings.heading != blank -%}
+  {%- if section.settings.eyebrow != blank or section.settings.heading != blank -%}
+    <div class="v-carousel__inner">
       <header class="v-carousel__header" data-reveal style="--reveal-i: 0;">
         {%- if section.settings.eyebrow != blank -%}
           <p class="v-eyebrow v-carousel__eyebrow">{{ section.settings.eyebrow }}</p>
@@ -12,7 +12,8 @@
           <h2 class="v-carousel__heading" id="GalleryHeading-{{ section.id }}">{{ section.settings.heading }}</h2>
         {%- endif -%}
       </header>
-    {%- endif -%}
+    </div>
+  {%- endif -%}
 
     {%- assign image_blocks = section.blocks | where: 'type', 'image' -%}
     {%- assign total = image_blocks | size -%}
@@ -101,7 +102,6 @@
       </div>
     {%- endif -%}
 
-  </div>
 </section>
 
 <script src="{{ 'photo-gallery.js' | asset_url }}" defer></script>
