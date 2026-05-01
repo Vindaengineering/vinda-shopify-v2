@@ -242,6 +242,7 @@
         "g1": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/vinda_hero_image.png",
             "alt": "",
             "caption": "VINDA HOME // GARAGEVÄGG"
           }
