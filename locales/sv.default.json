@@ -586,6 +586,9 @@
       "email_label": "E-post",
       "response": "Svarstid",
       "hours": "Öppettider"
+    },
+    "install": {
+      "tools": "Verktyg"
     }
   },
   "pages": {

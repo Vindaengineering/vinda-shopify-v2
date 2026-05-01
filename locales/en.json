@@ -587,6 +587,9 @@
       "email_label": "Email",
       "response": "Response time",
       "hours": "Opening hours"
+    },
+    "install": {
+      "tools": "Tools"
     }
   },
   "pages": {
