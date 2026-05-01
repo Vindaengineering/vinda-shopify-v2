@@ -562,6 +562,10 @@
     "payment": "Betalningsmetoder",
     "location": "Designad i Sverige"
   },
+  "sticky_bar": {
+    "portable_label": "Portabel",
+    "wall_label": "Väggmonterad"
+  },
   "cart": {
     "title": "Varukorg",
     "close": "Stäng varukorg",

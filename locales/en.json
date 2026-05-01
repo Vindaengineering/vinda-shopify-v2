@@ -563,6 +563,10 @@
     "payment": "Payment methods",
     "location": "Designed in Sweden"
   },
+  "sticky_bar": {
+    "portable_label": "Portable",
+    "wall_label": "Wall-Mount"
+  },
   "cart": {
     "title": "Cart",
     "close": "Close cart",

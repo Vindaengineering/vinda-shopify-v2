@@ -12,17 +12,19 @@
       </div>
       <div class="v-sticky-bar__ctas">
         {%- if portable != blank -%}
+          {%- assign portable_label = 'sticky_bar.portable_label' | t -%}
           {% render 'atc-form',
               product: portable,
               classes: 'v-btn-outline',
-              label: 'Portable',
+              label: portable_label,
               show_price: true %}
         {%- endif -%}
         {%- if wall != blank -%}
+          {%- assign wall_label = 'sticky_bar.wall_label' | t -%}
           {% render 'atc-form',
               product: wall,
               classes: 'v-btn-primary',
-              label: 'Wall Reel',
+              label: wall_label,
               show_price: true %}
         {%- endif -%}
       </div>
