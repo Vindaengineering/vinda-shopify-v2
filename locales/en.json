@@ -582,5 +582,26 @@
       "response": "Response time",
       "hours": "Opening hours"
     }
+  },
+  "pages": {
+    "about": {
+      "meta_market": "Market: Sweden & EU",
+      "meta_founded": "Founded: 2023",
+      "meta_based": "Based: Gothenburg",
+      "eyebrow": "About us",
+      "heading": "Built to keep the cable out of the way.",
+      "lede": "Vinda was started by EV owners tired of cable chaos. We build cable reels that make everyday life easier — at home and on the road.",
+      "timeline": {
+        "console_label": "HISTORY // VINDA"
+      },
+      "founders": {
+        "console_label": "TEAM // FOUNDERS"
+      },
+      "cta": {
+        "label": "Ready to buy?",
+        "heading": "Find your cable reel.",
+        "button": "See products"
+      }
+    }
   }
 }

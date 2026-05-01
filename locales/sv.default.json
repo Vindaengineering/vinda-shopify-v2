@@ -581,5 +581,26 @@
       "response": "Svarstid",
       "hours": "Öppettider"
     }
+  },
+  "pages": {
+    "about": {
+      "meta_market": "Marknad: Sverige & EU",
+      "meta_founded": "Grundat: 2023",
+      "meta_based": "Bas: Göteborg",
+      "eyebrow": "Om oss",
+      "heading": "Byggda för att hålla kabeln ur vägen.",
+      "lede": "Vinda startades av elbilsägare som tröttnade på kabelkaos. Vi bygger kabelvindor som gör vardagen enklare — hemma och på resande fot.",
+      "timeline": {
+        "console_label": "HISTORIK // VINDA"
+      },
+      "founders": {
+        "console_label": "TEAMET // GRUNDARE"
+      },
+      "cta": {
+        "label": "Redo att köpa?",
+        "heading": "Hitta din kabelvinda.",
+        "button": "Se produkterna"
+      }
+    }
   }
 }
