@@ -242,7 +242,7 @@
         "g1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/vinda_hero_image.png",
+            "image": "shopify://shop_images/Vinda_Home25.png",
             "alt": "",
             "caption": "VINDA HOME // GARAGEVÄGG"
           }
@@ -258,6 +258,7 @@
         "g3": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/vinda_hero_image.png",
             "alt": "",
             "caption": "MILJÖ // UPPFART"
           }
@@ -265,6 +266,7 @@
         "g4": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/vinda_home_26.jpg",
             "alt": "",
             "caption": "DETALJ // KABEL"
           }

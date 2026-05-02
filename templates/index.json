@@ -44,7 +44,7 @@
         "rating": "4.9",
         "review_count": 47,
         "price_meta": "inkl. moms",
-        "spec_chips": "11 kW, 5 m, IP44, Typ 2, CE-märkt",
+        "spec_chips": "11 kW, 8 m, IP44, Typ 2, CE-märkt",
         "secondary_cta_label": "Läs mer",
         "secondary_cta_url": "shopify://products/vinda-home"
       }
@@ -206,7 +206,8 @@
         "description": "Väggmonterad och auto-indragande. Efter varje laddning rullas kabeln in av sig själv. Inga trassel, ingen markkontakt, ingen daglig irritation. IP44-klassad för utomhusbruk året om i alla klimat.",
         "badge": "Bästsäljare",
         "show_overlay": true,
-        "micro_trust": "I lager, 2 års garanti, 30 dagars öppet köp"
+        "micro_trust": "I lager, 2 års garanti, 30 dagars öppet köp",
+        "product_url": ""
       }
     },
     "portable-reel": {
@@ -263,7 +264,8 @@
         "description": "Din Type 2-kabel är inte gjord för att slängas i bagageluckan i en hög. Ändå är det precis så de flesta elbilsägare förvarar sin laddkabel – ihoprullad, hoptrasslad och nedstoppad där den får plats. Med Vinda Go, den handhållna kabelvindan,  får din laddkabel äntligen den ordning den förtjänar.",
         "badge": "",
         "show_overlay": false,
-        "micro_trust": "I lager, 2 års garanti, 30 dagars öppet köp"
+        "micro_trust": "I lager, 2 års garanti, 30 dagars öppet köp",
+        "product_url": ""
       }
     },
     "before_after_YQQLQm": {
