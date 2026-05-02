@@ -15,7 +15,7 @@
         "trust-1": {
           "type": "trust_item",
           "settings": {
-            "label": "Fri frakt"
+            "label": "Fri frakt inom Sverige"
           }
         },
         "trust-2": {
