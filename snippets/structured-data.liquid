@@ -40,3 +40,78 @@
   </script>
 
 {%- endif -%}
+
+{%- if request.page_type == 'page' and page.handle == 'faq' -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Passar Vinda Home min elbil?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Vinda Home är kompatibel med alla elbilar som använder standard Typ 2-laddkabel — det vill säga i princip alla elbilar sålda i Sverige."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vilken effekt klarar Vinda Home?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Upp till 11 kW trefas (16 A). Kabeln är 8 meter, vilket räcker till de flesta garage och carportar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vad är skillnaden mellan Vinda Home och Vinda Go?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vinda Home är väggmonterad och för din fasta laddplats. Vinda Go är portabel och för resan — du kastar den i bagaget när du åker bort."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hur svår är installationen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Två skruvar och en vattenpass. De flesta kunder monterar Vinda Home på under 15 minuter. Väggplugg följer med i paketet."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Behöver jag en elektriker?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nej. Vinda Home kopplas in i din befintliga laddbox — du behöver ingen extra elinstallation. Har du ingen laddbox än, behövs en certifierad elektriker för den delen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hur lång leveranstid gäller?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "3–5 vardagar inom Sverige. Du får ett spårningsnummer samma dag som ordern skickas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vad gäller för returer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "30 dagars öppet köp. Produkten ska vara oanvänd och i originalförpackning. Kontakta oss innan du skickar retur."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vad gäller för garantin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2 års garanti på alla delar. Vid reklamation — mejla info@vinda.se med ordernummer och en kort beskrivning."
+        }
+      }
+    ]
+  }
+  </script>
+{%- endif -%}
