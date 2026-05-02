@@ -1,0 +1,42 @@
+{%- comment -%}
+  Structured data (JSON-LD) — rendered once per page from layout/theme.liquid.
+  Outputs the right schema type based on page type.
+{%- endcomment -%}
+
+{%- if request.page_type == 'product' -%}
+  {%- assign p = product -%}
+  {%- assign product_url = shop.url | append: p.url -%}
+  {%- assign product_image_url = '' -%}
+  {%- if p.featured_image != blank -%}
+    {%- assign product_image_url = p.featured_image | image_url: width: 1200 | prepend: 'https:' -%}
+  {%- endif -%}
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": {{ p.title | json }},
+    "description": {{ p.description | strip_html | truncate: 500 | json }},
+    "url": {{ product_url | json }},
+    {%- if product_image_url != blank -%}
+    "image": {{ product_image_url | json }},
+    {%- endif -%}
+    "brand": {
+      "@type": "Brand",
+      "name": "Vinda"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": {{ cart.currency.iso_code | json }},
+      "price": {{ p.price | money_without_currency | strip_html | json }},
+      "availability": {%- if p.available -%}"https://schema.org/InStock"{%- else -%}"https://schema.org/OutOfStock"{%- endif -%},
+      "url": {{ product_url | json }},
+      "seller": {
+        "@type": "Organization",
+        "name": {{ shop.name | json }}
+      }
+    }
+  }
+  </script>
+
+{%- endif -%}
