@@ -115,3 +115,31 @@
   }
   </script>
 {%- endif -%}
+
+{%- if request.page_type == 'index' -%}
+  {%- assign logo_url = '' -%}
+  {%- if settings.logo != blank -%}
+    {%- assign logo_url = settings.logo | image_url: width: 400 | prepend: 'https:' -%}
+  {%- endif -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": {{ shop.name | json }},
+    "url": {{ shop.url | json }},
+    {%- if logo_url != blank -%}
+    "logo": {{ logo_url | json }},
+    {%- endif -%}
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "info@vinda.se",
+      "contactType": "customer service",
+      "availableLanguage": ["Swedish", "English"]
+    },
+    "areaServed": "SE",
+    "sameAs": [
+      {%- if settings.social_instagram_link != blank -%}{{ settings.social_instagram_link | json }}{%- endif -%}
+    ]
+  }
+  </script>
+{%- endif -%}
