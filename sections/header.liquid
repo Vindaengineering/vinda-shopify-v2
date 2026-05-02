@@ -54,9 +54,42 @@
           {{- cart.item_count -}}
         </span>
       </button>
+
+      <button
+        type="button"
+        class="v-header__hamburger"
+        id="VHeaderMenuToggle"
+        aria-expanded="false"
+        aria-controls="VHeaderMobileNav"
+        aria-label="{{ 'header.menu_open' | t | default: 'Open menu' }}"
+      >
+        <span class="v-header__hamburger-bar"></span>
+        <span class="v-header__hamburger-bar"></span>
+        <span class="v-header__hamburger-bar"></span>
+      </button>
     </div>
   </div>
 </header>
+
+<nav
+  class="v-header__mobile-nav"
+  id="VHeaderMobileNav"
+  aria-label="{{ 'accessibility.main_navigation' | t }}"
+  aria-hidden="true"
+>
+  <ul role="list">
+    {%- for link in menu.links -%}
+      <li>
+        <a href="{{ link.url }}" class="v-header__mobile-link">{{ link.title | escape }}</a>
+      </li>
+    {%- endfor -%}
+    {%- if about_url != blank -%}
+      <li>
+        <a href="{{ about_url }}" class="v-header__mobile-link">{{ 'header.about' | t | default: 'About' }}</a>
+      </li>
+    {%- endif -%}
+  </ul>
+</nav>
 
 {% schema %}
 {
