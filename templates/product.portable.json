@@ -75,10 +75,11 @@
         "rating": "4.7",
         "review_count": 23,
         "price_meta": "inkl. moms · fri frakt",
-        "description": "Kompakt skivformad. Följer med dit din bil tar dig. Maskinbearbetad aluminiumkropp, matt svart finish, och en fjäderbelastad indragning som håller kabeln perfekt upprullad.",
+        "description": "Vinda Go är räddningen för dig som tröttnat på att slänga in en trasslig och lerig kabel i bakluckan eller garaget. Rulla in din befintliga laddkabel smidigt på Vinda Go och slipp all huvudvärk. Tillverkad av slittålig plast som kan återvinnas.",
         "badge": "",
         "show_overlay": false,
-        "micro_trust": "I lager, 2 års garanti, 30 dagars öppet köp"
+        "micro_trust": "I lager, 2 års garanti, 30 dagars öppet köp",
+        "product_url": ""
       }
     },
     "pdp-trust-strip": {
@@ -182,50 +183,49 @@
         "g1": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/image-12.jpg",
             "alt": "",
-            "caption": "VINDA GO // BAKLUCKA",
-            "size": "wide"
+            "caption": "VINDA GO // BAKLUCKA"
           }
         },
         "g2": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/image-5.1.jpg",
             "alt": "",
-            "caption": "DETALJ // KABEL",
-            "size": "normal"
+            "caption": "DETALJ // KABEL"
           }
         },
         "g3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/image-12.jpg",
+            "image": "shopify://shop_images/661b21610b21833cdeed29c3_image-22-p-1600_a2d11020-39ef-4a59-a667-343127af88b1.webp",
             "alt": "",
-            "caption": "MILJÖ // RESAN",
-            "size": "normal"
+            "caption": "MILJÖ // RESAN"
           }
         },
         "g4": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/661b21610b21833cdeed29c3_image-22-p-1600_a2d11020-39ef-4a59-a667-343127af88b1.webp",
             "alt": "",
-            "caption": "DETALJ // RULLE",
-            "size": "tall"
+            "caption": "DETALJ // RULLE"
           }
         },
         "g5": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/661b21d8ca5426d2790d63fc_image-31-p-1600_a1e377b0-bbd9-49bc-9a4e-cd23f565ff04.webp",
             "alt": "",
-            "caption": "MILJÖ // LADDSTATION",
-            "size": "normal"
+            "caption": "MILJÖ // LADDSTATION"
           }
         },
         "g6": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/462582832_1358915848409092_3309696846528476261_n.png",
             "alt": "",
-            "caption": "VINDA GO // NÄRBILD",
-            "size": "normal"
+            "caption": "VINDA GO // NÄRBILD"
           }
         }
       },
@@ -239,7 +239,8 @@
       ],
       "settings": {
         "eyebrow": "GALLERI // VINDA GO",
-        "heading": "Sett i verkligheten."
+        "heading": "Sett i verkligheten.",
+        "interval": 4000
       }
     },
     "pdp-final-cta": {
