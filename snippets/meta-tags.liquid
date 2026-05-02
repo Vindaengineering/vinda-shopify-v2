@@ -42,9 +42,11 @@
 {%- endif -%}
 
 {%- comment -%} Hreflang: sv (default) + en alternate for every page {%- endcomment -%}
-{%- assign base_url = request.origin -%}
-{%- assign current_path = request.path -%}
-<link rel="alternate" hreflang="sv" href="{{ base_url }}{{ current_path }}">
-<link rel="alternate" hreflang="en" href="{{ base_url }}/en{{ current_path }}">
-<link rel="alternate" hreflang="x-default" href="{{ base_url }}{{ current_path }}">
+{%- unless request.page_type == 'password' -%}
+  {%- assign clean_path = canonical_url | remove_first: request.origin -%}
+  {%- assign clean_path = clean_path | remove_first: '/en' -%}
+  <link rel="alternate" hreflang="sv" href="{{ request.origin }}{{ clean_path }}">
+  <link rel="alternate" hreflang="en" href="{{ request.origin }}/en{{ clean_path }}">
+  <link rel="alternate" hreflang="x-default" href="{{ request.origin }}{{ clean_path }}">
+{%- endunless -%}
 {%- comment -%}sync{%- endcomment -%}
