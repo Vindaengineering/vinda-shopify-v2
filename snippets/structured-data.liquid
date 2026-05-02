@@ -27,8 +27,8 @@
     },
     "offers": {
       "@type": "Offer",
-      "priceCurrency": {{ cart.currency.iso_code | json }},
-      "price": {{ p.price | money_without_currency | strip_html | json }},
+      "priceCurrency": {{ localization.country.currency.iso_code | json }},
+      "price": {{ p.price_min | divided_by: 100.0 }},
       "availability": {%- if p.available -%}"https://schema.org/InStock"{%- else -%}"https://schema.org/OutOfStock"{%- endif -%},
       "url": {{ product_url | json }},
       "seller": {
