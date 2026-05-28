@@ -54,7 +54,7 @@
   font-family: var(--font-body);
   font-size: var(--text-meta);
   font-weight: var(--weight-medium);
-  color: var(--color-fg-muted);
+  color: var(--color-fg);
   text-decoration: none;
   transition: color var(--motion-fast) var(--motion-ease-out);
 }
