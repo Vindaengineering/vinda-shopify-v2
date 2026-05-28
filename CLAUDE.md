@@ -41,11 +41,11 @@ Use these CSS custom properties (defined in `assets/tokens.css`). Don't introduc
 --color-bg-card: #111;
 --color-bg-card-hi: #141414;
 --color-fg: #FFFFFF;
---color-fg-soft: #BBBBBB;
---color-fg-muted: #777;
---color-fg-mute2: #555;
---color-fg-mute3: #444;
---color-fg-mute4: #333;
+--color-fg-soft: #C8C8C8;
+--color-fg-muted: #999999;
+--color-fg-mute2: #777777;
+--color-fg-mute3: #666666;
+--color-fg-mute4: #555555;
 --color-border: #1A1A1A;
 --color-border-2: #222;
 --color-border-3: #2A2A2A;
