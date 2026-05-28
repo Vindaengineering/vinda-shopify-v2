@@ -18,13 +18,17 @@
               <p class="v-final-cta__price">{{ cp.price | money }}</p>
             {%- endif -%}
             <p class="v-final-cta__sub v-mono">{{ block.settings.sub_specs }}</p>
+            {%- assign product_url = block.settings.url | default: cp.url -%}
             {%- if cp != blank -%}
               {% render 'atc-form', product: cp, classes: 'v-btn-primary v-btn-primary--block', show_price: false %}
-            {%- endif -%}
-            {%- assign read_more_url = block.settings.url | default: cp.url -%}
-            {%- if read_more_url != blank -%}
-              <a href="{{ read_more_url }}" class="v-final-cta__read-more">
-                {{- 'home.final_cta.read_more' | t | default: 'Läs mer' -}}
+              {%- if product_url != blank -%}
+                <a href="{{ product_url }}" class="v-final-cta__read-more">
+                  {{- 'home.final_cta.read_more' | t | default: 'Läs mer' -}}
+                </a>
+              {%- endif -%}
+            {%- elsif product_url != blank -%}
+              <a href="{{ product_url }}" class="v-btn-primary v-btn-primary--block v-final-cta__view-btn">
+                {{- 'home.final_cta.view_product' | t | default: 'Se produkt' -}}
               </a>
             {%- endif -%}
           </article>
@@ -51,7 +55,7 @@
         { "type": "text", "id": "label", "label": "Label", "default": "Wall-Mount Reel" },
         { "type": "text", "id": "sub_specs", "label": "Sub specs", "default": "11 kW · Auto-retract · IP44" },
         { "type": "text", "id": "badge", "label": "Badge (optional)" },
-        { "type": "url", "id": "url", "label": "\"Läs mer\" link (defaults to product URL)" }
+        { "type": "url", "id": "url", "label": "Product link (fallback when no product set)" }
       ]
     }
   ],

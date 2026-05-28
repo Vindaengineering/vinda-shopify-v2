@@ -344,21 +344,21 @@
         "c1": {
           "type": "product_card",
           "settings": {
-            "product": "",
+            "product": "vinda-home",
             "label": "Vinda Home",
             "sub_specs": "11 kW · Auto-indragning · IP44",
             "badge": "Bästsäljare",
-            "url": ""
+            "url": "shopify://products/vinda-home"
           }
         },
         "c2": {
           "type": "product_card",
           "settings": {
-            "product": "",
+            "product": "vinda",
             "label": "Vinda Go",
             "sub_specs": "Upp till 10m · Får plats i frunken · CE-märkt",
             "badge": "",
-            "url": ""
+            "url": "shopify://products/vinda"
           }
         }
       },

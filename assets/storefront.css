@@ -711,6 +711,7 @@ body:not(.page-index) main { padding-top: var(--header-height); }
   margin-bottom: 8px;
 }
 .v-final-cta__card .v-atc-form { width: 100%; }
+.v-final-cta__view-btn { display: block; text-align: center; text-decoration: none; }
 
 .v-final-cta__read-more {
   display: block;

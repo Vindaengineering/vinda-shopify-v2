@@ -548,7 +548,8 @@
       "trust_label": "Trust"
     },
     "final_cta": {
-      "read_more": "Read more"
+      "read_more": "Read more",
+      "view_product": "View product"
     }
   },
   "header": {
