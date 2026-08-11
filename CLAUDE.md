@@ -4,7 +4,9 @@ Context for Claude Code when working in this repository.
 
 ## Project
 
-**Vinda v2** — Shopify storefront for an EV cable reel brand, separate from the live v1 store. Two products only: a **wall-mounted auto-retractable reel** and a **portable cable reel**. Markets: Sweden primary, also wider EU. Languages: Swedish (default) + English.
+**Vinda v2** — Shopify storefront for an EV cable reel brand. **This is the live production storefront.** v2 has fully replaced v1; v1 no longer exists. Two products only: a **wall-mounted auto-retractable reel** and a **portable cable reel**. Markets: Sweden primary, also wider EU. Languages: Swedish (default) + English.
+
+> ⚠️ **Pushing to `main` deploys to production.** This repo is wired to the **Active** theme (`vinda-shopify-v2/main`) through the Shopify GitHub integration. Every commit pushed to `main` goes live immediately — there is no staging step and no approval gate. There is real customer traffic. Always `git pull --rebase` first: Shopify writes merchant Theme Editor changes back as `Update from Shopify…` commits, and a stale local checkout will silently revert them.
 
 The visual language for v2 was mocked up in Anthropic Design and lives at [`/tmp/design-r03/vinda-storefront/`](/tmp/design-r03/vinda-storefront/) at the time of build. It is dark, dense, e-commerce-flat — a single-page conversion-focused layout. **Do not introduce the v1 instrument-panel aesthetic here**; v2 is a separate brand expression.
 
@@ -101,11 +103,16 @@ Use these CSS custom properties (defined in `assets/tokens.css`). Don't introduc
 
 ## Current status
 
+**Shipped and live.** All build waves are complete:
+
 - [x] Wave 1 — foundation (tokens, fonts, layout shell)
-- [ ] Wave 2 — header + footer
-- [ ] Wave 3 — homepage (8 sections)
-- [ ] Wave 4 — cart drawer + sticky cart bar
-- [ ] Wave 5 — PDPs + locales + a11y polish
+- [x] Wave 2 — header + footer
+- [x] Wave 3 — homepage sections (hero, trust-strip, features, product-feature, before-after, lifestyle-break, reviews, final-cta)
+- [x] Wave 4 — cart drawer + sticky cart bar
+- [x] Wave 5 — PDPs (`product.wall-reel`, `product.portable`) + locales + a11y polish
+- [x] Post-launch — content pages (`page.about`, `page.faq`, `page.shipping`, `page.installation`), photo gallery, structured data, Swedish translation sweep
+
+Work from here is maintenance and iteration on a live store, not greenfield build. Treat every change as a production change.
 
 ## Communication style
 
