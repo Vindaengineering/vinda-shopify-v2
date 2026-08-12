@@ -74,6 +74,7 @@
   },
   "accessibility": {
     "skip_to_text": "Skip to content",
+    "main_navigation": "Main navigation",
     "skip_to_product_info": "Skip to product information",
     "close": "Close",
     "unit_price_separator": "per",
@@ -93,6 +94,7 @@
   "blogs": {
     "article": {
       "blog": "Blog",
+      "by": "By",
       "read_more_title": "Read more: {{ title }}",
       "comments": {
         "one": "{{ count }} comment",
@@ -108,6 +110,10 @@
       "share": "Share this article",
       "success": "Your comment was posted successfully! Thank you!",
       "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated."
+    },
+    "index": {
+      "read_more": "Read more",
+      "empty": "No posts yet. Check back soon."
     }
   },
   "onboarding": {

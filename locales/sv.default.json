@@ -74,6 +74,7 @@
   },
   "accessibility": {
     "skip_to_text": "Gå vidare till innehåll",
+    "main_navigation": "Huvudnavigering",
     "close": "Stäng",
     "unit_price_separator": "per",
     "vendor": "Säljare:",
@@ -93,6 +94,7 @@
   "blogs": {
     "article": {
       "blog": "Blogg",
+      "by": "Av",
       "read_more_title": "Läs mer: {{ title }}",
       "comments": {
         "one": "{{ count }} kommentar",
@@ -108,6 +110,10 @@
       "share": "Dela denna artikel",
       "success": "Din kommentar har lagts upp! Tack!",
       "success_moderated": "Din kommentar har lagts upp. Vi kommer publicera den lite senare, eftersom att bloggen är modererad."
+    },
+    "index": {
+      "read_more": "Läs mer",
+      "empty": "Inga inlägg än. Kom tillbaka snart."
     }
   },
   "onboarding": {

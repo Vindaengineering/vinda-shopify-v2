@@ -15,7 +15,8 @@
       </p>
 
       <h1 class="v-hero__title" id="HeroHeading" data-reveal style="--reveal-i: 1;">
-        {{ section.settings.heading | default: 'Always ready.<br>Never tangled.' }}
+        {%- comment -%} richtext settings store <p>-wrapped HTML — strip it, headings only allow phrasing content {%- endcomment -%}
+        {{ section.settings.heading | replace: '</p><p>', '<br>' | remove: '<p>' | remove: '</p>' | default: 'Always ready.<br>Never tangled.' }}
       </h1>
 
       <div class="v-hero__rating" data-reveal style="--reveal-i: 2;">

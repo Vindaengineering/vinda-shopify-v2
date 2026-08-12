@@ -54,7 +54,8 @@
       <div class="v-pf__body" data-reveal style="--reveal-i: 1;">
         <p class="v-eyebrow">{{ section.settings.eyebrow }}</p>
         <{{ heading_tag }} class="v-display v-pf__heading" id="PF-{{ section.id }}-heading">
-          {{ section.settings.heading | default: p.title }}
+          {%- comment -%} richtext settings store <p>-wrapped HTML — strip it, headings only allow phrasing content {%- endcomment -%}
+          {{ section.settings.heading | replace: '</p><p>', '<br>' | remove: '<p>' | remove: '</p>' | default: p.title }}
         </{{ heading_tag }}>
 
         {%- if section.settings.show_rating -%}
