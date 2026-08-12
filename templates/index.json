@@ -40,7 +40,7 @@
         "product": "vinda-home",
         "eyebrow": "Väggmonterad · Automatisk indragning",
         "heading": "<p>Alltid redo.<br/>Aldrig trasslig.</p>",
-        "description": "Monteras på valfri yttervägg. Kabeln dras in automatiskt efter varje laddning — inga trassel, inget släp på marken, inget krångel.",
+        "description": "Monteras på valfri yttervägg. Kabeln dras in automatiskt efter varje laddning — inga trassel, inget släp på marken, inget krångel. Ansluts direkt till din befintliga laddbox.",
         "rating": "4.9",
         "review_count": 47,
         "price_meta": "inkl. moms",
@@ -147,13 +147,6 @@
     "wall-reel": {
       "type": "product-feature",
       "blocks": {
-        "spec_row_JrHcmJ": {
-          "type": "spec_row",
-          "settings": {
-            "label": "Output",
-            "value": "11 kW"
-          }
-        },
         "s1": {
           "type": "spec_row",
           "settings": {
@@ -184,7 +177,6 @@
         }
       },
       "block_order": [
-        "spec_row_JrHcmJ",
         "s1",
         "s2",
         "s3",
