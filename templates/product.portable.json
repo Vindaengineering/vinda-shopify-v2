@@ -192,7 +192,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/image-5.1.jpg",
-            "alt": "",
+            "alt": "Vinda Go kabel hantering för det moderna hemmet.",
             "caption": "DETALJ // KABEL"
           }
         },
@@ -200,23 +200,15 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/661b21610b21833cdeed29c3_image-22-p-1600_a2d11020-39ef-4a59-a667-343127af88b1.webp",
-            "alt": "",
+            "alt": "Modern skandinavisk design i Vinda Go.",
             "caption": "MILJÖ // RESAN"
-          }
-        },
-        "g4": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/661b21610b21833cdeed29c3_image-22-p-1600_a2d11020-39ef-4a59-a667-343127af88b1.webp",
-            "alt": "",
-            "caption": "DETALJ // RULLE"
           }
         },
         "g5": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/661b21d8ca5426d2790d63fc_image-31-p-1600_a1e377b0-bbd9-49bc-9a4e-cd23f565ff04.webp",
-            "alt": "",
+            "alt": "Vinda Go - kabelvindan som passar i alla bilar och hem.",
             "caption": "MILJÖ // LADDSTATION"
           }
         },
@@ -224,7 +216,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/462582832_1358915848409092_3309696846528476261_n.png",
-            "alt": "",
+            "alt": "Vinda Go - sparar dig plats i bakluckan och garaget.",
             "caption": "VINDA GO // NÄRBILD"
           }
         }
@@ -233,7 +225,6 @@
         "g1",
         "g2",
         "g3",
-        "g4",
         "g5",
         "g6"
       ],
