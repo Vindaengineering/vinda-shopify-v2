@@ -259,7 +259,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/vinda_hero_image.png",
-            "alt": "",
+            "alt": "Vinda Home - elbilägarens dröm.",
             "caption": "MILJÖ // UPPFART"
           }
         },
@@ -267,22 +267,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/vinda_home_26.jpg",
-            "alt": "",
+            "alt": "Vinda Home - Laddningskabelhantering för din elbil.",
             "caption": "DETALJ // KABEL"
-          }
-        },
-        "g5": {
-          "type": "image",
-          "settings": {
-            "alt": "",
-            "caption": "MILJÖ // LADDNING"
-          }
-        },
-        "g6": {
-          "type": "image",
-          "settings": {
-            "alt": "",
-            "caption": "INSTALLATION // STEG 3"
           }
         }
       },
@@ -290,9 +276,7 @@
         "g1",
         "g2",
         "g3",
-        "g4",
-        "g5",
-        "g6"
+        "g4"
       ],
       "settings": {
         "eyebrow": "GALLERI // VINDA HOME",
