@@ -147,13 +147,6 @@
     "wall-reel": {
       "type": "product-feature",
       "blocks": {
-        "spec_row_JrHcmJ": {
-          "type": "spec_row",
-          "settings": {
-            "label": "Output",
-            "value": "11 kW"
-          }
-        },
         "s1": {
           "type": "spec_row",
           "settings": {
@@ -184,7 +177,6 @@
         }
       },
       "block_order": [
-        "spec_row_JrHcmJ",
         "s1",
         "s2",
         "s3",
