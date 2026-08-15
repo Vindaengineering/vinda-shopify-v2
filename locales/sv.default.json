@@ -572,7 +572,9 @@
   },
   "sticky_bar": {
     "portable_label": "Portabel",
-    "wall_label": "Väggmonterad"
+    "wall_label": "Väggmonterad",
+    "title": "Vinda kabelvindor",
+    "sub": "IP44 · Auto-indrag · Typ 2"
   },
   "cart": {
     "title": "Varukorg",
@@ -582,6 +584,7 @@
     "total_incl_vat": "Totalt inkl. moms",
     "checkout": "Till kassan",
     "remove": "Ta bort",
+    "adding": "Lägger till …",
     "footnote": "Fri frakt · Säker betalning · 30 dagars öppet köp"
   },
   "page": {

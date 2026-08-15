@@ -14,6 +14,12 @@
       this.countEl = this.querySelector('[data-drawer-count]');
       this.lastFocus = null;
       this.moneyFormat = this.dataset.moneyFormat || '${{amount}}';
+      // Localized strings passed from Liquid — JS must never hardcode user-facing text.
+      this.t = {
+        remove: this.dataset.tRemove || 'Remove',
+        emptyTitle: this.dataset.tEmptyTitle || 'Your cart is empty.',
+        emptySub: this.dataset.tEmptySub || 'Add a product to get started.',
+      };
     }
 
     connectedCallback() {
@@ -107,8 +113,8 @@
       if (cart.item_count === 0) {
         this.itemsEl.innerHTML = `
           <div class="v-drawer__empty">
-            <p class="v-drawer__empty-title">Your cart is empty.</p>
-            <p class="v-drawer__empty-sub">Add a product to get started.</p>
+            <p class="v-drawer__empty-title">${escapeHtml(this.t.emptyTitle)}</p>
+            <p class="v-drawer__empty-sub">${escapeHtml(this.t.emptySub)}</p>
           </div>`;
         this.footerEl.classList.add('is-hidden');
         return;
@@ -129,7 +135,7 @@
               ${variant}
               <div class="v-drawer__item-row">
                 <span class="v-drawer__item-price" data-item-price>${formatMoney(item.final_line_price, this.moneyFormat)}</span>
-                <button type="button" class="v-drawer__item-remove" data-drawer-remove data-item-key="${item.key}">Remove</button>
+                <button type="button" class="v-drawer__item-remove" data-drawer-remove data-item-key="${item.key}">${escapeHtml(this.t.remove)}</button>
               </div>
             </div>
           </div>`;
@@ -155,7 +161,9 @@
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
     const original = btn ? btn.textContent : '';
-    if (btn) { btn.disabled = true; btn.textContent = 'Adding…'; }
+    const drawerEl = document.querySelector('cart-drawer');
+    const addingText = (drawerEl && drawerEl.dataset.tAdding) || 'Adding…';
+    if (btn) { btn.disabled = true; btn.textContent = addingText; }
     try {
       const res = await fetch('/cart/add.js', {
         method: 'POST',
@@ -200,14 +208,25 @@
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
-  // Minimal Shopify money formatter (handles {{amount}}, {{amount_no_decimals}},
-  // {{amount_with_comma_separator}}, {{amount_no_decimals_with_comma_separator}}).
+  // Shopify money formatter. Grouping/decimal separators follow the storefront
+  // locale via Intl so the JS-rendered price matches the server-rendered one
+  // ("4 995 kr" on sv, not "4,995 kr"). Handles every {{amount*}} token.
   function formatMoney(cents, format) {
-    const n = Number(cents) / 100;
-    return format
-      .replace(/\{\{\s*amount\s*\}\}/g, n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ','))
-      .replace(/\{\{\s*amount_no_decimals\s*\}\}/g, Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','))
-      .replace(/\{\{\s*amount_with_comma_separator\s*\}\}/g, n.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!,))/g, '.'))
-      .replace(/\{\{\s*amount_no_decimals_with_comma_separator\s*\}\}/g, Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'));
+    const locale = document.documentElement.lang || 'sv-SE';
+    return format.replace(/\{\{\s*(\w+)\s*\}\}/g, function (_, token) {
+      const n = Number(cents) / 100;
+      const decimals = token.indexOf('no_decimals') !== -1 ? 0 : 2;
+      let out;
+      try {
+        out = new Intl.NumberFormat(locale, {
+          minimumFractionDigits: decimals,
+          maximumFractionDigits: decimals,
+        }).format(n);
+      } catch (e) {
+        out = n.toFixed(decimals);
+      }
+      // Server-side Liquid renders a plain space as thousands separator.
+      return out.replace(/[  ]/g, ' ');
+    });
   }
 })();

@@ -1,14 +1,25 @@
 {%- liquid
-  assign wall = section.settings.wall_product
-  assign portable = section.settings.portable_product
+  # Fall back to the known product handles so the bar can never silently
+  # disappear when the section's product pickers are left unset.
+  assign wall = section.settings.wall_product | default: all_products['vinda-home']
+  assign portable = section.settings.portable_product | default: all_products['vinda']
+
+  assign bar_title = section.settings.title
+  if bar_title == blank
+    assign bar_title = 'sticky_bar.title' | t
+  endif
+  assign bar_sub = section.settings.sub
+  if bar_sub == blank
+    assign bar_sub = 'sticky_bar.sub' | t
+  endif
 -%}
 
 {%- if wall != blank or portable != blank -%}
   <aside class="v-sticky-bar" id="VStickyBar" data-sticky-bar aria-hidden="true">
     <div class="v-sticky-bar__inner">
       <div class="v-sticky-bar__copy">
-        <p class="v-sticky-bar__title">{{ section.settings.title | default: 'Vinda Cable Reels' }}</p>
-        <p class="v-sticky-bar__sub">{{ section.settings.sub | default: 'IP44 · AUTO-RETRACT · TYPE 2' }}</p>
+        <p class="v-sticky-bar__title">{{ bar_title }}</p>
+        <p class="v-sticky-bar__sub">{{ bar_sub }}</p>
       </div>
       <div class="v-sticky-bar__ctas">
         {%- if portable != blank -%}
@@ -38,8 +49,8 @@
   "settings": [
     { "type": "product", "id": "wall_product", "label": "Wall reel product" },
     { "type": "product", "id": "portable_product", "label": "Portable reel product" },
-    { "type": "text", "id": "title", "label": "Title", "default": "Vinda Cable Reels" },
-    { "type": "text", "id": "sub", "label": "Sub label", "default": "IP44 · AUTO-RETRACT · TYPE 2" }
+    { "type": "text", "id": "title", "label": "Title (leave empty to use translated default)" },
+    { "type": "text", "id": "sub", "label": "Sub label (leave empty to use translated default)" }
   ]
 }
 {% endschema %}

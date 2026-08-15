@@ -573,7 +573,9 @@
   },
   "sticky_bar": {
     "portable_label": "Portable",
-    "wall_label": "Wall-Mount"
+    "wall_label": "Wall-Mount",
+    "title": "Vinda Cable Reels",
+    "sub": "IP44 · Auto-retract · Type 2"
   },
   "cart": {
     "title": "Cart",
@@ -583,6 +585,7 @@
     "total_incl_vat": "Total incl. VAT",
     "checkout": "Checkout",
     "remove": "Remove",
+    "adding": "Adding…",
     "footnote": "Free shipping · Secure checkout · 30-day returns"
   },
   "page": {

@@ -11,6 +11,10 @@
   data-drawer
   aria-hidden="true"
   data-money-format="{{ shop.money_format | strip_html | escape }}"
+  data-t-remove="{{ 'cart.remove' | t | escape }}"
+  data-t-adding="{{ 'cart.adding' | t | escape }}"
+  data-t-empty-title="{{ 'cart.empty_title' | t | escape }}"
+  data-t-empty-sub="{{ 'cart.empty_sub' | t | escape }}"
 >
   <div class="v-drawer__backdrop" data-drawer-close></div>
 
