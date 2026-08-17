@@ -25,7 +25,7 @@
           "type": "menu_column",
           "settings": {
             "heading": "Navigation",
-            "menu": "footer-legal"
+            "menu": ""
           }
         }
       },
@@ -43,7 +43,7 @@
         "newsletter_success": "Tack — du är på listan.",
         "rights": "Alla rättigheter förbehållna.",
         "legal_menu": "",
-        "payment_icons": false
+        "payment_icons": true
       }
     }
   },
@@ -51,4 +51,3 @@
     "footer"
   ]
 }
-
