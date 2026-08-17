@@ -290,11 +290,11 @@
         "c1": {
           "type": "product_card",
           "settings": {
-            "product": "",
+            "product": "vinda-home",
             "label": "Väggmonterad vinda",
             "sub_specs": "11 kW · Auto-indragning · IP44",
             "badge": "Bästsäljare",
-            "url": "/products/vinda-home"
+            "url": ""
           }
         },
         "c2": {
