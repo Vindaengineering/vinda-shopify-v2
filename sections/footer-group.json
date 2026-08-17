@@ -25,13 +25,21 @@
           "type": "menu_column",
           "settings": {
             "heading": "Navigation",
-            "menu": "footer"
+            "menu": "footer-legal"
+          }
+        },
+        "menu_column_em4VCG": {
+          "type": "menu_column",
+          "settings": {
+            "heading": "Produkter",
+            "menu": "legal-strip"
           }
         }
       },
       "block_order": [
         "menu_column_zPEWrR",
-        "menu_column_jFyLrB"
+        "menu_column_jFyLrB",
+        "menu_column_em4VCG"
       ],
       "settings": {
         "tagline": "Auto-indragande kabelvindor för elbilsladdning. Byggda för skandinaviska hem.",
