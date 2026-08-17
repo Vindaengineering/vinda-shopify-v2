@@ -12,7 +12,11 @@
 {%- liquid
   assign p = product
   assign cls = classes | default: 'v-btn-primary v-btn-primary--block'
-  assign btn_label = label | default: 'products.product.add_to_cart' | t
+  # A passed-in label is already translated text — only translate the fallback key.
+  assign btn_label = label
+  if btn_label == blank
+    assign btn_label = 'products.product.add_to_cart' | t
+  endif
   if show_price == nil
     assign show_price = true
   endif
