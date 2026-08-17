@@ -198,10 +198,10 @@
       "sticky-cart-bar": {
         "type": "sticky-cart-bar",
         "settings": {
-          "wall_product": "",
-          "portable_product": "",
-          "title": "Vinda Cable Reels",
-          "sub": "IP44 · AUTO-RETRACT · TYPE 2"
+          "wall_product": "vinda-home",
+          "portable_product": "vinda",
+          "title": "",
+          "sub": ""
         }
       }
     },
