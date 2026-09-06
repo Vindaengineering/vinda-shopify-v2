@@ -51,7 +51,7 @@ Admin path: **Products → [product name] → Edit**
 **Description (HTML):**
 ```html
 <p>Väggmonterad och auto-indragande. Efter varje laddning rullas kabeln in av sig själv — inga trassel, ingen markkontakt, ingen daglig irritation.</p>
-<p>IP44-klassad för utomhusbruk året om. Trefasladdning upp till 11 kW. 8 meters Typ 2-kabel. Monteras på valfri yttervägg på 30 minuter.</p>
+<p>IP44-klassad för utomhusbruk året om. Trefasladdning upp till 11 kW. 8 meters Typ 2-kabel. Monteras på valfri yttervägg på under 15 minuter.</p>
 <ul>
   <li>Effekt: 11 kW (trefas, 16 A)</li>
   <li>Kabellängd: 8 m</li>

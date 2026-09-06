@@ -199,10 +199,10 @@
       "type": "installation-page",
       "settings": {
         "eyebrow": "Installation",
-        "heading": "Monterbar på 3 minuter.",
+        "heading": "Monterbar på under 15 minuter.",
         "lede": "Superenkel installation. Inga elektriker, inga avancerade verktyg.",
         "meta_1": "VERKTYG // BORRMASKIN",
-        "meta_2": "TID // CA 2 MIN",
+        "meta_2": "TID // UNDER 15 MIN",
         "meta_3": "SVÅRIGHETSGRAD // ENKEL",
         "image_1": "shopify://shop_images/Instruktion_1.1_ny.png",
         "title_1": "Välj plats",
