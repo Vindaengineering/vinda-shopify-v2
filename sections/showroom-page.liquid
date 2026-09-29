@@ -1,6 +1,5 @@
 {{ 'showroom.css' | asset_url | stylesheet_tag }}
 
-{%- comment -%} sync: re-upload 2026-09-29 {%- endcomment -%}
 {%- comment -%}
   Showroom page. One place, one promise: come and pull the cable yourself.
   Head → real photo → "Hitta hit" / "Öppettider" → what to do there → how to buy.
@@ -161,7 +160,7 @@
     { "type": "text", "id": "address_city", "label": "Postal code and city", "default": "168 73 Bromma" },
     { "type": "text", "id": "transit", "label": "Transit note", "default": "Tunnelbana till Abrahamsberg, gröna linjen. Butiken ligger vid stationen." },
     { "type": "text", "id": "parking", "label": "Parking note" },
-    { "type": "url", "id": "maps_url", "label": "Google Maps link", "default": "https://www.google.com/maps/search/?api=1&query=Drottningholmsv%C3%A4gen+340%2C+168+73+Bromma" },
+    { "type": "url", "id": "maps_url", "label": "Google Maps link" },
     { "type": "header", "content": "Opening hours" },
     { "type": "text", "id": "hours_day_1", "label": "Row 1 days", "default": "Måndag till torsdag" },
     { "type": "text", "id": "hours_time_1", "label": "Row 1 hours", "default": "09.00 till 18.00" },
