@@ -556,7 +556,8 @@
     "final_cta": {
       "read_more": "Read more",
       "view_product": "View product"
-    }
+    },
+    "showroom": { "label": "Showroom", "cta": "Visit the showroom", "maps": "Open in Google Maps", "address_label": "Address", "transit_label": "Metro", "hours_label": "Open" }
   },
   "header": {
     "about": "About",
@@ -622,6 +623,7 @@
         "heading": "Find your cable reel.",
         "button": "See products"
       }
-    }
+    },
+    "showroom": { "find_us": "Find us", "hours": "Opening hours", "maps": "Open in Google Maps", "call": "Call", "what_to_do": "What you can do there", "purchase_label": "How to buy", "cta_product": "See Vinda Home", "cta_contact": "Contact us" }
   }
 }

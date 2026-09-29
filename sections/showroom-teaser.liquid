@@ -1,0 +1,100 @@
+{%- comment -%}
+  Showroom teaser (homepage). Physical proof: the reel is mounted in a real
+  store where visitors can pull the cable and watch it retract. Asymmetric
+  split: statement + "coordinates" on the left, a real in-store photo on the
+  right. No image → single column, no placeholder art.
+{%- endcomment -%}
+
+{%- liquid
+  assign img = section.settings.image
+  assign page_url = section.settings.page_url | default: '/pages/showroom'
+-%}
+
+<section class="v-showroom{% if img == blank %} v-showroom--no-image{% endif %}" aria-labelledby="ShowroomHeading-{{ section.id }}">
+  <div class="v-container v-showroom__grid">
+
+    <div class="v-showroom__body" data-reveal>
+      <p class="v-showroom__label v-mono">{{ 'home.showroom.label' | t }}</p>
+
+      <h2 class="v-display v-showroom__heading" id="ShowroomHeading-{{ section.id }}">
+        {{ section.settings.heading | replace: '</p><p>', '<br>' | remove: '<p>' | remove: '</p>' }}
+      </h2>
+
+      {%- if section.settings.body != blank -%}
+        <p class="v-showroom__text">{{ section.settings.body }}</p>
+      {%- endif -%}
+
+      <dl class="v-showroom__coords">
+        {%- if section.settings.store_name != blank or section.settings.address != blank -%}
+          <div class="v-showroom__row">
+            <dt class="v-mono">{{ 'home.showroom.address_label' | t }}</dt>
+            <dd>
+              {%- if section.settings.store_name != blank -%}<span class="v-showroom__store">{{ section.settings.store_name }}</span>{%- endif -%}
+              {%- if section.settings.address != blank -%}<span>{{ section.settings.address }}</span>{%- endif -%}
+            </dd>
+          </div>
+        {%- endif -%}
+        {%- if section.settings.transit != blank -%}
+          <div class="v-showroom__row">
+            <dt class="v-mono">{{ 'home.showroom.transit_label' | t }}</dt>
+            <dd>{{ section.settings.transit }}</dd>
+          </div>
+        {%- endif -%}
+        {%- if section.settings.hours_summary != blank -%}
+          <div class="v-showroom__row">
+            <dt class="v-mono">{{ 'home.showroom.hours_label' | t }}</dt>
+            <dd>{{ section.settings.hours_summary }}</dd>
+          </div>
+        {%- endif -%}
+      </dl>
+
+      <div class="v-showroom__actions">
+        <a href="{{ page_url }}" class="v-btn-primary">{{ 'home.showroom.cta' | t }}</a>
+        {%- if section.settings.maps_url != blank -%}
+          <a href="{{ section.settings.maps_url }}" class="v-showroom__maps" target="_blank" rel="noopener">
+            {{ 'home.showroom.maps' | t }}
+            <span class="v-showroom__ext" aria-hidden="true">↗</span>
+            <span class="visually-hidden">{{ 'accessibility.link_messages.new_window' | t }}</span>
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- if img != blank -%}
+      <figure class="v-showroom__media" data-reveal style="--reveal-i: 1;">
+        {{ img | image_url: width: 1400 | image_tag:
+            alt: section.settings.image_alt,
+            class: 'v-showroom__img',
+            widths: '600,900,1200,1400',
+            sizes: '(min-width: 990px) 44vw, 100vw',
+            loading: 'lazy' }}
+        {%- if section.settings.image_caption != blank -%}
+          <figcaption class="v-showroom__caption v-mono">{{ section.settings.image_caption }}</figcaption>
+        {%- endif -%}
+      </figure>
+    {%- endif -%}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Showroom teaser",
+  "settings": [
+    { "type": "richtext", "id": "heading", "label": "Heading", "default": "<p>Känn på den<br>innan du köper.</p>" },
+    { "type": "textarea", "id": "body", "label": "Body", "default": "Vinda Home sitter monterad hos Elcykelpunkten i Abrahamsberg. Dra ut kabeln, släpp, och se den rulla in. Ingen bokning behövs." },
+    { "type": "header", "content": "Location" },
+    { "type": "text", "id": "store_name", "label": "Store name", "default": "Elcykelpunkten Bromma" },
+    { "type": "text", "id": "address", "label": "Address", "default": "Drottningholmsvägen 340, 168 73 Bromma" },
+    { "type": "text", "id": "transit", "label": "Transit note", "default": "Abrahamsberg, gröna linjen" },
+    { "type": "text", "id": "hours_summary", "label": "Hours summary", "default": "Vardagar 9 till 18, helger 10 till 16" },
+    { "type": "url", "id": "maps_url", "label": "Google Maps link", "default": "https://www.google.com/maps/search/?api=1&query=Drottningholmsv%C3%A4gen+340%2C+168+73+Bromma" },
+    { "type": "url", "id": "page_url", "label": "Showroom page" },
+    { "type": "header", "content": "Photo" },
+    { "type": "image_picker", "id": "image", "label": "Photo of the reel in the store" },
+    { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "Vinda Home monterad i butiken hos Elcykelpunkten i Abrahamsberg" },
+    { "type": "text", "id": "image_caption", "label": "Caption (mono)", "default": "ELCYKELPUNKTEN // ABRAHAMSBERG" }
+  ],
+  "presets": [{ "name": "Showroom teaser" }]
+}
+{% endschema %}

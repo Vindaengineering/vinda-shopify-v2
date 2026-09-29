@@ -555,7 +555,8 @@
     "final_cta": {
       "read_more": "Läs mer",
       "view_product": "Se produkt"
-    }
+    },
+    "showroom": { "label": "Showroom", "cta": "Besök showroomet", "maps": "Öppna i Google Maps", "address_label": "Adress", "transit_label": "T-bana", "hours_label": "Öppet" }
   },
   "header": {
     "about": "Om oss",
@@ -621,6 +622,7 @@
         "heading": "Hitta din kabelvinda.",
         "button": "Se produkterna"
       }
-    }
+    },
+    "showroom": { "find_us": "Hitta hit", "hours": "Öppettider", "maps": "Öppna i Google Maps", "call": "Ring", "what_to_do": "Det här kan du göra på plats", "purchase_label": "Så köper du", "cta_product": "Se Vinda Home", "cta_contact": "Kontakta oss" }
   }
 }

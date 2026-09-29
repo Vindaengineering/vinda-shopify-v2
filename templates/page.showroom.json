@@ -1,0 +1,47 @@
+{
+  "sections": {
+    "main": {
+      "type": "showroom-page",
+      "settings": {
+        "meta_1": "SHOWROOM // STOCKHOLM",
+        "meta_2": "ABRAHAMSBERG",
+        "meta_3": "INGEN BOKNING",
+        "heading": "<p>Känn på Vinda innan du köper.</p>",
+        "lede": "Vinda Home sitter monterad på väggen hos Elcykelpunkten i Abrahamsberg. Gå in, dra ut kabeln, släpp och se den rulla in av sig själv. Personalen visar gärna.",
+        "image_alt": "Vinda Home monterad på väggen i Elcykelpunktens butik i Abrahamsberg",
+        "image_caption": "",
+        "store_name": "Elcykelpunkten Bromma",
+        "address_line": "Drottningholmsvägen 340",
+        "address_city": "168 73 Bromma",
+        "transit": "Tunnelbana till Abrahamsberg, gröna linjen. Butiken ligger vid stationen.",
+        "parking": "",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Drottningholmsv%C3%A4gen+340%2C+168+73+Bromma",
+        "hours_day_1": "Måndag till torsdag",
+        "hours_time_1": "09.00 till 18.00",
+        "hours_day_2": "Fredag",
+        "hours_time_2": "09.00 till 17.00",
+        "hours_day_3": "Lördag",
+        "hours_time_3": "10.00 till 16.00",
+        "hours_day_4": "Söndag",
+        "hours_time_4": "11.00 till 16.00",
+        "hours_day_5": "",
+        "hours_time_5": "",
+        "hours_note": "Avvikande tider kring helgdagar, kolla med butiken.",
+        "store_phone": "08-35 72 47",
+        "store_email": "",
+        "step_title_1": "Dra ut och släpp",
+        "step_body_1": "Åtta meter kabel som rullar in av sig själv. Det är hela poängen, och det märks i handen.",
+        "step_title_2": "Se monteringen på riktigt",
+        "step_body_2": "Två skruvar i väggen och kabeln i laddboxens uttag. Titta på fästet, känn på höljet.",
+        "step_title_3": "Fråga personalen",
+        "step_body_3": "Elcykelpunkten lever på laddning och sladdar. De vet hur den funkar i vardagen.",
+        "step_title_4": "",
+        "step_body_4": "",
+        "purchase_note": "Du beställer som vanligt här på vinda.se. Fri frakt inom Sverige, 30 dagars öppet köp och 2 års garanti.",
+        "product_url": "shopify://products/vinda-home",
+        "contact_url": "shopify://pages/contact"
+      }
+    }
+  },
+  "order": ["main"]
+}

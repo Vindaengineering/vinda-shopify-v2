@@ -322,6 +322,21 @@
         "aggregate_count": 70
       }
     },
+    "showroom": {
+      "type": "showroom-teaser",
+      "settings": {
+        "heading": "<p>Känn på den<br>innan du köper.</p>",
+        "body": "Vinda Home sitter monterad hos Elcykelpunkten i Abrahamsberg. Dra ut kabeln, släpp, och se den rulla in. Ingen bokning behövs.",
+        "store_name": "Elcykelpunkten Bromma",
+        "address": "Drottningholmsvägen 340, 168 73 Bromma",
+        "transit": "Abrahamsberg, gröna linjen",
+        "hours_summary": "Vardagar 9 till 18, helger 10 till 16",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Drottningholmsv%C3%A4gen+340%2C+168+73+Bromma",
+        "page_url": "shopify://pages/showroom",
+        "image_alt": "Vinda Home monterad i butiken hos Elcykelpunkten i Abrahamsberg",
+        "image_caption": "ELCYKELPUNKTEN // ABRAHAMSBERG"
+      }
+    },
     "lifestyle-break": {
       "type": "lifestyle-break",
       "settings": {
@@ -372,6 +387,7 @@
     "portable-reel",
     "before_after_YQQLQm",
     "reviews",
+    "showroom",
     "lifestyle-break",
     "final-cta"
   ]

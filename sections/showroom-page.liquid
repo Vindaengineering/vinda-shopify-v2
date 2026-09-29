@@ -1,0 +1,194 @@
+{{ 'showroom.css' | asset_url | stylesheet_tag }}
+
+{%- comment -%}
+  Showroom page. One place, one promise: come and pull the cable yourself.
+  Head → real photo → "Hitta hit" / "Öppettider" → what to do there → how to buy.
+  All labels via locales; merchant facts (address, hours, copy) via settings.
+{%- endcomment -%}
+
+{%- liquid
+  assign s = section.settings
+  assign img = s.image
+-%}
+
+<section class="showroom" aria-labelledby="ShowroomPageHeading">
+  <div class="showroom__inner">
+
+    <header class="showroom__head" data-reveal>
+      {%- if s.meta_1 != blank or s.meta_2 != blank or s.meta_3 != blank -%}
+        <div class="showroom__meta">
+          {%- if s.meta_1 != blank -%}<span class="showroom__meta-item">{{ s.meta_1 }}</span>{%- endif -%}
+          {%- if s.meta_2 != blank -%}<span class="showroom__meta-item">{{ s.meta_2 }}</span>{%- endif -%}
+          {%- if s.meta_3 != blank -%}<span class="showroom__meta-item">{{ s.meta_3 }}</span>{%- endif -%}
+        </div>
+      {%- endif -%}
+      <h1 class="showroom__heading" id="ShowroomPageHeading">
+        {{ s.heading | replace: '</p><p>', '<br>' | remove: '<p>' | remove: '</p>' }}
+      </h1>
+      {%- if s.lede != blank -%}
+        <p class="showroom__lede">{{ s.lede }}</p>
+      {%- endif -%}
+    </header>
+
+    {%- if img != blank -%}
+      <figure class="showroom__photo" data-reveal>
+        {{ img | image_url: width: 2000 | image_tag:
+            alt: s.image_alt,
+            class: 'showroom__photo-img',
+            widths: '800,1200,1600,2000',
+            sizes: '(min-width: 1200px) 1200px, 100vw',
+            loading: 'eager',
+            fetchpriority: 'high' }}
+        {%- if s.image_caption != blank -%}
+          <figcaption class="showroom__photo-caption">{{ s.image_caption }}</figcaption>
+        {%- endif -%}
+      </figure>
+    {%- endif -%}
+
+    <div class="showroom__facts">
+
+      <div class="showroom__block" data-reveal>
+        <h2 class="showroom__block-title">{{ 'pages.showroom.find_us' | t }}</h2>
+        <address class="showroom__address">
+          {%- if s.store_name != blank -%}<span class="showroom__store">{{ s.store_name }}</span>{%- endif -%}
+          {%- if s.address_line != blank -%}<span>{{ s.address_line }}</span>{%- endif -%}
+          {%- if s.address_city != blank -%}<span>{{ s.address_city }}</span>{%- endif -%}
+        </address>
+        {%- if s.transit != blank -%}
+          <p class="showroom__note">{{ s.transit }}</p>
+        {%- endif -%}
+        {%- if s.parking != blank -%}
+          <p class="showroom__note">{{ s.parking }}</p>
+        {%- endif -%}
+        {%- if s.maps_url != blank -%}
+          <a href="{{ s.maps_url }}" class="showroom__link" target="_blank" rel="noopener">
+            {{ 'pages.showroom.maps' | t }}
+            <span aria-hidden="true">↗</span>
+            <span class="visually-hidden">{{ 'accessibility.link_messages.new_window' | t }}</span>
+          </a>
+        {%- endif -%}
+      </div>
+
+      <div class="showroom__block" data-reveal style="--reveal-i: 1;">
+        <h2 class="showroom__block-title">{{ 'pages.showroom.hours' | t }}</h2>
+        <dl class="showroom__hours">
+          {%- for i in (1..5) -%}
+            {%- assign d_key = 'hours_day_' | append: i -%}
+            {%- assign t_key = 'hours_time_' | append: i -%}
+            {%- assign day = s[d_key] -%}
+            {%- assign time = s[t_key] -%}
+            {%- if day != blank and time != blank -%}
+              <div class="showroom__hours-row">
+                <dt>{{ day }}</dt>
+                <dd>{{ time }}</dd>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </dl>
+        {%- if s.hours_note != blank -%}
+          <p class="showroom__note">{{ s.hours_note }}</p>
+        {%- endif -%}
+        {%- if s.store_phone != blank or s.store_email != blank -%}
+          <div class="showroom__contact">
+            {%- if s.store_phone != blank -%}
+              {%- assign tel = s.store_phone | remove: ' ' | remove: '-' -%}
+              <a href="tel:{{ tel }}" class="showroom__link">{{ 'pages.showroom.call' | t }} {{ s.store_phone }}</a>
+            {%- endif -%}
+            {%- if s.store_email != blank -%}
+              <a href="mailto:{{ s.store_email }}" class="showroom__link">{{ s.store_email }}</a>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+    </div>
+
+    <div class="showroom__do" data-reveal>
+      <h2 class="showroom__block-title">{{ 'pages.showroom.what_to_do' | t }}</h2>
+      <ol class="showroom__steps">
+        {%- for i in (1..4) -%}
+          {%- assign st_key = 'step_title_' | append: i -%}
+          {%- assign sb_key = 'step_body_' | append: i -%}
+          {%- assign st = s[st_key] -%}
+          {%- assign sb = s[sb_key] -%}
+          {%- if st != blank -%}
+            <li class="showroom__step">
+              <span class="showroom__step-num" aria-hidden="true">{{ i }}</span>
+              <div class="showroom__step-body">
+                <p class="showroom__step-title">{{ st }}</p>
+                {%- if sb != blank -%}<p class="showroom__step-text">{{ sb }}</p>{%- endif -%}
+              </div>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ol>
+    </div>
+
+    <div class="showroom__buy" data-reveal>
+      <div class="showroom__buy-text">
+        <p class="showroom__buy-label">{{ 'pages.showroom.purchase_label' | t }}</p>
+        {%- if s.purchase_note != blank -%}
+          <p class="showroom__buy-note">{{ s.purchase_note }}</p>
+        {%- endif -%}
+      </div>
+      <div class="showroom__buy-actions">
+        <a href="{{ s.product_url | default: '/products/vinda-home' }}" class="v-btn-primary">{{ 'pages.showroom.cta_product' | t }}</a>
+        <a href="{{ s.contact_url | default: '/pages/contact' }}" class="v-btn-outline">{{ 'pages.showroom.cta_contact' | t }}</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Showroom page",
+  "settings": [
+    { "type": "header", "content": "Head" },
+    { "type": "text", "id": "meta_1", "label": "Meta 1 (mono)", "default": "SHOWROOM // STOCKHOLM" },
+    { "type": "text", "id": "meta_2", "label": "Meta 2 (mono)", "default": "ABRAHAMSBERG" },
+    { "type": "text", "id": "meta_3", "label": "Meta 3 (mono)", "default": "INGEN BOKNING" },
+    { "type": "richtext", "id": "heading", "label": "Heading", "default": "<p>Känn på Vinda innan du köper.</p>" },
+    { "type": "textarea", "id": "lede", "label": "Lede", "default": "Vinda Home sitter monterad på väggen hos Elcykelpunkten i Abrahamsberg. Gå in, dra ut kabeln, släpp och se den rulla in av sig själv. Personalen visar gärna." },
+    { "type": "header", "content": "Photo" },
+    { "type": "image_picker", "id": "image", "label": "Photo of the reel in the store" },
+    { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "Vinda Home monterad på väggen i Elcykelpunktens butik i Abrahamsberg" },
+    { "type": "text", "id": "image_caption", "label": "Caption" },
+    { "type": "header", "content": "Find us" },
+    { "type": "text", "id": "store_name", "label": "Store name", "default": "Elcykelpunkten Bromma" },
+    { "type": "text", "id": "address_line", "label": "Street address", "default": "Drottningholmsvägen 340" },
+    { "type": "text", "id": "address_city", "label": "Postal code and city", "default": "168 73 Bromma" },
+    { "type": "text", "id": "transit", "label": "Transit note", "default": "Tunnelbana till Abrahamsberg, gröna linjen. Butiken ligger vid stationen." },
+    { "type": "text", "id": "parking", "label": "Parking note" },
+    { "type": "url", "id": "maps_url", "label": "Google Maps link", "default": "https://www.google.com/maps/search/?api=1&query=Drottningholmsv%C3%A4gen+340%2C+168+73+Bromma" },
+    { "type": "header", "content": "Opening hours" },
+    { "type": "text", "id": "hours_day_1", "label": "Row 1 days", "default": "Måndag till torsdag" },
+    { "type": "text", "id": "hours_time_1", "label": "Row 1 hours", "default": "09.00 till 18.00" },
+    { "type": "text", "id": "hours_day_2", "label": "Row 2 days", "default": "Fredag" },
+    { "type": "text", "id": "hours_time_2", "label": "Row 2 hours", "default": "09.00 till 17.00" },
+    { "type": "text", "id": "hours_day_3", "label": "Row 3 days", "default": "Lördag" },
+    { "type": "text", "id": "hours_time_3", "label": "Row 3 hours", "default": "10.00 till 16.00" },
+    { "type": "text", "id": "hours_day_4", "label": "Row 4 days", "default": "Söndag" },
+    { "type": "text", "id": "hours_time_4", "label": "Row 4 hours", "default": "11.00 till 16.00" },
+    { "type": "text", "id": "hours_day_5", "label": "Row 5 days" },
+    { "type": "text", "id": "hours_time_5", "label": "Row 5 hours" },
+    { "type": "text", "id": "hours_note", "label": "Hours note", "default": "Avvikande tider kring helgdagar, kolla med butiken." },
+    { "type": "text", "id": "store_phone", "label": "Store phone", "default": "08-35 72 47" },
+    { "type": "text", "id": "store_email", "label": "Store email" },
+    { "type": "header", "content": "What you can do there" },
+    { "type": "text", "id": "step_title_1", "label": "Item 1 title", "default": "Dra ut och släpp" },
+    { "type": "text", "id": "step_body_1", "label": "Item 1 text", "default": "Åtta meter kabel som rullar in av sig själv. Det är hela poängen, och det märks i handen." },
+    { "type": "text", "id": "step_title_2", "label": "Item 2 title", "default": "Se monteringen på riktigt" },
+    { "type": "text", "id": "step_body_2", "label": "Item 2 text", "default": "Två skruvar i väggen och kabeln i laddboxens uttag. Titta på fästet, känn på höljet." },
+    { "type": "text", "id": "step_title_3", "label": "Item 3 title", "default": "Fråga personalen" },
+    { "type": "text", "id": "step_body_3", "label": "Item 3 text", "default": "Elcykelpunkten lever på laddning och sladdar. De vet hur den funkar i vardagen." },
+    { "type": "text", "id": "step_title_4", "label": "Item 4 title" },
+    { "type": "text", "id": "step_body_4", "label": "Item 4 text" },
+    { "type": "header", "content": "How to buy" },
+    { "type": "textarea", "id": "purchase_note", "label": "Purchase note", "default": "Du beställer som vanligt här på vinda.se. Fri frakt inom Sverige, 30 dagars öppet köp och 2 års garanti." },
+    { "type": "url", "id": "product_url", "label": "Product link" },
+    { "type": "url", "id": "contact_url", "label": "Contact link" }
+  ],
+  "presets": [{ "name": "Showroom page" }]
+}
+{% endschema %}
