@@ -8,9 +8,19 @@
 {%- liquid
   assign img = section.settings.image
   assign page_url = section.settings.page_url | default: '/pages/showroom'
+  assign map_src = section.settings.map_embed_url | strip
+  unless map_src contains 'https://www.google.com/maps/embed'
+    assign map_src = ''
+  endunless
+  assign has_media = false
+  if img != blank or map_src != blank
+    assign has_media = true
+  endif
 -%}
 
-<section class="v-showroom{% if img == blank %} v-showroom--no-image{% endif %}" aria-labelledby="ShowroomHeading-{{ section.id }}">
+{%- if map_src != blank -%}<script src="{{ 'map-embed.js' | asset_url }}" defer></script>{%- endif -%}
+
+<section class="v-showroom{% unless has_media %} v-showroom--no-image{% endunless %}" aria-labelledby="ShowroomHeading-{{ section.id }}">
   <div class="v-container v-showroom__grid">
 
     <div class="v-showroom__body" data-reveal>
@@ -60,18 +70,36 @@
       </div>
     </div>
 
-    {%- if img != blank -%}
-      <figure class="v-showroom__media" data-reveal style="--reveal-i: 1;">
-        {{ img | image_url: width: 1400 | image_tag:
-            alt: section.settings.image_alt,
-            class: 'v-showroom__img',
-            widths: '600,900,1200,1400',
-            sizes: '(min-width: 990px) 44vw, 100vw',
-            loading: 'lazy' }}
-        {%- if section.settings.image_caption != blank -%}
-          <figcaption class="v-showroom__caption v-mono">{{ section.settings.image_caption }}</figcaption>
+    {%- if has_media -%}
+      <div class="v-showroom__media" data-reveal style="--reveal-i: 1;">
+        {%- if img != blank -%}
+          <figure class="v-showroom__figure">
+            {{ img | image_url: width: 1400 | image_tag:
+                alt: section.settings.image_alt,
+                class: 'v-showroom__img',
+                widths: '600,900,1200,1400',
+                sizes: '(min-width: 990px) 44vw, 100vw',
+                loading: 'lazy' }}
+            {%- if section.settings.image_caption != blank -%}
+              <figcaption class="v-showroom__caption v-mono">{{ section.settings.image_caption }}</figcaption>
+            {%- endif -%}
+          </figure>
         {%- endif -%}
-      </figure>
+
+        {%- if map_src != blank -%}
+          <div class="v-map{% if img != blank %} v-map--secondary{% endif %}" data-map-embed data-map-src="{{ map_src | escape }}" data-map-title="{{ 'home.showroom.map_title' | t | escape }}">
+            <div class="v-map__placeholder" data-map-placeholder>
+              <p class="v-map__label v-mono">{{ 'home.showroom.map_label' | t }}</p>
+              <p class="v-map__address">
+                {%- if section.settings.store_name != blank -%}<strong>{{ section.settings.store_name }}</strong><br>{%- endif -%}
+                {{ section.settings.address }}
+              </p>
+              <button type="button" class="v-btn-outline v-map__btn" data-map-load>{{ 'home.showroom.map_show' | t }}</button>
+              <p class="v-map__note">{{ 'home.showroom.map_note' | t }}</p>
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
     {%- endif -%}
 
   </div>
@@ -90,6 +118,7 @@
     { "type": "text", "id": "hours_summary", "label": "Hours summary", "default": "Vardagar 9 till 18, helger 10 till 16" },
     { "type": "url", "id": "maps_url", "label": "Google Maps link" },
     { "type": "url", "id": "page_url", "label": "Showroom page" },
+    { "type": "textarea", "id": "map_embed_url", "label": "Google Maps embed URL (the iframe src, loads on click)" },
     { "type": "header", "content": "Photo" },
     { "type": "image_picker", "id": "image", "label": "Photo of the reel in the store" },
     { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "Vinda Home monterad i butiken hos Elcykelpunkten i Abrahamsberg" },

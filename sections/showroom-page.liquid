@@ -9,7 +9,13 @@
 {%- liquid
   assign s = section.settings
   assign img = s.image
+  assign map_src = s.map_embed_url | strip
+  unless map_src contains 'https://www.google.com/maps/embed'
+    assign map_src = ''
+  endunless
 -%}
+
+{%- if map_src != blank -%}<script src="{{ 'map-embed.js' | asset_url }}" defer></script>{%- endif -%}
 
 <section class="showroom" aria-labelledby="ShowroomPageHeading">
   <div class="showroom__inner">
@@ -101,6 +107,20 @@
         {%- endif -%}
       </div>
 
+      {%- if map_src != blank -%}
+        <div class="showroom__map v-map v-map--wide" data-reveal style="--reveal-i: 2;" data-map-embed data-map-src="{{ map_src | escape }}" data-map-title="{{ 'home.showroom.map_title' | t | escape }}">
+          <div class="v-map__placeholder" data-map-placeholder>
+            <p class="v-map__label v-mono">{{ 'home.showroom.map_label' | t }}</p>
+            <p class="v-map__address">
+              {%- if s.store_name != blank -%}<strong>{{ s.store_name }}</strong><br>{%- endif -%}
+              {{ s.address_line }}{% if s.address_line != blank and s.address_city != blank %}, {% endif %}{{ s.address_city }}
+            </p>
+            <button type="button" class="v-btn-outline v-map__btn" data-map-load>{{ 'home.showroom.map_show' | t }}</button>
+            <p class="v-map__note">{{ 'home.showroom.map_note' | t }}</p>
+          </div>
+        </div>
+      {%- endif -%}
+
     </div>
 
     <div class="showroom__do" data-reveal>
@@ -161,6 +181,7 @@
     { "type": "text", "id": "transit", "label": "Transit note", "default": "Tunnelbana till Abrahamsberg, gröna linjen. Butiken ligger vid stationen." },
     { "type": "text", "id": "parking", "label": "Parking note" },
     { "type": "url", "id": "maps_url", "label": "Google Maps link" },
+    { "type": "textarea", "id": "map_embed_url", "label": "Google Maps embed URL (the iframe src, loads on click)" },
     { "type": "header", "content": "Opening hours" },
     { "type": "text", "id": "hours_day_1", "label": "Row 1 days", "default": "Måndag till torsdag" },
     { "type": "text", "id": "hours_time_1", "label": "Row 1 hours", "default": "09.00 till 18.00" },

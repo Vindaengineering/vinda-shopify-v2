@@ -16,6 +16,7 @@
         "transit": "Tunnelbana till Abrahamsberg, gröna linjen. Butiken ligger vid stationen.",
         "parking": "",
         "maps_url": "https://www.google.com/maps/search/?api=1&query=Drottningholmsv%C3%A4gen+340%2C+168+73+Bromma",
+        "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d260820.15712355566!2d18.000531039752506!3d59.288575917316976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f760158121659%3A0x6c4f1f29cddf270c!2sDrottningholmsv%C3%A4gen%20340%2C%20168%2073%20Bromma!5e0!3m2!1ssv!2sse!4v1790814291152!5m2!1ssv!2sse",
         "hours_day_1": "Måndag till torsdag",
         "hours_time_1": "09.00 till 18.00",
         "hours_day_2": "Fredag",

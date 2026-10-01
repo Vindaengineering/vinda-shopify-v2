@@ -557,7 +557,7 @@
       "read_more": "Read more",
       "view_product": "View product"
     },
-    "showroom": { "label": "Showroom", "cta": "Visit the showroom", "maps": "Open in Google Maps", "address_label": "Address", "transit_label": "Metro", "hours_label": "Open" }
+    "showroom": { "label": "Showroom", "cta": "Visit the showroom", "maps": "Open in Google Maps", "address_label": "Address", "transit_label": "Metro", "hours_label": "Open", "map_label": "Map", "map_title": "Map to the showroom", "map_show": "Show map", "map_note": "The map is loaded from Google Maps only when you click." }
   },
   "header": {
     "about": "About",

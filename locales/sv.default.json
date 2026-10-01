@@ -556,7 +556,7 @@
       "read_more": "Läs mer",
       "view_product": "Se produkt"
     },
-    "showroom": { "label": "Showroom", "cta": "Besök showroomet", "maps": "Öppna i Google Maps", "address_label": "Adress", "transit_label": "T-bana", "hours_label": "Öppet" }
+    "showroom": { "label": "Showroom", "cta": "Besök showroomet", "maps": "Öppna i Google Maps", "address_label": "Adress", "transit_label": "T-bana", "hours_label": "Öppet", "map_label": "Karta", "map_title": "Karta till showroomet", "map_show": "Visa karta", "map_note": "Kartan laddas från Google Maps först när du klickar." }
   },
   "header": {
     "about": "Om oss",

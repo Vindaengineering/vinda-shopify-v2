@@ -1478,6 +1478,99 @@ body:not(.page-index) main { padding-top: var(--header-height); }
   color: var(--color-fg-mute3);
 }
 
+.v-showroom__figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Click-to-load map panel. The Google iframe is created by map-embed.js
+ * only after the visitor presses the button, so no third-party request
+ * (or cookie) fires on page load. Placeholder: tokenised grid "map". */
+.v-map {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--color-border-2);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-card);
+  overflow: hidden;
+}
+.v-map--secondary { aspect-ratio: 16 / 10; }
+.v-map--wide { aspect-ratio: 16 / 9; }
+@media (max-width: 989px) { .v-map { aspect-ratio: 4 / 3; } }
+@media (max-width: 749px) { .v-map, .v-map--wide { aspect-ratio: 4 / 3; } }
+.v-map__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  background-image:
+    radial-gradient(circle at 62% 42%, rgba(57, 230, 20, 0.14), transparent 38%),
+    repeating-linear-gradient(0deg, transparent 0 47px, var(--color-border) 47px 48px),
+    repeating-linear-gradient(90deg, transparent 0 47px, var(--color-border) 47px 48px);
+}
+.v-map__placeholder::after {
+  content: "";
+  position: absolute;
+  left: 62%;
+  top: 42%;
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 6px rgba(57, 230, 20, 0.18);
+}
+.v-map__placeholder[hidden] { display: none; }
+.v-map__label {
+  font-size: var(--text-mono);
+  color: var(--color-fg-mute3);
+  margin: 0;
+}
+.v-map__address {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.5;
+  color: var(--color-fg-soft);
+  margin: 0;
+}
+.v-map__address strong {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: var(--weight-semi);
+  color: var(--color-fg);
+  margin-bottom: 2px;
+}
+.v-map__btn {
+  align-self: flex-start;
+  min-height: 44px;
+  color: var(--color-fg);
+  border-color: var(--color-border-4);
+  background: var(--color-bg);
+}
+.v-map__btn:hover { border-color: var(--color-accent); }
+.v-map__btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+.v-map__note {
+  font-family: var(--font-body);
+  font-size: var(--text-meta);
+  line-height: 1.5;
+  color: var(--color-fg-mute3);
+  margin: 0;
+}
+.v-map__frame {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 /* Screen-reader-only utility (theme does not load Dawn's base.css) */
 .visually-hidden {
   position: absolute !important;
