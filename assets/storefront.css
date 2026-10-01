@@ -1488,3 +1488,53 @@ body:not(.page-index) main { padding-top: var(--header-height); }
   white-space: nowrap;
   border: 0;
 }
+
+
+/* --- Value stack (PDP) ----------------------------------------
+ * What is in the box next to an honest hook comparison. */
+.v-vs { background: var(--color-bg); border-top: 1px solid var(--color-border); }
+.v-vs__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: var(--space-12);
+  align-items: start;
+  padding-block: var(--space-12);
+}
+@media (max-width: 989px) {
+  .v-vs__grid { grid-template-columns: 1fr; gap: var(--space-8); padding-block: var(--space-10); }
+}
+.v-vs__label { font-size: var(--text-mono); color: var(--color-fg-mute3); margin: 0 0 var(--space-4); }
+.v-vs__heading { font-size: var(--text-h2-sm); margin: 0 0 var(--space-6); max-width: 18ch; }
+.v-vs__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.v-vs__item {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: var(--space-4);
+  padding: 14px 0;
+  border-top: 1px solid var(--color-border-2);
+}
+.v-vs__item:last-child { border-bottom: 1px solid var(--color-border-2); }
+.v-vs__check { width: 20px; height: 20px; margin-top: 1px; color: var(--color-accent); }
+.v-vs__check svg { width: 100%; height: 100%; display: block; }
+.v-vs__item-body { display: flex; flex-direction: column; gap: 2px; }
+.v-vs__item-text { font-family: var(--font-body); font-size: var(--text-body-lg); font-weight: var(--weight-medium); color: var(--color-fg); line-height: 1.4; }
+.v-vs__item-note { font-family: var(--font-body); font-size: var(--text-body-sm); color: var(--color-fg-mute3); line-height: 1.5; }
+.v-vs__compare {
+  padding: var(--space-7);
+  border: 1px solid var(--color-border-2);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.v-vs__compare .v-vs__label { margin: 0; }
+.v-vs__compare-text { font-family: var(--font-body); font-size: var(--text-body-lg); line-height: 1.65; color: var(--color-fg-soft); margin: 0; max-width: 40ch; }
+.v-vs__link {
+  display: inline-flex; align-items: center; gap: var(--space-2); min-height: 44px; align-self: flex-start;
+  font-family: var(--font-body); font-size: var(--text-body); font-weight: var(--weight-medium);
+  color: var(--color-fg); text-decoration: underline; text-decoration-color: var(--color-border-4); text-underline-offset: 4px;
+  transition: text-decoration-color var(--motion-fast) var(--motion-ease-out);
+}
+.v-vs__link:hover { text-decoration-color: var(--color-accent); }
+.v-vs__link:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; border-radius: var(--radius-xs); }

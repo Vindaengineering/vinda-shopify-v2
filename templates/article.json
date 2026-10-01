@@ -9,7 +9,16 @@
  */
 {
   "sections": {
-    "main": { "type": "main-article-vinda", "settings": {} }
+    "main": { "type": "main-article-vinda", "settings": {} },
+    "final-cta": {
+      "type": "final-cta",
+      "blocks": {
+        "c1": { "type": "product_card", "settings": { "product": "vinda-home", "label": "Vinda Home", "sub_specs": "Väggmonterad · Auto-indragning · 8 m", "badge": "Bästsäljare" } },
+        "c2": { "type": "product_card", "settings": { "product": "vinda", "label": "Vinda Go", "sub_specs": "Portabel · Upp till 10 m · Typ 2" } }
+      },
+      "block_order": ["c1", "c2"],
+      "settings": { "eyebrow": "Redo att slippa trasslet?", "heading": "Välj din vinda." }
+    }
   },
-  "order": ["main"]
+  "order": ["main", "final-cta"]
 }

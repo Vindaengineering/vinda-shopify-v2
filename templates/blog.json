@@ -9,7 +9,7 @@
  */
 {
   "sections": {
-    "main": { "type": "main-blog-vinda", "settings": { "posts_per_page": 9 } }
+    "main": { "type": "main-blog-vinda", "settings": { "posts_per_page": 9, "eyebrow": "Guider", "heading": "Guider för laddkabeln", "lede": "Förvaring, montering och vardag med elbil. Skrivet av oss som bygger vindan." } }
   },
   "order": ["main"]
 }

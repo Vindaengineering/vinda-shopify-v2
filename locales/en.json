@@ -578,6 +578,9 @@
     "title": "Vinda Cable Reels",
     "sub": "IP44 · Auto-retract · Type 2"
   },
+  "product": {
+    "value_stack": { "label": "What is included", "compare_label": "Compared with a cable hook" }
+  },
   "cart": {
     "title": "Cart",
     "close": "Close cart",

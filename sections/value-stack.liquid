@@ -1,0 +1,87 @@
+{%- comment -%}
+  Value stack (PDP). Answers "why 4 995 kr when a hook costs 99 kr":
+  what is in the box (incl. the 8 m 11 kW cable that would cost 1 500-2 500 kr
+  on its own) next to an honest hook comparison. No per-day price arithmetic.
+{%- endcomment -%}
+
+{%- liquid
+  assign s = section.settings
+  assign compat_url = s.compat_url
+-%}
+
+<section class="v-vs" aria-labelledby="ValueStackHeading-{{ section.id }}">
+  <div class="v-container v-vs__grid">
+
+    <div class="v-vs__included" data-reveal>
+      <p class="v-vs__label v-mono">{{ 'product.value_stack.label' | t }}</p>
+      <h2 class="v-display v-vs__heading" id="ValueStackHeading-{{ section.id }}">
+        {{ s.heading | replace: '</p><p>', '<br>' | remove: '<p>' | remove: '</p>' }}
+      </h2>
+      <ul class="v-vs__list" role="list">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'item' and block.settings.text != blank -%}
+            <li class="v-vs__item" {{ block.shopify_attributes }}>
+              <span class="v-vs__check" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span class="v-vs__item-body">
+                <span class="v-vs__item-text">{{ block.settings.text }}</span>
+                {%- if block.settings.note != blank -%}
+                  <span class="v-vs__item-note">{{ block.settings.note }}</span>
+                {%- endif -%}
+              </span>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+
+    {%- if s.compare_text != blank -%}
+      <aside class="v-vs__compare" data-reveal style="--reveal-i: 1;">
+        <p class="v-vs__label v-mono">{{ 'product.value_stack.compare_label' | t }}</p>
+        <p class="v-vs__compare-text">{{ s.compare_text }}</p>
+        {%- if compat_url != blank and s.compat_label != blank -%}
+          <a href="{{ compat_url }}" class="v-vs__link">
+            {{ s.compat_label }}
+            <span aria-hidden="true">→</span>
+          </a>
+        {%- endif -%}
+      </aside>
+    {%- endif -%}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Value stack",
+  "settings": [
+    { "type": "richtext", "id": "heading", "label": "Heading", "default": "<p>Det här ingår i priset.</p>" },
+    { "type": "textarea", "id": "compare_text", "label": "Comparison text", "default": "En kabelkrok för hundralappen håller kabeln borta från marken. Men du rullar fortfarande upp åtta meter lerig kabel för hand, varje kväll. Vinda Home gör det själv, i över 10 000 cykler." },
+    { "type": "text", "id": "compat_label", "label": "Link label", "default": "Passar den din laddbox?" },
+    { "type": "url", "id": "compat_url", "label": "Link URL" }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Included item",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Item", "default": "Vinda Home-vindan" },
+        { "type": "text", "id": "note", "label": "Note (optional)" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Value stack",
+      "blocks": [
+        { "type": "item", "settings": { "text": "Vinda Home-vindan", "note": "Fjädermekanism testad i över 10 000 cykler" } },
+        { "type": "item", "settings": { "text": "8 m Typ 2-laddkabel, 11 kW", "note": "Motsvarar en separat laddkabel för 1 500 till 2 500 kr" } },
+        { "type": "item", "settings": { "text": "Väggfäste, skruv och plugg" } },
+        { "type": "item", "settings": { "text": "Borrmall" } },
+        { "type": "item", "settings": { "text": "2 års garanti och 30 dagars öppet köp" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

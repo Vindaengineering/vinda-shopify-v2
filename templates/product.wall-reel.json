@@ -82,6 +82,23 @@
         "product_url": ""
       }
     },
+    "pdp-value-stack": {
+      "type": "value-stack",
+      "blocks": {
+        "i1": { "type": "item", "settings": { "text": "Vinda Home-vindan", "note": "Fjädermekanism testad i över 10 000 cykler" } },
+        "i2": { "type": "item", "settings": { "text": "8 m Typ 2-laddkabel, 11 kW", "note": "Motsvarar en separat laddkabel för 1 500 till 2 500 kr" } },
+        "i3": { "type": "item", "settings": { "text": "Väggfäste, skruv och plugg", "note": "" } },
+        "i4": { "type": "item", "settings": { "text": "Borrmall", "note": "" } },
+        "i5": { "type": "item", "settings": { "text": "2 års garanti och 30 dagars öppet köp", "note": "" } }
+      },
+      "block_order": ["i1", "i2", "i3", "i4", "i5"],
+      "settings": {
+        "heading": "<p>Det här ingår i priset.</p>",
+        "compare_text": "En kabelkrok för hundralappen håller kabeln borta från marken. Men du rullar fortfarande upp åtta meter lerig kabel för hand, varje kväll. Vinda Home gör det själv, i över 10 000 cykler.",
+        "compat_label": "Passar den din laddbox?",
+        "compat_url": "shopify://pages/laddbox-kompatibilitet"
+      }
+    },
     "pdp-trust-strip": {
       "type": "trust-strip",
       "blocks": {
@@ -320,6 +337,7 @@
   },
   "order": [
     "pdp-hero",
+    "pdp-value-stack",
     "pdp-trust-strip",
     "pdp-features",
     "pdp-before-after",

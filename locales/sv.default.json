@@ -577,6 +577,9 @@
     "title": "Vinda kabelvindor",
     "sub": "IP44 · Auto-indrag · Typ 2"
   },
+  "product": {
+    "value_stack": { "label": "Ingår i priset", "compare_label": "Jämfört med en kabelkrok" }
+  },
   "cart": {
     "title": "Varukorg",
     "close": "Stäng varukorg",

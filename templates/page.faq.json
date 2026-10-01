@@ -28,7 +28,7 @@
           "settings": {
             "console_label": "LOGG // PRODUKT",
             "q_1": "Passar Vinda Home min elbil?",
-            "a_1": "<p>Ja. Vinda Home är kompatibel med alla elbilar som använder standard Typ 2-laddkabel — det vill säga i princip alla elbilar sålda i Sverige.</p>",
+            "a_1": "<p>Ja. Vinda Home är kompatibel med alla elbilar som använder standard Typ 2-laddkabel — det vill säga i princip alla elbilar sålda i Sverige. Laddboxen behöver ett Typ 2-uttag, se <a href=\"/pages/laddbox-kompatibilitet\">vilka laddboxar som passar</a>.</p>",
             "q_2": "Vilken effekt klarar Vinda Home?",
             "a_2": "<p>Upp till 11 kW trefas (16 A). Kabeln är 8 meter, vilket räcker till de flesta garage och carportar.</p>",
             "q_3": "Vad är skillnaden mellan Vinda Home och Vinda Go?",
