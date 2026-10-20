@@ -155,6 +155,10 @@
   }
 
   // ─── Intercept any [data-atc-form] form across the page ──
+  // Capture phase on purpose: Shopify's analytics listens for form submits on
+  // the document (bubbling) and records product_added_to_cart unless the submit
+  // is already defaultPrevented. Bubbling here made every click count twice in
+  // Meta/GA (once for the submit, once for the /cart/add.js fetch).
   document.addEventListener('submit', async (e) => {
     const form = e.target.closest('[data-atc-form]');
     if (!form) return;
@@ -184,7 +188,7 @@
     } finally {
       if (btn) { btn.disabled = false; btn.textContent = original; }
     }
-  });
+  }, true);
 
   // ─── Sticky cart bar reveal ──────────────────────────────
   const stickyBar = document.getElementById('VStickyBar');
