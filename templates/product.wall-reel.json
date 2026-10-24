@@ -264,14 +264,6 @@
             "caption": "VINDA HOME // GARAGEVÄGG"
           }
         },
-        "g2": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Create_a_premium_commercial_li_Flux_20_Pro_86219.png",
-            "alt": "Vinda Home - kabelhantering som inte ser fult ut på din fasad.",
-            "caption": "DETALJ // ANSLUTNING"
-          }
-        },
         "g3": {
           "type": "image",
           "settings": {
@@ -291,7 +283,6 @@
       },
       "block_order": [
         "g1",
-        "g2",
         "g3",
         "g4"
       ],
