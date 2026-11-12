@@ -1655,3 +1655,20 @@ body:not(.page-index) main { padding-top: var(--header-height); }
 }
 .v-vs__link:hover { text-decoration-color: var(--color-accent); }
 .v-vs__link:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; border-radius: var(--radius-xs); }
+
+/* ─── Shopify cookie banner (#shopify-pc__banner) — compact on phones ───
+   Shopify stacks all three buttons at <=480px whatever position is set in
+   Admin, so the banner covered ~417px of an 812px screen. Tighter padding and
+   Accept/Decline side by side at equal width bring it to ~267px. Accept and
+   Decline keep identical size and styling (refusing must be as easy as
+   accepting); colours stay Shopify's. Selectors use the id to beat Shopify's
+   injected rules. */
+@media (max-width: 480px) {
+  #shopify-pc__banner.shopify-pc__banner__dialog { padding: 18px 20px; left: 8px; width: calc(100% - 16px); }
+  #shopify-pc__banner h2 { font-size: 16px; margin-bottom: 6px; }
+  #shopify-pc__banner p { font-size: 14px; }
+  #shopify-pc__banner .shopify-pc__banner__btns { flex-direction: row; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  #shopify-pc__banner .shopify-pc__banner__btn-accept,
+  #shopify-pc__banner .shopify-pc__banner__btn-decline { flex: 1 1 0; margin: 0; }
+  #shopify-pc__banner .shopify-pc__banner__btn-manage-prefs { flex-basis: 100%; margin: 0; padding-block: 4px; }
+}
