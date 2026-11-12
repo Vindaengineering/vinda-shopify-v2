@@ -7,7 +7,14 @@
   <div class="v-container">
     <header class="v-page__header" data-reveal>
       <p class="v-eyebrow">{{ section.settings.eyebrow | default: 'Installation' }}</p>
-      <h1 class="v-display v-page__heading">{{ section.settings.heading | default: 'Installation i tre steg.' }}</h1>
+      {%- comment -%} h1 only on the installation page itself; on a product page the product title is the h1. {%- endcomment -%}
+      {%- liquid
+        assign install_heading_tag = 'h2'
+        if template.name == 'page'
+          assign install_heading_tag = 'h1'
+        endif
+      -%}
+      <{{ install_heading_tag }} class="v-display v-page__heading">{{ section.settings.heading | default: 'Installation i tre steg.' }}</{{ install_heading_tag }}>
       {%- if section.settings.lede != blank -%}
         <p class="v-page__lede">{{ section.settings.lede }}</p>
       {%- endif -%}
