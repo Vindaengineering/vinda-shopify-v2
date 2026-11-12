@@ -6,7 +6,11 @@
   z-index: 300;
   pointer-events: none;
 }
-.v-drawer[data-open="true"] { pointer-events: auto; }
+/* Open drawer sits above Shopify's cookie banner (#shopify-pc__banner, fixed,
+   z-index 2000000), which otherwise covers the total + checkout button on
+   mobile when a first-time visitor adds to cart before answering it. The
+   banner comes back when the drawer closes. */
+.v-drawer[data-open="true"] { pointer-events: auto; z-index: 2000001; }
 
 .v-drawer__backdrop {
   position: absolute;
