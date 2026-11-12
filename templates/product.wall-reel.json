@@ -70,11 +70,13 @@
         "mirror": false,
         "background_variant": "default",
         "eyebrow": "Väggmontering",
-        "heading": "<p>Auto-indragande<br>kabelvinda</p>",
+        "heading": "<p>Auto-indragande<br/>kabelvinda</p>",
         "show_rating": true,
         "rating": "4.9",
         "review_count": 47,
         "price_meta": "inkl. moms · fri frakt",
+        "show_pay_note": true,
+        "show_compat": true,
         "description": "Väggmonterad och auto-indragande. Efter varje laddning rullas kabeln in av sig själv. Inga trassel, ingen markkontakt, ingen daglig irritation. IP44-klassad för utomhusbruk året om i alla klimat.",
         "badge": "Bästsäljare",
         "show_overlay": true,
@@ -85,13 +87,49 @@
     "pdp-value-stack": {
       "type": "value-stack",
       "blocks": {
-        "i1": { "type": "item", "settings": { "text": "Vinda Home-vindan", "note": "Fjädermekanism testad i över 10 000 cykler" } },
-        "i2": { "type": "item", "settings": { "text": "8 m Typ 2-laddkabel, 11 kW", "note": "Motsvarar en separat laddkabel för 1 500 till 2 500 kr" } },
-        "i3": { "type": "item", "settings": { "text": "Väggfäste, skruv och plugg", "note": "" } },
-        "i4": { "type": "item", "settings": { "text": "Borrmall", "note": "" } },
-        "i5": { "type": "item", "settings": { "text": "2 års garanti och 30 dagars öppet köp", "note": "" } }
+        "i1": {
+          "type": "item",
+          "settings": {
+            "text": "Vinda Home-vindan",
+            "note": "Fjädermekanism testad i över 10 000 cykler"
+          }
+        },
+        "i2": {
+          "type": "item",
+          "settings": {
+            "text": "8 m Typ 2-laddkabel, 11 kW",
+            "note": "Motsvarar en separat laddkabel för 1 500 till 2 500 kr"
+          }
+        },
+        "i3": {
+          "type": "item",
+          "settings": {
+            "text": "Väggfäste, skruv och plugg",
+            "note": ""
+          }
+        },
+        "i4": {
+          "type": "item",
+          "settings": {
+            "text": "Borrmall",
+            "note": ""
+          }
+        },
+        "i5": {
+          "type": "item",
+          "settings": {
+            "text": "2 års garanti och 30 dagars öppet köp",
+            "note": ""
+          }
+        }
       },
-      "block_order": ["i1", "i2", "i3", "i4", "i5"],
+      "block_order": [
+        "i1",
+        "i2",
+        "i3",
+        "i4",
+        "i5"
+      ],
       "settings": {
         "heading": "<p>Det här ingår i priset.</p>",
         "compare_text": "En kabelkrok för hundralappen håller kabeln borta från marken. Men du rullar fortfarande upp åtta meter lerig kabel för hand, varje kväll. Vinda Home gör det själv, i över 10 000 cykler.",
