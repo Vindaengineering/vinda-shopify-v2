@@ -234,6 +234,14 @@
 }
 .v-sticky-bar__ctas .v-atc-form { display: inline-flex; }
 
+/* Product page: one full-width button for the product being viewed. */
+@media (max-width: 599px) {
+  .v-sticky-bar--single .v-sticky-bar__ctas,
+  .v-sticky-bar--single .v-atc-form,
+  .v-sticky-bar--single .v-atc-form > button { flex: 1; }
+  .v-sticky-bar--single .v-atc-form > button { padding-inline: 16px; }
+}
+
 /* compact buttons inside sticky bar */
 .v-sticky-bar .v-btn-primary {
   padding: 10px 28px;

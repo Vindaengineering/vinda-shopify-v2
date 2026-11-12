@@ -12,16 +12,36 @@
   if bar_sub == blank
     assign bar_sub = 'sticky_bar.sub' | t
   endif
+
+  # On either reel's own product page, offer only that reel. Showing both put
+  # the cheaper portable first and stacked two buttons on phones.
+  assign current = blank
+  if product != blank
+    if wall != blank and product.id == wall.id
+      assign current = wall
+    elsif portable != blank and product.id == portable.id
+      assign current = portable
+    endif
+  endif
+  if current != blank and section.settings.title == blank
+    assign bar_title = current.title
+  endif
 -%}
 
 {%- if wall != blank or portable != blank -%}
-  <aside class="v-sticky-bar" id="VStickyBar" data-sticky-bar aria-hidden="true">
+  <aside class="v-sticky-bar{% if current != blank %} v-sticky-bar--single{% endif %}" id="VStickyBar" data-sticky-bar aria-hidden="true">
     <div class="v-sticky-bar__inner">
       <div class="v-sticky-bar__copy">
         <p class="v-sticky-bar__title">{{ bar_title }}</p>
         <p class="v-sticky-bar__sub">{{ bar_sub }}</p>
       </div>
       <div class="v-sticky-bar__ctas">
+        {%- if current != blank -%}
+          {% render 'atc-form',
+              product: current,
+              classes: 'v-btn-primary',
+              show_price: true %}
+        {%- else -%}
         {%- if portable != blank -%}
           {%- assign portable_label = 'sticky_bar.portable_label' | t -%}
           {% render 'atc-form',
@@ -37,6 +57,7 @@
               classes: 'v-btn-primary',
               label: wall_label,
               show_price: true %}
+        {%- endif -%}
         {%- endif -%}
       </div>
     </div>

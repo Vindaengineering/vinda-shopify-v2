@@ -7,8 +7,10 @@
   assign anchor = section.settings.anchor | default: 'product-feature'
   assign bg = section.settings.background_variant
   assign heading_tag = 'h2'
+  assign is_pdp = false
   if template contains 'product'
     assign heading_tag = 'h1'
+    assign is_pdp = true
   endif
 -%}
 
@@ -20,27 +22,46 @@
   <div class="v-container">
     <div class="v-pf__grid">
       {%- comment -%} Image side {%- endcomment -%}
+      {%- comment -%}
+        On a product page this section is the first screen and its image is the
+        LCP element, so it renders as a real <img> with srcset, loads eagerly at
+        high priority, and skips the scroll-reveal fade (which kept it invisible
+        until reveal.js ran). Elsewhere it stays lazy and keeps the reveal.
+      {%- endcomment -%}
       {%- liquid
-        assign pf_image_url = ''
+        assign pf_image = blank
         assign pf_alt = ''
         if section.settings.media_image != blank
-          assign pf_image_url = section.settings.media_image | image_url: width: 1600
+          assign pf_image = section.settings.media_image
           assign pf_alt = section.settings.media_alt | default: p.title
         elsif p.featured_image != blank
-          assign pf_image_url = p.featured_image | image_url: width: 1600
+          assign pf_image = p.featured_image
           assign pf_alt = p.title
+        endif
+        if is_pdp
+          assign pf_loading = 'eager'
+          assign pf_priority = 'high'
         else
-          assign pf_image_url = 'lifestyle-garden.jpg' | asset_url
-          assign pf_alt = ''
+          assign pf_loading = 'lazy'
+          assign pf_priority = 'auto'
         endif
       -%}
-      <div
-        class="v-pf__media"
-        data-reveal
-        role="img"
-        aria-label="{{ pf_alt | escape }}"
-        style="background-image: url('{{ pf_image_url }}');"
-      >
+      <div class="v-pf__media"{% unless is_pdp %} data-reveal{% endunless %}>
+        {%- if pf_image != blank -%}
+          {{
+            pf_image
+            | image_url: width: 1600
+            | image_tag:
+              class: 'v-pf__img',
+              alt: pf_alt,
+              widths: '400, 600, 800, 1000, 1200, 1600',
+              sizes: '(min-width: 1200px) 576px, (min-width: 990px) 50vw, (min-width: 750px) 100vw, 80vw',
+              loading: pf_loading,
+              fetchpriority: pf_priority
+          }}
+        {%- else -%}
+          <img class="v-pf__img" src="{{ 'lifestyle-garden.jpg' | asset_url }}" alt="" width="1600" height="1600" loading="{{ pf_loading }}">
+        {%- endif -%}
 
         {%- if section.settings.show_overlay -%}
           <div class="v-pf__overlay" aria-hidden="true"></div>
@@ -51,7 +72,7 @@
       </div>
 
       {%- comment -%} Content side {%- endcomment -%}
-      <div class="v-pf__body" data-reveal style="--reveal-i: 1;">
+      <div class="v-pf__body"{% unless is_pdp %} data-reveal style="--reveal-i: 1;"{% endunless %}>
         <p class="v-eyebrow">{{ section.settings.eyebrow }}</p>
         <{{ heading_tag }} class="v-display v-pf__heading" id="PF-{{ section.id }}-heading">
           {%- comment -%} richtext settings store <p>-wrapped HTML — strip it, headings only allow phrasing content {%- endcomment -%}
@@ -73,6 +94,9 @@
             <span class="v-pf__price-amount">{{ p.price | money }}</span>
             <span class="v-pf__price-meta">{{ section.settings.price_meta | default: 'incl. VAT · free shipping' }}</span>
           </p>
+          {%- if section.settings.show_pay_note and shop.enabled_payment_types contains 'klarna' -%}
+            <p class="v-pf__pay-note">{{ 'product.feature.pay_note' | t }}</p>
+          {%- endif -%}
         {%- endif -%}
 
         {%- if section.settings.description != blank -%}
@@ -98,6 +122,21 @@
           <a href="{{ section.settings.product_url }}" class="v-btn-primary v-btn-primary--block">
             {{ 'products.product.add_to_cart' | t | default: 'Köp nu' }}
           </a>
+        {%- endif -%}
+
+        {%- comment -%}
+          "Will it fit my wallbox?" is answered three screens down otherwise, and
+          ad visitors drop off between cart and checkout. Off by default: the
+          copy is about Vinda Home (needs a Type 2 socket), so only that PDP turns it on.
+        {%- endcomment -%}
+        {%- if section.settings.show_compat -%}
+          {%- assign compat_page = pages['laddbox-kompatibilitet'] -%}
+          <p class="v-pf__compat">
+            {{ 'product.feature.compat_note' | t }}
+            {%- if compat_page != blank and compat_page.url != blank %}
+              <a href="{{ compat_page.url }}" class="v-pf__compat-link">{{ 'product.feature.compat_link' | t }}</a>
+            {%- endif -%}
+          </p>
         {%- endif -%}
 
         <ul class="v-trust-row v-pf__micro-trust" aria-label="{{ 'home.product.trust_label' | t | default: 'Trust' }}">
@@ -134,6 +173,8 @@
     { "type": "text", "id": "rating", "label": "Rating value", "default": "4.9" },
     { "type": "number", "id": "review_count", "label": "Review count", "default": 47 },
     { "type": "text", "id": "price_meta", "label": "Price meta", "default": "incl. VAT · free shipping" },
+    { "type": "checkbox", "id": "show_pay_note", "label": "Show Klarna payment note under the price", "info": "Only appears while Klarna is an active payment method.", "default": true },
+    { "type": "checkbox", "id": "show_compat", "label": "Show wallbox compatibility note under the buy button", "info": "Text is written for Vinda Home (Type 2 socket) and links to the Laddbox compatibility page.", "default": false },
     { "type": "textarea", "id": "description", "label": "Description" },
     { "type": "text", "id": "badge", "label": "Badge label (e.g. Best seller)" },
     { "type": "checkbox", "id": "show_overlay", "label": "Show image gradient overlay", "default": true },

@@ -579,7 +579,12 @@
     "sub": "IP44 · Auto-retract · Type 2"
   },
   "product": {
-    "value_stack": { "label": "What is included", "compare_label": "Compared with a cable hook" }
+    "value_stack": { "label": "What is included", "compare_label": "Compared with a cable hook" },
+    "feature": {
+      "compat_note": "Fits wallboxes with a Type 2 socket.",
+      "compat_link": "Check your wallbox",
+      "pay_note": "Pay by card or with Klarna."
+    }
   },
   "cart": {
     "title": "Cart",

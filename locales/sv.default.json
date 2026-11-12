@@ -578,7 +578,12 @@
     "sub": "IP44 · Auto-indrag · Typ 2"
   },
   "product": {
-    "value_stack": { "label": "Ingår i priset", "compare_label": "Jämfört med en kabelkrok" }
+    "value_stack": { "label": "Ingår i priset", "compare_label": "Jämfört med en kabelkrok" },
+    "feature": {
+      "compat_note": "Passar laddboxar med Typ 2-uttag.",
+      "compat_link": "Kolla din laddbox",
+      "pay_note": "Betala med kort eller Klarna."
+    }
   },
   "cart": {
     "title": "Varukorg",
